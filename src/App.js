@@ -9,7 +9,6 @@ export default class App extends React.Component {
   };
 
   loginArtist = (artist) => {
-    // console.log(artist);
     this.setState({
       artist,
     });
@@ -19,6 +18,7 @@ export default class App extends React.Component {
     this.setState({
       artist: null,
     });
+    localStorage.removeItem("token");
   };
 
   render() {
