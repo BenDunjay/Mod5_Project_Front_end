@@ -2,6 +2,10 @@ import React, { Component } from "react";
 
 export default class Logout extends Component {
   render() {
-    return <div>Hi</div>;
+    return (
+      <div>
+        <button onClick={this.props.logoutArtist}> Logout</button>
+      </div>
+    );
   }
 }

@@ -15,11 +15,17 @@ export default class App extends React.Component {
     });
   };
 
+  logoutArtist = () => {
+    this.setState({
+      artist: null,
+    });
+  };
+
   render() {
     return (
       <div>
         {this.state.artist ? (
-          <AppContainer />
+          <AppContainer logoutArtist={this.logoutArtist} />
         ) : (
           <AuthContainer loginArtist={this.loginArtist} />
         )}
