@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import API from "../API";
 
 class Login extends Component {
   state = {
@@ -13,23 +14,14 @@ class Login extends Component {
   };
 
   artistLoginFetch = (artist) => {
-    return fetch("http://localhost:3000/api/v1/artist_login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({ artist }),
-    })
-      .then((resp) => resp.json())
-      .then((data) => {
-        if (data.message) {
-          alert("Invalid login");
-        } else {
-          localStorage.setItem("token", data.jwt);
-          this.props.loginArtist(data.artist);
-        }
-      });
+    API.loginArtist(artist).then((data) => {
+      if (data.message) {
+        alert("Invalid login");
+      } else {
+        localStorage.setItem("token", data.jwt);
+        this.props.loginArtist(data.artist);
+      }
+    });
   };
 
   handleSubmit = (e) => {

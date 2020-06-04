@@ -25,7 +25,10 @@ export default class App extends React.Component {
     return (
       <div>
         {this.state.artist ? (
-          <AppContainer logoutArtist={this.logoutArtist} />
+          <AppContainer
+            logoutArtist={this.logoutArtist}
+            artist={this.state.artist}
+          />
         ) : (
           <AuthContainer loginArtist={this.loginArtist} />
         )}

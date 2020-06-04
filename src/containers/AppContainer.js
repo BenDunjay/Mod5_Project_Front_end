@@ -3,8 +3,9 @@ import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 import Home from "../components/Home";
 import Logout from "../components/Logout";
 import ArtistProfile from "../components/ArtistProfile";
+import EditArtistProfile from "../components/EditArtistProfile";
 
-export default function AppContainer({ logoutArtist }) {
+export default function AppContainer(props) {
   return (
     <Router>
       <div className="App">
@@ -15,15 +16,21 @@ export default function AppContainer({ logoutArtist }) {
           <Link to="/profile"> Profile </Link>
         </h3>
         <h3>
+          <Link to="/edit_profile"> Edit Profile </Link>
+        </h3>
+        <h3>
           <Link to="/logout"> Logout </Link>
         </h3>
 
         <Switch>
+          <Route exact path="/edit_profile">
+            <EditArtistProfile artist={props.artist} />
+          </Route>
           <Route exact path="/profile">
-            <ArtistProfile />
+            <ArtistProfile artist={props.artist} />
           </Route>
           <Route exact path="/logout">
-            <Logout logoutArtist={logoutArtist} />
+            <Logout logoutArtist={props.logoutArtist} />
           </Route>
           <Route exact path="/">
             <Home />
