@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import API from "../API";
 
 class SignUpArtist extends Component {
   state = {
@@ -16,23 +17,14 @@ class SignUpArtist extends Component {
     this.userPostFetch(this.state);
   };
 
-  userPostFetch = (artist) => {
-    return fetch("http://localhost:3000/api/v1/artists", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({ artist }),
-    })
-      .then((resp) => resp.json())
-      .then((data) => {
-        if (data.message) {
-          alert("artist already set");
-        } else {
-          localStorage.setItem("token", data.token);
-        }
-      });
+  artistPostFetch = (artist) => {
+    API.signupArtist(artist).then((data) => {
+      if (data.message) {
+        alert("artist already set");
+      } else {
+        localStorage.setItem("token", data.token);
+      }
+    });
   };
 
   render() {

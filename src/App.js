@@ -9,17 +9,26 @@ export default class App extends React.Component {
   };
 
   loginArtist = (artist) => {
-    // console.log(artist);
     this.setState({
       artist,
     });
+  };
+
+  logoutArtist = () => {
+    this.setState({
+      artist: null,
+    });
+    localStorage.removeItem("token");
   };
 
   render() {
     return (
       <div>
         {this.state.artist ? (
-          <AppContainer />
+          <AppContainer
+            logoutArtist={this.logoutArtist}
+            artist={this.state.artist}
+          />
         ) : (
           <AuthContainer loginArtist={this.loginArtist} />
         )}

@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function ArtistProfile() {
-  return <div>Hi</div>;
+export default function ArtistProfile(props) {
+  return <div>{props.artist.name}</div>;
 }
