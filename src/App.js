@@ -1,32 +1,29 @@
 import React from "react";
-import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 import "./App.css";
+import AppContainer from "./containers/AppContainer";
+import AuthContainer from "./containers/AuthContainer";
 
-import SignUp from "./components/SignUp";
-import Login from "./components/Login";
+export default class App extends React.Component {
+  state = {
+    artist: null,
+  };
 
-function App() {
-  return (
-    <Router>
-      <div className="App">
-        <Link to="/"> Home </Link>
-        <Link to="/signup"> Sign Up </Link>
-        <Link to="/login"> Log In </Link>
+  loginArtist = (artist) => {
+    // console.log(artist);
+    this.setState({
+      artist,
+    });
+  };
 
-        <Switch>
-          <Route exact path="/signup">
-            <SignUp />
-          </Route>
-          <Route exact path="/login">
-            <Login />
-          </Route>
-          <Route exact path="/login">
-            <App />
-          </Route>
-        </Switch>
+  render() {
+    return (
+      <div>
+        {this.state.artist ? (
+          <AppContainer />
+        ) : (
+          <AuthContainer loginArtist={this.loginArtist} />
+        )}
       </div>
-    </Router>
-  );
+    );
+  }
 }
-
-export default App;

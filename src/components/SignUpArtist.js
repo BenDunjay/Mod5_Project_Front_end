@@ -1,19 +1,23 @@
 import React, { Component } from "react";
 
-class Login extends Component {
+class SignUpArtist extends Component {
   state = {
     name: "",
     password: "",
   };
-
   handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
     });
   };
 
-  artistLoginFetch = (artist) => {
-    return fetch("http://localhost:3000/api/v1/artist_login", {
+  handleSubmit = (event) => {
+    event.preventDefault();
+    this.userPostFetch(this.state);
+  };
+
+  userPostFetch = (artist) => {
+    return fetch("http://localhost:3000/api/v1/artists", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -24,23 +28,17 @@ class Login extends Component {
       .then((resp) => resp.json())
       .then((data) => {
         if (data.message) {
-          alert("Invalid login");
+          alert("artist already set");
         } else {
-          localStorage.setItem("token", data.jwt);
-          this.props.loginArtist(data.artist);
+          localStorage.setItem("token", data.token);
         }
       });
-  };
-
-  handleSubmit = (e) => {
-    e.preventDefault();
-    this.artistLoginFetch(this.state);
   };
 
   render() {
     return (
       <div>
-        <h1>Login</h1>
+        <h1>Sign Up</h1>
         <div>
           <form onSubmit={this.handleSubmit}>
             <label>Name:</label>
@@ -59,7 +57,7 @@ class Login extends Component {
               value={this.state.password}
             />
             <br />
-            <input type="submit" value="Login" />
+            <input type="submit" value="Sign up" />
           </form>
         </div>
       </div>
@@ -67,4 +65,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default SignUpArtist;
