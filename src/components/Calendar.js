@@ -7,7 +7,13 @@ import "react-datepicker/dist/react-datepicker.css";
 class Calendar extends React.Component {
   state = {
     startDate: new Date(),
-    unavailableDate: [],
+    availableDates: [],
+  };
+
+  componentDidMount = () => {
+    this.setState({
+      availableDates: this.props.artistDates,
+    });
   };
 
   handleChange = (date) => {
@@ -20,10 +26,18 @@ class Calendar extends React.Component {
     let date = new Date(this.state.startDate)
       .toISOString("yyyy-MM-dd")
       .slice(0, 10);
+    if (this.props.artistDates.includes(date)) {
+      alert("This date is already available!");
+    } else {
+      this.sendAvailabilityRequest(date);
+    }
+  };
+
+  sendAvailabilityRequest = (date) => {
     let newDate = { date: date, artist_id: this.props.artist.id };
     API.createAvailability(newDate).then(
       this.setState({
-        unavailableDate: [...this.state.unavailableDate, newDate],
+        availableDates: [...this.state.availableDates, newDate],
       })
     );
   };
@@ -35,11 +49,7 @@ class Calendar extends React.Component {
         <DatePicker
           selected={this.state.startDate}
           onChange={this.handleChange}
-          excludeDates={[
-            new Date(),
-            new Date("2020-6-20"),
-            new Date("2020-6-21"),
-          ]}
+          excludeDates={this.state.availableDates.map((date) => new Date(date))}
         />
       </div>
     );
