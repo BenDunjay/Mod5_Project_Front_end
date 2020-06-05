@@ -1,12 +1,17 @@
 import React from "react";
 import Calendar from "./Calendar";
 
-export default function ArtistProfile(props) {
+export default function ArtistProfile({ artist }) {
+  const unavailableArtistDates = () => {
+    return artist.availabilities.map((element) => element.date);
+  };
+
   return (
     <div>
-      {props.artist.name}
+      {artist.name}
       <div>
-        <Calendar />
+        <Calendar artistDates={unavailableArtistDates()} />
+        <hr></hr>
       </div>
     </div>
   );
