@@ -14,7 +14,7 @@ class SignUpArtist extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.userPostFetch(this.state);
+    this.artistPostFetch(this.state);
   };
 
   artistPostFetch = (artist) => {
