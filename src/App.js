@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import AppContainer from "./containers/AppContainer";
+import ArtistAppContainer from "./containers/ArtistAppContainer";
 import AuthContainer from "./containers/AuthContainer";
 
 export default class App extends React.Component {
@@ -25,7 +25,7 @@ export default class App extends React.Component {
     return (
       <div>
         {this.state.artist ? (
-          <AppContainer
+          <ArtistAppContainer
             logoutArtist={this.logoutArtist}
             artist={this.state.artist}
           />

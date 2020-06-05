@@ -5,7 +5,7 @@ import Logout from "../components/Logout";
 import ArtistProfile from "../components/ArtistProfile";
 import EditArtistProfile from "../components/EditArtistProfile";
 
-export default function AppContainer(props) {
+export default function ArtistAppContainer(props) {
   return (
     <Router>
       <div className="App">
