@@ -2,7 +2,7 @@ import React from "react";
 import Calendar from "./Calendar";
 
 export default function ArtistProfile({ artist }) {
-  const unavailableArtistDates = () => {
+  const availableArtistDates = () => {
     return artist.availabilities.map((element) => element.date);
   };
 
@@ -10,7 +10,7 @@ export default function ArtistProfile({ artist }) {
     <div>
       {artist.name}
       <div>
-        <Calendar artistDates={unavailableArtistDates()} />
+        <Calendar artistDates={availableArtistDates()} artist={artist} />
         <hr></hr>
       </div>
     </div>

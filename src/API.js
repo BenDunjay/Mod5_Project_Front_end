@@ -6,13 +6,11 @@ const updateArtistUrl = baseUrlArtist + "/edit_profile";
 const createAvailabilityUrl = baseUrlArtist + "/create_availability";
 
 const post = (url, object) => {
-  console.log(object);
   return fetch(url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
-      Authorization: localStorage.token,
     },
     body: JSON.stringify(object),
   }).then((response) => response.json());
@@ -30,6 +28,19 @@ const patch = (url, object) => {
   }).then((resp) => resp.json());
 };
 
+const postAPI = (url, object) => {
+  console.log(object);
+  return fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: localStorage.token,
+    },
+    body: JSON.stringify(object),
+  }).then((response) => response.json());
+};
+
 const signupArtist = (artist) => {
   return post(artistSignUpUrl, { artist });
 };
@@ -43,7 +54,7 @@ const updateArtist = (artist) => {
 };
 
 const createAvailability = (date) => {
-  return post(createAvailabilityUrl, date);
+  return postAPI(createAvailabilityUrl, date);
 };
 
 export default { signupArtist, loginArtist, updateArtist, createAvailability };

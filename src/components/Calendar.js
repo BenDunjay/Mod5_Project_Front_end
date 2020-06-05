@@ -20,9 +20,12 @@ class Calendar extends React.Component {
     let date = new Date(this.state.startDate)
       .toISOString("yyyy-MM-dd")
       .slice(0, 10);
-    console.log(date);
-    console.log(this.props.artistDates);
-    API.createAvailability(date).then(console.log);
+    let newDate = { date: date, artist_id: this.props.artist.id };
+    API.createAvailability(newDate).then(
+      this.setState({
+        unavailableDate: [...this.state.unavailableDate, newDate],
+      })
+    );
   };
 
   render() {
