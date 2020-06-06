@@ -1,9 +1,10 @@
-const baseUrlArtist = "http://localhost:3000/api/v1";
+const baseUrl = "http://localhost:3000/api/v1";
 
-const artistLoginUrl = baseUrlArtist + "/artist_login";
-const artistSignUpUrl = baseUrlArtist + "/artists";
-const updateArtistUrl = baseUrlArtist + "/edit_profile";
-const createAvailabilityUrl = baseUrlArtist + "/create_availability";
+const artistLoginUrl = baseUrl + "/artist_login";
+const artistSignUpUrl = baseUrl + "/artists";
+const updateArtistUrl = baseUrl + "/edit_profile";
+const createAvailabilityUrl = baseUrl + "/create_availability";
+const venueLoginUrl = baseUrl + "/venue_login";
 
 const post = (url, object) => {
   return fetch(url, {
@@ -52,8 +53,18 @@ const updateArtist = (artist) => {
   return patch(updateArtistUrl, artist);
 };
 
+const loginVenue = (venue) => {
+  return post(venueLoginUrl, { venue });
+};
+
 const createAvailability = (date) => {
   return postAPI(createAvailabilityUrl, date);
 };
 
-export default { signupArtist, loginArtist, updateArtist, createAvailability };
+export default {
+  signupArtist,
+  loginArtist,
+  updateArtist,
+  createAvailability,
+  loginVenue,
+};
