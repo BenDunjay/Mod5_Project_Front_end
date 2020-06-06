@@ -8,6 +8,7 @@ class Calendar extends React.Component {
   state = {
     startDate: new Date(),
     availableDates: [],
+    selectedDate: "",
   };
 
   componentDidMount = () => {
@@ -22,8 +23,15 @@ class Calendar extends React.Component {
     });
   };
 
-  createAvailability = (event) => {
-    let date = new Date(this.state.startDate)
+  // need to write method to check if the input follows the YYYY-MM-DD else returns sorry this is not a date.
+
+  authenticateAvailabilityInput = (event) => {
+    event.preventDefault();
+    this.convertDate();
+  };
+
+  convertDate = () => {
+    let date = new Date(this.state.selectedDate)
       .toISOString("yyyy-MM-dd")
       .slice(0, 10);
     if (this.props.artistDates.includes(date)) {
@@ -42,14 +50,35 @@ class Calendar extends React.Component {
     );
   };
 
+  handleDateChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
+  };
+
   render() {
     return (
       <div>
-        <button onClick={this.createAvailability}>Pick a date</button>
+        <form onSubmit={this.authenticateAvailabilityInput}>
+          <label>Create availability:</label>
+          <input
+            type="text"
+            name="selectedDate"
+            onChange={this.handleDateChange}
+            value={this.state.selectedDate}
+            placeholder="YYYY-M-DD"
+          />
+          <br />
+          <input type="submit" value="Submit Date" />
+        </form>
+
+        <h3>See the dates you are currently available</h3>
         <DatePicker
           selected={this.state.startDate}
           onChange={this.handleChange}
-          excludeDates={this.state.availableDates.map((date) => new Date(date))}
+          includeDates={this.state.availableDates.map((date) => new Date(date))}
+          // will include unlimited calendar months
+          // if i make this include dates it will filter out all the dates not picked (which is what I want) BUT it will only show up to the last month you cancelled a day
         />
       </div>
     );
