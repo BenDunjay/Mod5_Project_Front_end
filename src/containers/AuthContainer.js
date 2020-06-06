@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 
-import SignUpArtist from "../components/SignUpArtist";
-import Login from "../components/Login";
 import Home from "../components/Home";
+import ArtistAuthContainer from "./ArtistAuthContainer";
+import VenueAuthContainer from "./VenueAuthContainer";
 
-export default function AuthContainer({ loginArtist }) {
+export default function AuthContainer({ loginArtist, loginVenue }) {
   return (
     <div>
       <Router>
@@ -14,18 +14,18 @@ export default function AuthContainer({ loginArtist }) {
             <Link to="/"> Home </Link>
           </h3>
           <h3>
-            <Link to="/signup"> Sign Up Artist</Link>
+            <Link to="/artist"> Artists</Link>
           </h3>
           <h3>
-            <Link to="/artist_login"> Log In </Link>
+            <Link to="/venue"> Venues </Link>
           </h3>
 
           <Switch>
-            <Route exact path="/signup">
-              <SignUpArtist />
+            <Route exact path="/artist">
+              <ArtistAuthContainer loginArtist={loginArtist} />
             </Route>
-            <Route exact path="/artist_login">
-              <Login loginArtist={loginArtist} />
+            <Route exact path="/venue">
+              <VenueAuthContainer loginVenue={loginVenue} />
             </Route>
             <Route exact path="/">
               <Home />

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from "../API";
 
-class Login extends Component {
+class VenueLogin extends Component {
   state = {
     name: "",
     password: "",
@@ -13,20 +13,20 @@ class Login extends Component {
     });
   };
 
-  artistLoginFetch = (artist) => {
-    API.loginArtist(artist).then((data) => {
+  venueLoginFetch = (venue) => {
+    API.loginVenue(venue).then((data) => {
       if (data.message) {
         alert("Invalid login");
       } else {
         localStorage.setItem("token", data.jwt);
-        this.props.loginArtist(data.artist);
+        this.props.loginVenue(data.venue);
       }
     });
   };
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.artistLoginFetch(this.state);
+    this.venueLoginFetch(this.state);
   };
 
   render() {
@@ -59,4 +59,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default VenueLogin;
