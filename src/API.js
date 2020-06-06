@@ -29,7 +29,6 @@ const patch = (url, object) => {
 };
 
 const postAPI = (url, object) => {
-  console.log(object);
   return fetch(url, {
     method: "POST",
     headers: {
