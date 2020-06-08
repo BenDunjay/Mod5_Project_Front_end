@@ -30,7 +30,7 @@ export default function ArtistAppContainer(props) {
             <ArtistProfile artist={props.artist} />
           </Route>
           <Route exact path="/logout">
-            <Logout logoutArtist={props.logoutArtist} />
+            <Logout logout={props.logout} />
           </Route>
           <Route exact path="/">
             <Home />

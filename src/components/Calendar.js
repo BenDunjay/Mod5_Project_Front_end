@@ -43,9 +43,10 @@ class Calendar extends React.Component {
 
   sendAvailabilityRequest = (date) => {
     let newDate = { date: date, artist_id: this.props.artist.id };
-    API.createAvailability(newDate).then(
+    API.createAvailability(newDate).then((newAvailability) =>
       this.setState({
-        availableDates: [...this.state.availableDates, newDate],
+        availableDates: [...this.state.availableDates, newAvailability],
+        selectedDate: "",
       })
     );
   };
@@ -54,6 +55,10 @@ class Calendar extends React.Component {
     this.setState({
       [event.target.name]: event.target.value,
     });
+  };
+
+  showArtistAvailability = () => {
+    return this.state.availableDates.map((date) => new Date(date.date));
   };
 
   render() {
@@ -66,7 +71,7 @@ class Calendar extends React.Component {
             name="selectedDate"
             onChange={this.handleDateChange}
             value={this.state.selectedDate}
-            placeholder="YYYY-M-DD"
+            placeholder="YYYY-MM-DD"
           />
           <br />
           <input type="submit" value="Submit Date" />
@@ -76,9 +81,7 @@ class Calendar extends React.Component {
         <DatePicker
           selected={this.state.startDate}
           onChange={this.handleChange}
-          includeDates={this.state.availableDates.map((date) => new Date(date))}
-          // will include unlimited calendar months
-          // if i make this include dates it will filter out all the dates not picked (which is what I want) BUT it will only show up to the last month you cancelled a day
+          includeDates={this.showArtistAvailability()}
         />
       </div>
     );

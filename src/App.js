@@ -22,9 +22,10 @@ export default class App extends React.Component {
     });
   };
 
-  logoutArtist = () => {
+  logout = () => {
     this.setState({
       artist: null,
+      venue: null,
     });
     localStorage.removeItem("token");
   };
@@ -32,10 +33,7 @@ export default class App extends React.Component {
   chooseContainer = () => {
     if (this.state.artist) {
       return (
-        <ArtistAppContainer
-          logoutArtist={this.logoutArtist}
-          artist={this.state.artist}
-        />
+        <ArtistAppContainer logout={this.logout} artist={this.state.artist} />
       );
     } else if (this.state.venue) {
       return <VenueAppContainer venue={this.state.venue} />;

@@ -3,7 +3,7 @@ import Calendar from "./Calendar";
 
 export default function ArtistProfile({ artist }) {
   const availableArtistDates = () => {
-    return artist.availabilities.map((element) => element.date);
+    return artist.availabilities.map((element) => element);
   };
 
   return (
