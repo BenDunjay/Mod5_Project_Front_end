@@ -5,6 +5,16 @@ const artistSignUpUrl = baseUrl + "/artists";
 const updateArtistUrl = baseUrl + "/edit_profile";
 const createAvailabilityUrl = baseUrl + "/create_availability";
 const venueLoginUrl = baseUrl + "/venue_login";
+const allArtistsUrl = baseUrl + "/all_artists";
+const findArtistUrl = baseUrl + "/profile/";
+
+const get = (url) => {
+  return fetch(url).then((resp) => resp.json());
+};
+
+const getArtist = (url, name) => {
+  return fetch(url + name).then((resp) => resp.json());
+};
 
 const post = (url, object) => {
   return fetch(url, {
@@ -61,10 +71,20 @@ const createAvailability = (date) => {
   return postAPI(createAvailabilityUrl, date);
 };
 
+const getAllArtists = () => {
+  return get(allArtistsUrl);
+};
+
+const findClickedArtist = (artistName) => {
+  return getArtist(findArtistUrl, artistName);
+};
+
 export default {
   signupArtist,
   loginArtist,
   updateArtist,
   createAvailability,
   loginVenue,
+  getAllArtists,
+  findClickedArtist,
 };
