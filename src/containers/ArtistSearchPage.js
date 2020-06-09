@@ -9,6 +9,7 @@ export default class ArtistSearchPage extends Component {
   state = {
     selectedArtist: null,
     allArtists: [],
+    dateFilter: "",
   };
 
   componentDidMount = () => {
@@ -25,12 +26,36 @@ export default class ArtistSearchPage extends Component {
     });
   };
 
+  artistFilter = () => {
+    if (this.state.dateFilter === "") {
+      return this.state.allArtists;
+    } else {
+      return this.checkArtistAvailability();
+    }
+  };
+
+  checkArtistAvailability = () => {
+    let newArtists = [...this.state.allArtists];
+    let newArtistsCopy = newArtists.filter((artist) => {
+      if (
+        artist.availabilities.find(
+          (dateObject) => dateObject.date === this.state.dateFilter
+        )
+      ) {
+        return artist;
+      }
+    });
+    return newArtistsCopy;
+  };
+
   render() {
     return (
       <div>
         <div>
+          <input type="text" name="name" placeholder="Check by availability" />
+
           <ArtistList
-            allArtists={this.state.allArtists}
+            allArtists={this.artistFilter()}
             handleSelectedArtistChange={this.handleSelectedArtistChange}
           />
         </div>

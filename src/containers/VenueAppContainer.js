@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 
 import ArtistSearchPage from "./ArtistSearchPage";
+import SelectedArtistProfile from "../components/SelectedArtistProfile";
 
 export default function VenueAppContainer() {
   return (
@@ -27,6 +28,10 @@ export default function VenueAppContainer() {
           <Route exact path="/edit_profile"></Route>
           <Route exact path="/profile"></Route>
           <Route exact path="/logout"></Route>
+          <Route
+            path="/artist_profile/:artistname"
+            render={(routerProps) => <SelectedArtistProfile {...routerProps} />}
+          />
         </Switch>
       </div>
     </Router>
