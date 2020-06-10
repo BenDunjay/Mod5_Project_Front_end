@@ -13,7 +13,9 @@ const get = (url) => {
 };
 
 const getArtist = (url, name) => {
-  return fetch(url + name).then((resp) => resp.json());
+  return fetch(url + name, {
+    headers: { Authorization: localStorage.token },
+  }).then((resp) => resp.json());
 };
 
 const post = (url, object) => {
@@ -22,6 +24,7 @@ const post = (url, object) => {
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
+      Authorization: localStorage.token,
     },
     body: JSON.stringify(object),
   }).then((response) => response.json());
@@ -88,3 +91,15 @@ export default {
   getAllArtists,
   findClickedArtist,
 };
+
+// {
+//   /* <App>
+//   {this.state.user ? (
+//     <MainContainer>
+//       {this.props.isArtist ? <ArtistAppContainer /> : <VenueAppContainer />}
+//     </MainContainer>
+//   ) : (
+//     <AuthContainer />
+//   )}
+// </App>; */
+// }
