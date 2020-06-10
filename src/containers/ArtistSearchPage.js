@@ -48,11 +48,22 @@ export default class ArtistSearchPage extends Component {
     return newArtistsCopy;
   };
 
+  handleFilterDateChange = (event) => {
+    this.setState({
+      dateFilter: event.target.value,
+    });
+  };
+
   render() {
     return (
       <div>
         <div>
-          <input type="text" name="name" placeholder="Check by availability" />
+          <input
+            onChange={this.handleFilterDateChange}
+            type="text"
+            name="name"
+            placeholder="Filter by availability: YYYY-MM-DD"
+          />
 
           <ArtistList
             allArtists={this.artistFilter()}

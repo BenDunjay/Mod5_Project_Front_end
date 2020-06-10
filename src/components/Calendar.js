@@ -42,7 +42,7 @@ class Calendar extends React.Component {
   };
 
   sendAvailabilityRequest = (date) => {
-    let newDate = { date: date, artist_id: this.props.artist.id };
+    let newDate = { date: date };
     API.createAvailability(newDate).then((newAvailability) =>
       this.setState({
         availableDates: [...this.state.availableDates, newAvailability],
