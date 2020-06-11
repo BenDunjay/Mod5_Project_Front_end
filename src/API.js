@@ -8,6 +8,7 @@ const venueLoginUrl = baseUrl + "/venue_login";
 const allArtistsUrl = baseUrl + "/all_artists";
 const findArtistUrl = baseUrl + "/profile/";
 const availabilityForRequestUrl = baseUrl + "/get_availability/";
+const createRequestUrl = baseUrl + "/create_request";
 
 const get = (url) => {
   return fetch(url).then((resp) => resp.json());
@@ -91,6 +92,10 @@ const findClickedArtist = (artistName) => {
   return getArtist(findArtistUrl, artistName);
 };
 
+const sendARequest = (requestObject) => {
+  return post(createRequestUrl, requestObject);
+};
+
 export default {
   signupArtist,
   loginArtist,
@@ -100,6 +105,7 @@ export default {
   getAllArtists,
   findClickedArtist,
   createRequest,
+  sendARequest,
 };
 
 // {
