@@ -6,10 +6,10 @@ import "react-datepicker/dist/react-datepicker.css";
 export default class SelectedArtistCalendar extends Component {
   state = {
     startDate: new Date(),
-    selectedDate: "",
   };
 
   handleChange = (date) => {
+    this.props.handledateToBookChange(date);
     this.setState({
       startDate: date,
     });
