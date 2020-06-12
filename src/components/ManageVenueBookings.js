@@ -1,5 +1,7 @@
-import React from "react";
+import React, { Component } from "react";
 
-export default function ManageVenueBookings() {
-  return <div>Hi from my bookings</div>;
+export default class ManageVenueBookings extends Component {
+  render() {
+    return <div>Hi from my bookings</div>;
+  }
 }
