@@ -9,8 +9,13 @@ export default function Request({ request }) {
       <Table.Cell>{request.name}</Table.Cell>
       <Table.Cell>{request.number_of_hours}</Table.Cell>
       <Table.Cell>{request.payment}</Table.Cell>
-      <Table.Cell> Tick or Cross</Table.Cell>
       <Table.Cell> Brief Message</Table.Cell>
+      <Table.Cell> {request.accept}</Table.Cell>
+      {request.accept === true || false ? null : (
+        <p>
+          <button> Accept </button> <button>Reject</button>{" "}
+        </p>
+      )}
     </Table.Row>
   );
 }
