@@ -4,6 +4,7 @@ import Home from "../components/Home";
 import Logout from "../components/Logout";
 import ArtistProfile from "../components/ArtistProfile";
 import EditArtistProfile from "../components/EditArtistProfile";
+import ManageArtistBookings from "../components/ManageArtistBookings";
 
 export default function ArtistAppContainer(props) {
   return (
@@ -18,9 +19,9 @@ export default function ArtistAppContainer(props) {
         <h3>
           <Link to="/edit_profile"> Edit Profile </Link>
         </h3>
-        {/* <h3>
+        <h3>
           <Link to="/manage_bookings"> Manage Bookings </Link>
-        </h3> */}
+        </h3>
         <h3>
           <Link to="/logout"> Logout </Link>
         </h3>
@@ -29,9 +30,9 @@ export default function ArtistAppContainer(props) {
           <Route exact path="/edit_profile">
             <EditArtistProfile artist={props.artist} />
           </Route>
-          {/* <Route exact path="/manage_bookings">
-            <ManageVenueBookings />
-          </Route> */}
+          <Route exact path="/manage_bookings">
+            <ManageArtistBookings artist={props.artist} />
+          </Route>
           <Route exact path="/profile">
             <ArtistProfile artist={props.artist} />
           </Route>

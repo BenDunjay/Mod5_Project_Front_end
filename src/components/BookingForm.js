@@ -42,10 +42,10 @@ export default class BookingForm extends React.Component {
         Hi from {artist.name} booking page
         <form onSubmit={this.handleSubmitRequest}>
           <label> Artist:</label>
-          <input value={artist.name} />
+          <input value={artist.name} disabled={true} />
           <br />
           <label> Date:</label>
-          <input value={this.state.availabilityObject.date} />
+          <input value={this.state.availabilityObject.date} disabled={true} />
           <br />
           <label>Number of Hours Required:</label>
           <input
