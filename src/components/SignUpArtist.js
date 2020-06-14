@@ -3,8 +3,9 @@ import API from "../API";
 
 class SignUpArtist extends Component {
   state = {
-    name: "",
+    username: "",
     password: "",
+    stageName: "",
   };
   handleChange = (e) => {
     this.setState({
@@ -33,7 +34,7 @@ class SignUpArtist extends Component {
         <h1>Sign Up</h1>
         <div>
           <form onSubmit={this.handleSubmit}>
-            <label>Name:</label>
+            <label>Username:</label>
             <input
               type="text"
               name="name"

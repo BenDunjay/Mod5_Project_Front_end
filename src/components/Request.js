@@ -1,7 +1,26 @@
 import React from "react";
 import { Table } from "semantic-ui-react";
 
-export default function Request({ request }) {
+export default function Request({ request, changeAcceptStatus }) {
+  const showAcceptReject = () => {
+    if (request.accept === true) {
+      return null;
+    } else if (request.accept === false) {
+      return null;
+    } else {
+      return (
+        <p>
+          <button onClick={(e) => changeAcceptStatus(e, request)}>
+            Accept
+          </button>
+          <button onClick={(e) => changeAcceptStatus(e, request)}>
+            Reject
+          </button>
+        </p>
+      );
+    }
+  };
+
   return (
     <Table.Row>
       <Table.Cell>{request.id}</Table.Cell>
@@ -11,11 +30,7 @@ export default function Request({ request }) {
       <Table.Cell>{request.payment}</Table.Cell>
       <Table.Cell> Brief Message</Table.Cell>
       <Table.Cell> {request.accept}</Table.Cell>
-      {request.accept === true || false ? null : (
-        <p>
-          <button> Accept </button> <button>Reject</button>{" "}
-        </p>
-      )}
+      <Table.Cell>{showAcceptReject()}</Table.Cell>
     </Table.Row>
   );
 }

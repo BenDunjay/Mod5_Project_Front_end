@@ -4,6 +4,11 @@ import API from "../API";
 export default class EditArtistProfile extends React.Component {
   state = {
     name: "",
+    stageName: "",
+    bio: "",
+    profile: "",
+    spotify: "",
+    instagram: "",
   };
 
   handleChange = (e) => {
@@ -30,6 +35,46 @@ export default class EditArtistProfile extends React.Component {
             value={this.state.name}
             placeholder={this.props.artist.name}
           />
+          <label>Stage Name:</label>
+          <input
+            type="text"
+            name="stageName"
+            onChange={this.handleChange}
+            value={this.state.stageName}
+          />
+          <br />
+          <label>Bio:</label>
+          <textarea
+            type="text"
+            name="bio"
+            onChange={this.handleChange}
+            value={this.state.bio}
+          />
+          <br />
+          <label>Profile Pic:</label>
+          <input
+            type="text"
+            name="profile"
+            onChange={this.handleChange}
+            value={this.state.profile}
+          />
+          <br />
+          <label>Spotify Url:</label>
+          <input
+            type="text"
+            name="spotify"
+            onChange={this.handleChange}
+            value={this.state.spotify}
+          />
+          <br />
+          <label>Instagram Url:</label>
+          <input
+            type="text"
+            name="instagram"
+            onChange={this.handleChange}
+            value={this.state.instagram}
+          />
+          <br />
           <input type="submit" value="Edit Profile" />
         </form>
       </div>

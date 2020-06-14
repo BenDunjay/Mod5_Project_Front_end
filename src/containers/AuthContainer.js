@@ -11,9 +11,6 @@ export default function AuthContainer({ loginArtist, loginVenue }) {
       <Router>
         <div className="App">
           <h3>
-            <Link to="/"> Home </Link>
-          </h3>
-          <h3>
             <Link to="/artist"> Artists</Link>
           </h3>
           <h3>
@@ -26,9 +23,6 @@ export default function AuthContainer({ loginArtist, loginVenue }) {
             </Route>
             <Route exact path="/venue">
               <VenueAuthContainer loginVenue={loginVenue} />
-            </Route>
-            <Route exact path="/">
-              <Home />
             </Route>
           </Switch>
         </div>

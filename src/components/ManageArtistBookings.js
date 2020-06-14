@@ -1,31 +1,58 @@
 import React, { Component } from "react";
 import { Table } from "semantic-ui-react";
+import API from "../API";
 
 import Request from "./Request";
 
 export default class ManageArtistBookings extends Component {
-  displayPendingBookings = () => {
-    return this.props.artist.requests.map((request) => {
-      if (request.accept === null) {
-        return <Request request={request} key={request.id} />;
-      }
+  state = {
+    bookings: [],
+    requests: [],
+    rejected: [],
+  };
+
+  componentDidMount = () => {
+    API.fetchBookings().then((data) => {
+      this.setState({
+        bookings: data.accepted,
+        requests: data.pending,
+        rejected: data.rejected,
+      });
     });
   };
 
-  displayAcceptedBookings = () => {
-    return this.props.artist.requests.map((request) => {
-      if (request.accept === true) {
-        return <Request request={request} key={request.id} />;
-      }
-    });
+  changeAcceptStatus = (e, requestObject) => {
+    if (e.target.innerText === "Accept") {
+      API.acceptOrReject(requestObject, true).then(() =>
+        this.componentDidMount()
+      );
+    } else {
+      API.acceptOrReject(requestObject, false).then(() =>
+        this.componentDidMount()
+      );
+    }
   };
 
-  displayRejectedBookings = () => {
-    return this.props.artist.requests.map((request) => {
-      if (request.accept === false) {
-        return <Request request={request} key={request.id} />;
-      }
-    });
+  confirmedBookings = () => {
+    return this.state.bookings.map((request) => (
+      <Request request={request} key={request.id} />
+    ));
+  };
+
+  pendingRequests = () => {
+    return this.state.requests.map((request) => (
+      <Request
+        request={request}
+        key={request.id}
+        changeAcceptStatus={this.changeAcceptStatus}
+      />
+    ));
+  };
+
+  rejectedBookings = () => {
+    return this.state.rejected.map((request) => (
+      <Request request={request} key={request.id} />
+    ));
   };
 
   render() {
@@ -46,7 +73,7 @@ export default class ManageArtistBookings extends Component {
               </Table.Row>
             </Table.Header>
 
-            <Table.Body>{this.displayPendingBookings()}</Table.Body>
+            <Table.Body>{this.pendingRequests()}</Table.Body>
           </Table>
         </div>
         <div>
@@ -64,7 +91,7 @@ export default class ManageArtistBookings extends Component {
               </Table.Row>
             </Table.Header>
 
-            <Table.Body>{this.displayAcceptedBookings()}</Table.Body>
+            <Table.Body>{this.confirmedBookings()}</Table.Body>
           </Table>
         </div>
         <div>
@@ -82,7 +109,7 @@ export default class ManageArtistBookings extends Component {
               </Table.Row>
             </Table.Header>
 
-            <Table.Body>{this.displayRejectedBookings()}</Table.Body>
+            <Table.Body>{this.rejectedBookings()}</Table.Body>
           </Table>
         </div>
       </div>
