@@ -26,9 +26,12 @@ export default function Request({ request, changeAcceptStatus }) {
       <Table.Cell>{request.id}</Table.Cell>
       <Table.Cell>{request.date}</Table.Cell>
       <Table.Cell>{request.name}</Table.Cell>
+      <Table.Cell>{request.postcode}</Table.Cell>
+      <Table.Cell>{request.start_time}</Table.Cell>
       <Table.Cell>{request.number_of_hours}</Table.Cell>
       <Table.Cell>{request.payment}</Table.Cell>
       <Table.Cell> Brief Message</Table.Cell>
+      <Table.Cell>{request.phone_number}</Table.Cell>
       <Table.Cell> {request.accept}</Table.Cell>
       <Table.Cell>{showAcceptReject()}</Table.Cell>
     </Table.Row>

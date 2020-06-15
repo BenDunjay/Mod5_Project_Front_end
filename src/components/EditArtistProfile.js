@@ -9,6 +9,9 @@ export default class EditArtistProfile extends React.Component {
     profile: "",
     spotify: "",
     instagram: "",
+    email: "",
+    artistGenre: "",
+    phoneNumber: "",
   };
 
   handleChange = (e) => {
@@ -27,7 +30,7 @@ export default class EditArtistProfile extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <label>Name:</label>
+          <label>Artist Name:</label>
           <input
             type="text"
             name="name"
@@ -35,12 +38,12 @@ export default class EditArtistProfile extends React.Component {
             value={this.state.name}
             placeholder={this.props.artist.name}
           />
-          <label>Stage Name:</label>
+          <label>User Name:</label>
           <input
             type="text"
             name="stageName"
             onChange={this.handleChange}
-            value={this.state.stageName}
+            value={this.state.username}
           />
           <br />
           <label>Bio:</label>
@@ -50,6 +53,30 @@ export default class EditArtistProfile extends React.Component {
             onChange={this.handleChange}
             value={this.state.bio}
           />
+          <br />
+          <label>Email:</label>
+          <input
+            type="text"
+            name="email"
+            onChange={this.handleChange}
+            value={this.state.email}
+          />
+          <br />
+          <label>Artist Genre:</label>
+          <input
+            type="text"
+            name="artistGenre"
+            onChange={this.handleChange}
+            value={this.state.artist_genre}
+          />
+          <label>Phone Number:</label>
+          <input
+            type="text"
+            name="phoneNumber"
+            onChange={this.handleChange}
+            value={this.state.phone_number}
+          />
+          <br />
           <br />
           <label>Profile Pic:</label>
           <input

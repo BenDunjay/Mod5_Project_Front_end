@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 
-import Home from "../components/Home";
 import ArtistAuthContainer from "./ArtistAuthContainer";
 import VenueAuthContainer from "./VenueAuthContainer";
 

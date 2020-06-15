@@ -66,9 +66,12 @@ export default class ManageArtistBookings extends Component {
                 <Table.HeaderCell>Request Id</Table.HeaderCell>
                 <Table.HeaderCell>Date</Table.HeaderCell>
                 <Table.HeaderCell>Venue Name</Table.HeaderCell>
+                <Table.HeaderCell>Postcode</Table.HeaderCell>
+                <Table.HeaderCell>Start Time</Table.HeaderCell>
                 <Table.HeaderCell>Hours Needed</Table.HeaderCell>
                 <Table.HeaderCell>Payment Offer</Table.HeaderCell>
                 <Table.HeaderCell>Venue message</Table.HeaderCell>
+                <Table.HeaderCell>Phone Number</Table.HeaderCell>
                 <Table.HeaderCell>Accept?</Table.HeaderCell>
               </Table.Row>
             </Table.Header>
@@ -84,9 +87,12 @@ export default class ManageArtistBookings extends Component {
                 <Table.HeaderCell>Request Id</Table.HeaderCell>
                 <Table.HeaderCell>Date</Table.HeaderCell>
                 <Table.HeaderCell>Venue Name</Table.HeaderCell>
+                <Table.HeaderCell>Postcode</Table.HeaderCell>
+                <Table.HeaderCell>Start Time</Table.HeaderCell>
                 <Table.HeaderCell>Hours Needed</Table.HeaderCell>
                 <Table.HeaderCell>Payment Offer</Table.HeaderCell>
                 <Table.HeaderCell>Venue message</Table.HeaderCell>
+                <Table.HeaderCell>Phone Number</Table.HeaderCell>
                 <Table.HeaderCell>Accept?</Table.HeaderCell>
               </Table.Row>
             </Table.Header>
@@ -102,9 +108,12 @@ export default class ManageArtistBookings extends Component {
                 <Table.HeaderCell>Request Id</Table.HeaderCell>
                 <Table.HeaderCell>Date</Table.HeaderCell>
                 <Table.HeaderCell>Venue Name</Table.HeaderCell>
+                <Table.HeaderCell>Postcode</Table.HeaderCell>
+                <Table.HeaderCell>Start Time</Table.HeaderCell>
                 <Table.HeaderCell>Hours Needed</Table.HeaderCell>
                 <Table.HeaderCell>Payment Offer</Table.HeaderCell>
                 <Table.HeaderCell>Venue message</Table.HeaderCell>
+                <Table.HeaderCell>Phone Number</Table.HeaderCell>
                 <Table.HeaderCell>Accept?</Table.HeaderCell>
               </Table.Row>
             </Table.Header>

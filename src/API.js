@@ -41,7 +41,7 @@ const post = (url, object) => {
 };
 
 const patch = (url, object) => {
-  return fetch(url + object.id, {
+  return fetch(url, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
