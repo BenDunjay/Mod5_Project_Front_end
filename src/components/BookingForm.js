@@ -6,6 +6,7 @@ export default class BookingForm extends React.Component {
     availabilityObject: null,
     numberOfHours: 0,
     payment: 0,
+    start_time: "",
   };
 
   componentDidMount = () => {
@@ -47,6 +48,13 @@ export default class BookingForm extends React.Component {
           <label> Date:</label>
           <input value={this.state.availabilityObject.date} disabled={true} />
           <br />
+          <label>Start Time:</label>
+          <input
+            type="time"
+            name="startTime"
+            onChange={this.handleChange}
+            value={this.state.start_time}
+          />
           <label>Number of Hours Required:</label>
           <input
             type="integer"

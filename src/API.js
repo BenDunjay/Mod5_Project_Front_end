@@ -9,9 +9,13 @@ const allArtistsUrl = baseUrl + "/all_artists";
 const findArtistUrl = baseUrl + "/profile/";
 const availabilityForRequestUrl = baseUrl + "/get_availability/";
 const createRequestUrl = baseUrl + "/create_request";
+const changeRequestStatusUrl = baseUrl + "/accept_or_reject/";
+const getAllBookingsUrl = baseUrl + "/all_bookings";
 
 const get = (url) => {
-  return fetch(url).then((resp) => resp.json());
+  return fetch(url, {
+    headers: { Authorization: localStorage.token },
+  }).then((resp) => resp.json());
 };
 
 const getAvailability = (url, id) => {
@@ -45,6 +49,18 @@ const patch = (url, object) => {
       Authorization: localStorage.token,
     },
     body: JSON.stringify(object),
+  }).then((resp) => resp.json());
+};
+
+const patchRequest = (url, object, booleanValue) => {
+  return fetch(url + object.id, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: localStorage.token,
+    },
+    body: JSON.stringify({ accept: booleanValue }),
   }).then((resp) => resp.json());
 };
 
@@ -96,6 +112,14 @@ const sendARequest = (requestObject) => {
   return post(createRequestUrl, requestObject);
 };
 
+const acceptOrReject = (requestObject, booleanValue) => {
+  return patchRequest(changeRequestStatusUrl, requestObject, booleanValue);
+};
+
+const fetchBookings = () => {
+  return get(getAllBookingsUrl);
+};
+
 export default {
   signupArtist,
   loginArtist,
@@ -106,6 +130,8 @@ export default {
   findClickedArtist,
   createRequest,
   sendARequest,
+  acceptOrReject,
+  fetchBookings,
 };
 
 // {

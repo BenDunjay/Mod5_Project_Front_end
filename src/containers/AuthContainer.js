@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 
-import Home from "../components/Home";
 import ArtistAuthContainer from "./ArtistAuthContainer";
 import VenueAuthContainer from "./VenueAuthContainer";
 
@@ -9,17 +8,17 @@ export default function AuthContainer({ loginArtist, loginVenue }) {
   return (
     <div>
       <Router>
-        <div className="App">
-          <h3>
-            <Link to="/"> Home </Link>
-          </h3>
-          <h3>
-            <Link to="/artist"> Artists</Link>
-          </h3>
-          <h3>
-            <Link to="/venue"> Venues </Link>
-          </h3>
-
+        <div style={styling}>
+          <div style={artists}>
+            <h3>
+              <Link to="/artist"> Artists</Link>
+            </h3>
+          </div>
+          <div style={venues}>
+            <h3>
+              <Link to="/venue"> Venues </Link>
+            </h3>
+          </div>
           <Switch>
             <Route exact path="/artist">
               <ArtistAuthContainer loginArtist={loginArtist} />
@@ -27,12 +26,27 @@ export default function AuthContainer({ loginArtist, loginVenue }) {
             <Route exact path="/venue">
               <VenueAuthContainer loginVenue={loginVenue} />
             </Route>
-            <Route exact path="/">
-              <Home />
-            </Route>
           </Switch>
         </div>
       </Router>
     </div>
   );
 }
+
+const styling = {
+  backgroundColor: "black",
+  height: "100vh",
+  textAlign: "center",
+};
+
+const artists = {
+  position: "fixed",
+  top: "25%",
+  left: "50%",
+};
+
+const venues = {
+  position: "fixed",
+  top: "70%",
+  left: "50%",
+};
