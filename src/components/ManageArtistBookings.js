@@ -60,7 +60,7 @@ export default class ManageArtistBookings extends Component {
       <div>
         <div>
           <h3> Pending Bookings</h3>
-          <Table striped color={"red"}>
+          <Table striped color={"orange"}>
             <Table.Header>
               <Table.Row>
                 <Table.HeaderCell>Request Id</Table.HeaderCell>
@@ -102,7 +102,7 @@ export default class ManageArtistBookings extends Component {
         </div>
         <div>
           <h3> Rejected Bookings</h3>
-          <Table striped color={"red"}>
+          <Table striped color={"yellow"}>
             <Table.Header>
               <Table.Row>
                 <Table.HeaderCell>Request Id</Table.HeaderCell>

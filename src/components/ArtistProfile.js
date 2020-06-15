@@ -1,7 +1,6 @@
 import React from "react";
 import Calendar from "./Calendar";
-import SpotifyLogo from "../Spotify.jpeg";
-import Instagram from "../Instagram.png";
+import { Icon } from "semantic-ui-react";
 
 export default function ArtistProfile({ artist }) {
   const availableArtistDates = () => {
@@ -10,6 +9,7 @@ export default function ArtistProfile({ artist }) {
 
   return (
     <div>
+      <img src={artist.profile_picture} />
       <h2>{artist.name}</h2>
       <h3>{artist.username}</h3>
       <p> {artist.email_address}</p>
@@ -20,11 +20,12 @@ export default function ArtistProfile({ artist }) {
         <Calendar artistDates={availableArtistDates()} artist={artist} />
         <hr></hr>
         <a href="https://open.spotify.com/user/tigiras?si=yy15Im-RQiiJUk2TQTzROA">
-          <img src={SpotifyLogo} alt="Spotify link" />
+          <Icon name="spotify" alt="Spotify link"></Icon>
         </a>
         <a href="https://www.instagram.com/">
-          <img src={Instagram} alt="Instagram Link" />
+          <Icon name="instagram" alt="instagram link"></Icon>
         </a>
+
         <hr></hr>
       </div>
     </div>

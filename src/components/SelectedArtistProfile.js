@@ -34,9 +34,16 @@ export default class SelectedArtistProfile extends React.Component {
   };
 
   render() {
+    console.log(this.state.artist);
     return (
       <div>
         <h3>This is {this.state.artist.name}'s profile Page </h3>
+        <h2>{this.state.artist.name}</h2>
+        <h3>{this.state.artist.username}</h3>
+        <p> {this.state.artist.email_address}</p>
+        <p> {this.state.artist.artist_genre}</p>
+        <p> {this.state.artist.bio}</p>
+        <p> {this.state.artist.phone_number}</p>
         <div>
           <SelectedArtistCalendar
             artist={this.state.artist}

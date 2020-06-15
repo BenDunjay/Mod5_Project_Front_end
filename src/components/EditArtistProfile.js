@@ -1,6 +1,8 @@
 import React from "react";
 import API from "../API";
 
+import { Button, Checkbox, Form } from "semantic-ui-react";
+
 export default class EditArtistProfile extends React.Component {
   state = {
     name: "",
@@ -28,8 +30,8 @@ export default class EditArtistProfile extends React.Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
+      <Form onSubmit={this.handleSubmit}>
+        <Form.Field>
           <label>Artist Name:</label>
           <input
             type="text"
@@ -38,6 +40,8 @@ export default class EditArtistProfile extends React.Component {
             value={this.state.name}
             placeholder={this.props.artist.name}
           />
+        </Form.Field>
+        <Form.Field>
           <label>User Name:</label>
           <input
             type="text"
@@ -45,7 +49,9 @@ export default class EditArtistProfile extends React.Component {
             onChange={this.handleChange}
             value={this.state.username}
           />
-          <br />
+        </Form.Field>
+        <br />
+        <Form.Field>
           <label>Bio:</label>
           <textarea
             type="text"
@@ -53,7 +59,9 @@ export default class EditArtistProfile extends React.Component {
             onChange={this.handleChange}
             value={this.state.bio}
           />
-          <br />
+        </Form.Field>
+        <br />
+        <Form.Field>
           <label>Email:</label>
           <input
             type="text"
@@ -61,7 +69,9 @@ export default class EditArtistProfile extends React.Component {
             onChange={this.handleChange}
             value={this.state.email}
           />
-          <br />
+        </Form.Field>
+        <br />
+        <Form.Field>
           <label>Artist Genre:</label>
           <input
             type="text"
@@ -69,6 +79,8 @@ export default class EditArtistProfile extends React.Component {
             onChange={this.handleChange}
             value={this.state.artist_genre}
           />
+        </Form.Field>
+        <Form.Field>
           <label>Phone Number:</label>
           <input
             type="text"
@@ -76,8 +88,10 @@ export default class EditArtistProfile extends React.Component {
             onChange={this.handleChange}
             value={this.state.phone_number}
           />
-          <br />
-          <br />
+        </Form.Field>
+        <br />
+        <br />
+        <Form.Field>
           <label>Profile Pic:</label>
           <input
             type="text"
@@ -85,7 +99,9 @@ export default class EditArtistProfile extends React.Component {
             onChange={this.handleChange}
             value={this.state.profile}
           />
-          <br />
+        </Form.Field>
+        <br />
+        <Form.Field>
           <label>Spotify Url:</label>
           <input
             type="text"
@@ -93,7 +109,9 @@ export default class EditArtistProfile extends React.Component {
             onChange={this.handleChange}
             value={this.state.spotify}
           />
-          <br />
+        </Form.Field>
+        <br />
+        <Form.Field>
           <label>Instagram Url:</label>
           <input
             type="text"
@@ -101,10 +119,12 @@ export default class EditArtistProfile extends React.Component {
             onChange={this.handleChange}
             value={this.state.instagram}
           />
-          <br />
-          <input type="submit" value="Edit Profile" />
-        </form>
-      </div>
+        </Form.Field>
+        <br />
+        <Button positive type="submit" value="Edit Profile">
+          Edit Profile
+        </Button>
+      </Form>
     );
   }
 }
