@@ -1,7 +1,7 @@
 import React from "react";
 import API from "../API";
 
-import { Button, Checkbox, Form } from "semantic-ui-react";
+import { Button, Form } from "semantic-ui-react";
 
 export default class EditArtistProfile extends React.Component {
   state = {

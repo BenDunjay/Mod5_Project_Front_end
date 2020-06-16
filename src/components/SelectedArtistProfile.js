@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import API from "../API";
 import SelectedArtistCalendar from "./SelectedArtistCalendar";
+import { Card, Image } from "semantic-ui-react";
 
 export default class SelectedArtistProfile extends React.Component {
   state = {
@@ -36,24 +37,31 @@ export default class SelectedArtistProfile extends React.Component {
   render() {
     console.log(this.state.artist);
     return (
-      <div>
-        <h3>This is {this.state.artist.name}'s profile Page </h3>
-        <h2>{this.state.artist.name}</h2>
-        <h3>{this.state.artist.username}</h3>
-        <p> {this.state.artist.email_address}</p>
-        <p> {this.state.artist.artist_genre}</p>
-        <p> {this.state.artist.bio}</p>
-        <p> {this.state.artist.phone_number}</p>
-        <div>
-          <SelectedArtistCalendar
-            artist={this.state.artist}
-            handledateToBookChange={this.handledateToBookChange}
-          />
-        </div>
-        <button>
-          <Link to={`/booking_form/${this.state.dateToBook.id}`}>Book Me!</Link>
-        </button>
-      </div>
+      <Card>
+        <Image src={this.state.artist.profile_picture} wrapped ui={false} />
+        <Card.Content>
+          <h3>This is {this.state.artist.name}'s profile Page </h3>
+          <Card.Header>{this.state.artist.username}</Card.Header>
+          <Card.Meta>
+            <span>{this.state.artist.name}</span>
+          </Card.Meta>
+          <p> {this.state.artist.email_address}</p>
+          <Card.Meta> {this.state.artist.artist_genre}</Card.Meta>
+          <Card.Description> {this.state.artist.bio}</Card.Description>
+          <p> {this.state.artist.phone_number}</p>
+          <div>
+            <SelectedArtistCalendar
+              artist={this.state.artist}
+              handledateToBookChange={this.handledateToBookChange}
+            />
+          </div>
+          <button>
+            <Link to={`/booking_form/${this.state.dateToBook.id}`}>
+              Book Me!
+            </Link>
+          </button>
+        </Card.Content>
+      </Card>
     );
   }
 }

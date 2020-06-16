@@ -2,50 +2,61 @@ import React from "react";
 import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 
 import ArtistSearchPage from "./ArtistSearchPage";
+import Home from "../components/Home";
 import SelectedArtistProfile from "../components/SelectedArtistProfile";
 import ManageVenueBookings from "../components/ManageVenueBookings.js";
 import BookingForm from "../components/BookingForm";
 
+import { Menu } from "semantic-ui-react";
+
 export default function VenueAppContainer() {
   return (
     <Router>
-      <div className="App">
-        <h3>
+      <Menu>
+        <Menu.Item>
+          <Link to="/"> Home </Link>
+        </Menu.Item>
+        <Menu.Item>
           <Link to="/profile"> Profile </Link>
-        </h3>
-        <h3>
+        </Menu.Item>
+        <Menu.Item>
           <Link to="/all_artists"> All Artists </Link>
-        </h3>
-        <h3>
+        </Menu.Item>
+        <Menu.Item>
           <Link to="/manage_bookings"> Manage Bookings </Link>
-        </h3>
-        <h3>
+        </Menu.Item>
+        <Menu.Item>
           <Link to="/edit_profile"> Edit Profile </Link>
-        </h3>
-        <h3>
+        </Menu.Item>
+        <Menu.Item style={logout}>
           <Link to="/logout"> Logout </Link>
-        </h3>
+        </Menu.Item>
+      </Menu>
 
-        <Switch>
-          <Route exact path="/all_artists">
-            <ArtistSearchPage />
-          </Route>
-          <Route exact path="/manage_bookings">
-            <ManageVenueBookings />
-          </Route>
-          <Route exact path="/edit_profile"></Route>
-          <Route exact path="/profile"></Route>
-          <Route exact path="/logout"></Route>
-          <Route
-            path="/artist_profile/:artistname"
-            render={(routerProps) => <SelectedArtistProfile {...routerProps} />}
-          />
-          <Route
-            path="/booking_form/:availability_id"
-            render={(routerProps) => <BookingForm {...routerProps} />}
-          />
-        </Switch>
-      </div>
+      <Switch>
+        <Route exact path="/all_artists">
+          <ArtistSearchPage />
+        </Route>
+        <Route exact path="/manage_bookings">
+          <ManageVenueBookings />
+        </Route>
+        <Route exact path="/edit_profile"></Route>
+        <Route exact path="/profile"></Route>
+        <Route exact path="/logout"></Route>
+        <Route
+          path="/artist_profile/:artistname"
+          render={(routerProps) => <SelectedArtistProfile {...routerProps} />}
+        />
+        <Route
+          path="/booking_form/:availability_id"
+          render={(routerProps) => <BookingForm {...routerProps} />}
+        />
+        <Route exact path="/">
+          <Home />
+        </Route>
+      </Switch>
     </Router>
   );
 }
+
+const logout = {};

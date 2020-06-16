@@ -34,7 +34,7 @@ export default function AuthContainer({ loginArtist, loginVenue }) {
 }
 
 const styling = {
-  backgroundColor: "black",
+  backgroundColor: "grey",
   height: "100vh",
   textAlign: "center",
 };
@@ -42,11 +42,11 @@ const styling = {
 const artists = {
   position: "fixed",
   top: "25%",
-  left: "50%",
+  left: "25%",
 };
 
 const venues = {
   position: "fixed",
-  top: "70%",
-  left: "50%",
+  top: "25%",
+  left: "65%",
 };

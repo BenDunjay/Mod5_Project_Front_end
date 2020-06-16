@@ -1,10 +1,15 @@
 import React, { Component } from "react";
 import API from "../API";
 
+import { Redirect } from "react-router-dom";
+
+import { Button, Form } from "semantic-ui-react";
+
 class VenueLogin extends Component {
   state = {
     name: "",
     password: "",
+    redirect: false,
   };
 
   handleChange = (e) => {
@@ -27,14 +32,20 @@ class VenueLogin extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.venueLoginFetch(this.state);
+    this.setState({
+      redirect: true,
+    });
   };
 
   render() {
+    if (this.state.redirect) {
+      return <Redirect to="/" />;
+    }
     return (
       <div>
         <h1>Login</h1>
-        <div>
-          <form onSubmit={this.handleSubmit}>
+        <Form onSubmit={this.handleSubmit}>
+          <Form.Field>
             <label>Name:</label>
             <input
               type="text"
@@ -42,7 +53,9 @@ class VenueLogin extends Component {
               onChange={this.handleChange}
               value={this.state.name}
             />
-            <br />
+          </Form.Field>
+          <br />
+          <Form.Field>
             <label>Password</label>
             <input
               type="password"
@@ -51,9 +64,12 @@ class VenueLogin extends Component {
               value={this.state.password}
             />
             <br />
-            <input type="submit" value="Login" />
-          </form>
-        </div>
+          </Form.Field>
+          <Button type="submit" value="Login">
+            {" "}
+            Login{" "}
+          </Button>
+        </Form>
       </div>
     );
   }
