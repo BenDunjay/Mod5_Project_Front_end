@@ -6,7 +6,7 @@ import SignUpVenue from "../components/SignUpVenue";
 
 export default function VenueAuthContainer({ loginVenue }) {
   return (
-    <div>
+    <div style={venues}>
       <Router>
         <h3>
           <Link to="/signup/venue"> Sign Up Venue</Link>
@@ -26,3 +26,9 @@ export default function VenueAuthContainer({ loginVenue }) {
     </div>
   );
 }
+
+const venues = {
+  position: "fixed",
+  top: "31%",
+  left: "65%",
+};

@@ -1,5 +1,6 @@
 import React from "react";
 import Vancouver from "../Vancouver.jpg";
+
 export default function NoArtistShown() {
   return (
     <div>
@@ -20,7 +21,7 @@ export default function NoArtistShown() {
         establish themselves are hard to find or rent. This has negatively
         impacted Vancouver's cultural "business" and life.
       </p>
-      <img src={Vancouver}></img>{" "}
+      <img src={Vancouver} alt="Vancouver City"></img>{" "}
     </div>
   );
 }

@@ -6,44 +6,46 @@ import ArtistProfile from "../components/ArtistProfile";
 import EditArtistProfile from "../components/EditArtistProfile";
 import ManageArtistBookings from "../components/ManageArtistBookings";
 
+import { Menu } from "semantic-ui-react";
+
 export default function ArtistAppContainer(props) {
   return (
     <Router>
-      <div className="App">
-        <h3>
+      <Menu>
+        <Menu.Item>
           <Link to="/"> Home </Link>
-        </h3>
-        <h3>
+        </Menu.Item>
+        <Menu.Item>
           <Link to="/profile"> Profile </Link>
-        </h3>
-        <h3>
+        </Menu.Item>
+        <Menu.Item>
           <Link to="/edit_profile"> Edit Profile </Link>
-        </h3>
-        <h3>
+        </Menu.Item>
+        <Menu.Item>
           <Link to="/manage_bookings"> Manage Bookings </Link>
-        </h3>
-        <h3>
+        </Menu.Item>
+        <Menu.Item>
           <Link to="/logout"> Logout </Link>
-        </h3>
+        </Menu.Item>
+      </Menu>
 
-        <Switch>
-          <Route exact path="/edit_profile">
-            <EditArtistProfile artist={props.artist} />
-          </Route>
-          <Route exact path="/manage_bookings">
-            <ManageArtistBookings artist={props.artist} />
-          </Route>
-          <Route exact path="/profile">
-            <ArtistProfile artist={props.artist} />
-          </Route>
-          <Route exact path="/logout">
-            <Logout logout={props.logout} />
-          </Route>
-          <Route exact path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </div>
+      <Switch>
+        <Route exact path="/edit_profile">
+          <EditArtistProfile artist={props.artist} />
+        </Route>
+        <Route exact path="/manage_bookings">
+          <ManageArtistBookings artist={props.artist} />
+        </Route>
+        <Route exact path="/profile">
+          <ArtistProfile artist={props.artist} />
+        </Route>
+        <Route exact path="/logout">
+          <Logout logout={props.logout} />
+        </Route>
+        <Route exact path="/">
+          <Home />
+        </Route>
+      </Switch>
     </Router>
   );
 }

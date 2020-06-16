@@ -1,5 +1,6 @@
 import React from "react";
 import { Table, Icon } from "semantic-ui-react";
+import moment from "moment";
 
 export default function Request({ request, changeAcceptStatus }) {
   const showAcceptReject = () => {
@@ -37,7 +38,7 @@ export default function Request({ request, changeAcceptStatus }) {
       <Table.Cell>{request.date}</Table.Cell>
       <Table.Cell>{request.name}</Table.Cell>
       <Table.Cell>{request.postcode}</Table.Cell>
-      <Table.Cell>{request.start_time}</Table.Cell>
+      <Table.Cell>{moment(request.start_time).format("LT")}</Table.Cell>
       <Table.Cell>{request.number_of_hours}</Table.Cell>
       <Table.Cell>{request.payment}</Table.Cell>
       <Table.Cell> Brief Message</Table.Cell>

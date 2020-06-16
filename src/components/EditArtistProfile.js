@@ -1,7 +1,7 @@
 import React from "react";
 import API from "../API";
 
-import { Button, Checkbox, Form } from "semantic-ui-react";
+import { Button, Form } from "semantic-ui-react";
 
 export default class EditArtistProfile extends React.Component {
   state = {
@@ -30,7 +30,7 @@ export default class EditArtistProfile extends React.Component {
 
   render() {
     return (
-      <Form onSubmit={this.handleSubmit}>
+      <Form onSubmit={this.handleSubmit} style={editProfile}>
         <Form.Field>
           <label>Artist Name:</label>
           <input
@@ -128,3 +128,9 @@ export default class EditArtistProfile extends React.Component {
     );
   }
 }
+
+const editProfile = {
+  margin: "10px 250px",
+  padding: "5px",
+  textAlign: "center",
+};

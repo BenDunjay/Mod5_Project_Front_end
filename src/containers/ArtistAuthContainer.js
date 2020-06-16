@@ -6,7 +6,7 @@ import ArtistLogin from "../components/ArtistLogin";
 
 export default function ArtistAuthContainer({ loginArtist }) {
   return (
-    <div>
+    <div style={artists}>
       <Router>
         <h3>
           <Link to="/signup/artist"> Sign Up Artist</Link>
@@ -27,3 +27,9 @@ export default function ArtistAuthContainer({ loginArtist }) {
     </div>
   );
 }
+
+const artists = {
+  position: "fixed",
+  top: "31%",
+  left: "25%",
+};
