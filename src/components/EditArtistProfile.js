@@ -30,7 +30,7 @@ export default class EditArtistProfile extends React.Component {
 
   render() {
     return (
-      <Form onSubmit={this.handleSubmit}>
+      <Form onSubmit={this.handleSubmit} style={editProfile}>
         <Form.Field>
           <label>Artist Name:</label>
           <input
@@ -128,3 +128,9 @@ export default class EditArtistProfile extends React.Component {
     );
   }
 }
+
+const editProfile = {
+  margin: "10px 250px",
+  padding: "5px",
+  textAlign: "center",
+};

@@ -90,5 +90,6 @@ const table = {
 };
 
 const showArtist = {
-  margin: "10px",
+  margin: "10px 40px 10px 10px",
+  textAlign: "center",
 };
