@@ -2,7 +2,7 @@ import React from "react";
 import API from "../API";
 
 import { Redirect } from "react-router-dom";
-import { Form, Button } from "semantic-ui-react";
+import { Form, Button, Message } from "semantic-ui-react";
 
 export default class BookingForm extends React.Component {
   state = {
@@ -11,6 +11,7 @@ export default class BookingForm extends React.Component {
     payment: 0,
     startTime: null,
     redirect: false,
+    success: false,
   };
 
   setRedirect = () => {
@@ -47,7 +48,11 @@ export default class BookingForm extends React.Component {
       payment: parseFloat(this.state.payment),
       start_time: this.state.startTime,
     };
-    API.sendARequest(request).then((req) => console.log(req));
+    API.sendARequest(request).then(() =>
+      this.setState({
+        success: true,
+      })
+    );
   };
 
   render() {
@@ -57,10 +62,10 @@ export default class BookingForm extends React.Component {
     return (
       <div style={bookingForm}>
         Booking Page
-        <Form onSubmit={this.handleSubmitRequest}>
+        <Form onSubmit={this.handleSubmitRequest} success={this.state.success}>
           <Form.Field>
             <label> Artist:</label>
-            <input value={artist.name} disabled={true} />
+            <input value={artist.username} disabled={true} />
             <br />
             <label> Date:</label>
             <input value={this.state.availabilityObject.date} disabled={true} />
@@ -99,6 +104,11 @@ export default class BookingForm extends React.Component {
             <label>CAD</label>
             <br />
           </Form.Field>
+          <Message
+            success
+            header="Booking Complete"
+            content="Wait to see if the artist accepts the request!"
+          />
           <Button type="submit" value="Submit Booking Request">
             Submit Booking{" "}
           </Button>

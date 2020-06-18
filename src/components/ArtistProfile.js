@@ -9,7 +9,7 @@ export default function ArtistProfile({ artist }) {
 
   return (
     <Container style={container}>
-      <Card>
+      <Card style={color}>
         <Image src={artist.profile_picture} alt="Artist Profile" />
         {/* <h2>{artist.name}</h2> */}
         <h3 style={text}>
@@ -40,3 +40,6 @@ export default function ArtistProfile({ artist }) {
 
 const container = { width: "fit-content" };
 const text = { margin: "5px", textAlign: "center" };
+const color = {
+  backgroundColor: "lightgrey",
+};
