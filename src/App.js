@@ -36,7 +36,9 @@ export default class App extends React.Component {
         <ArtistAppContainer logout={this.logout} artist={this.state.artist} />
       );
     } else if (this.state.venue) {
-      return <VenueAppContainer venue={this.state.venue} />;
+      return (
+        <VenueAppContainer venue={this.state.venue} logout={this.logout} />
+      );
     } else {
       return (
         <AuthContainer

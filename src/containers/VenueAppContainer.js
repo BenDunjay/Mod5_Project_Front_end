@@ -9,7 +9,7 @@ import BookingForm from "../components/BookingForm";
 
 import { Menu } from "semantic-ui-react";
 
-export default function VenueAppContainer() {
+export default function VenueAppContainer(props) {
   return (
     <Router>
       <Menu>
@@ -28,8 +28,8 @@ export default function VenueAppContainer() {
         <Menu.Item>
           <Link to="/edit_profile"> Edit Profile </Link>
         </Menu.Item>
-        <Menu.Item style={logout}>
-          <Link to="/logout"> Logout </Link>
+        <Menu.Item position="right" style={color}>
+          <Link onClick={props.logout}> Logout </Link>
         </Menu.Item>
       </Menu>
 
@@ -42,7 +42,6 @@ export default function VenueAppContainer() {
         </Route>
         <Route exact path="/edit_profile"></Route>
         <Route exact path="/profile"></Route>
-        <Route exact path="/logout"></Route>
         <Route
           path="/artist_profile/:artistname"
           render={(routerProps) => <SelectedArtistProfile {...routerProps} />}
@@ -59,4 +58,6 @@ export default function VenueAppContainer() {
   );
 }
 
-const logout = {};
+const color = {
+  backgroundColor: "lightgrey",
+};

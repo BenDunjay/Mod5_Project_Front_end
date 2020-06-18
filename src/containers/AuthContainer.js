@@ -9,6 +9,7 @@ export default function AuthContainer({ loginArtist, loginVenue }) {
     <div>
       <Router>
         <div style={styling}>
+          <h1>AVB</h1>
           <div style={artists}>
             <h3>
               <Link to="/artist"> Artists</Link>
@@ -34,7 +35,7 @@ export default function AuthContainer({ loginArtist, loginVenue }) {
 }
 
 const styling = {
-  backgroundColor: "grey",
+  backgroundColor: "lightblue",
   height: "100vh",
   textAlign: "center",
 };

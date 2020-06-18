@@ -5,7 +5,7 @@ import { Card, Image } from "semantic-ui-react";
 
 export default function ArtistShown(props) {
   return (
-    <Card>
+    <Card style={color}>
       <Image src={props.artist.profile_picture} wrapped ui={false} />
       <Card.Content>
         {/* <h3>This is {props.artist.name}'s profile Page </h3> */}
@@ -24,3 +24,7 @@ export default function ArtistShown(props) {
     </Card>
   );
 }
+
+const color = {
+  backgroundColor: "lightgrey",
+};

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import API from "../API";
 import SelectedArtistCalendar from "./SelectedArtistCalendar";
-import { Card, Image } from "semantic-ui-react";
+import { Card, Image, Container } from "semantic-ui-react";
 
 export default class SelectedArtistProfile extends React.Component {
   state = {
@@ -35,10 +35,9 @@ export default class SelectedArtistProfile extends React.Component {
   };
 
   render() {
-    console.log(this.state.artist);
     return (
-      <div style={container}>
-        <Card>
+      <Container style={container}>
+        <Card style={color}>
           <Image src={this.state.artist.profile_picture} wrapped ui={false} />
           <Card.Content>
             {/* <h3>{this.state.artist.name}'s profile Page </h3> */}
@@ -63,9 +62,12 @@ export default class SelectedArtistProfile extends React.Component {
             </button>
           </Card.Content>
         </Card>
-      </div>
+      </Container>
     );
   }
 }
 
-const container = { width: "fit-content" };
+const container = { width: "fit-content", float: "center" };
+const color = {
+  backgroundColor: "lightgrey",
+};

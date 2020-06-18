@@ -39,7 +39,7 @@ class VenueLogin extends Component {
 
   render() {
     if (this.state.redirect) {
-      return <Redirect to="/" />;
+      return <Redirect to="/all_artists" />;
     }
     return (
       <div>
