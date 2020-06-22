@@ -28,7 +28,7 @@ export default function Request({ request, changeAcceptStatus }) {
     } else if (request.accept === false) {
       return <Icon name="x"></Icon>;
     } else {
-      return;
+      return showAcceptReject();
     }
   };
 

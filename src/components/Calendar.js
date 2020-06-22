@@ -82,6 +82,7 @@ class Calendar extends React.Component {
           selected={this.state.startDate}
           onChange={this.handleChange}
           includeDates={this.showArtistAvailability()}
+          inline
         />
       </div>
     );

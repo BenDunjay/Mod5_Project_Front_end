@@ -24,13 +24,41 @@ export default class ManageArtistBookings extends Component {
   changeAcceptStatus = (e, requestObject) => {
     if (e.target.innerText === "Accept") {
       API.acceptOrReject(requestObject, true).then(() =>
-        this.componentDidMount()
+        this.addToBookings(requestObject)
       );
     } else {
       API.acceptOrReject(requestObject, false).then(() =>
-        this.componentDidMount()
+        this.addToReject(requestObject)
       );
     }
+  };
+
+  addToReject = (booking) => {
+    const newBooking = this.state.requests.find(
+      (request) => request.id === booking.id
+    );
+
+    const newRequests = this.state.requests.filter(
+      (request) => request.id !== booking.id
+    );
+    this.setState({
+      rejected: [...this.state.bookings, newBooking],
+      requests: newRequests,
+    });
+  };
+
+  addToBookings = (booking) => {
+    const newBooking = this.state.requests.find(
+      (request) => request.id === booking.id
+    );
+
+    const newRequests = this.state.requests.filter(
+      (request) => request.id !== booking.id
+    );
+    this.setState({
+      bookings: [...this.state.bookings, newBooking],
+      requests: newRequests,
+    });
   };
 
   confirmedBookings = () => {
