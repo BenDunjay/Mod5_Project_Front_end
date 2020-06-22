@@ -9,7 +9,7 @@ export default function AuthContainer({ loginArtist, loginVenue }) {
     <div>
       <Router>
         <div style={styling}>
-          <h1>AVB</h1>
+          {/* <h1>AVB</h1> */}
           <div style={artists}>
             <h3>
               <Link to="/artist"> Artists</Link>
