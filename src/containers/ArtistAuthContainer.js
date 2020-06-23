@@ -32,4 +32,5 @@ const artists = {
   position: "fixed",
   top: "31%",
   left: "25%",
+  backgroundColor: "yellow",
 };
