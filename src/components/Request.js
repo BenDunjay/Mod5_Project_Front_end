@@ -44,7 +44,6 @@ export default function Request({ request, changeAcceptStatus }) {
       <Table.Cell> Brief Message</Table.Cell>
       <Table.Cell>{request.phone_number}</Table.Cell>
       <Table.Cell> {tickOrCross()}</Table.Cell>
-      {showAcceptReject()}
     </Table.Row>
   );
 }

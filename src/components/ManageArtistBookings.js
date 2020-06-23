@@ -38,12 +38,12 @@ export default class ManageArtistBookings extends Component {
     const newBooking = this.state.requests.find(
       (request) => request.id === booking.id
     );
-
+    newBooking.accept = false;
     const newRequests = this.state.requests.filter(
       (request) => request.id !== booking.id
     );
     this.setState({
-      rejected: [...this.state.bookings, newBooking],
+      rejected: [...this.state.rejected, newBooking],
       requests: newRequests,
     });
   };
@@ -52,6 +52,7 @@ export default class ManageArtistBookings extends Component {
     const newBooking = this.state.requests.find(
       (request) => request.id === booking.id
     );
+    newBooking.accept = true;
 
     const newRequests = this.state.requests.filter(
       (request) => request.id !== booking.id
