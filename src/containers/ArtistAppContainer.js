@@ -38,9 +38,6 @@ export default function ArtistAppContainer(props) {
         <Route exact path="/profile">
           <ArtistProfile artist={props.artist} />
         </Route>
-        {/* <Route exact path="/logout">
-          <Logout logout={props.logout} />
-        </Route> */}
         <Route exact path="/">
           <Home />
         </Route>

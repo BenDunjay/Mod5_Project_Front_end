@@ -22,6 +22,7 @@ export default class ManageArtistBookings extends Component {
   };
 
   changeAcceptStatus = (e, requestObject) => {
+    console.log(e.target);
     if (e.target.innerText === "Accept") {
       API.acceptOrReject(requestObject, true).then(() =>
         this.addToBookings(requestObject)

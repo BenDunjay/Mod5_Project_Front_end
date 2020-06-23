@@ -5,15 +5,15 @@ import { Button, Form } from "semantic-ui-react";
 
 export default class EditArtistProfile extends React.Component {
   state = {
-    name: "",
-    stageName: "",
-    bio: "",
-    profile: "",
-    spotify: "",
-    instagram: "",
-    email: "",
-    artistGenre: "",
-    phoneNumber: "",
+    name: this.props.artist.name,
+    username: this.props.artist.username,
+    bio: this.props.artist.bio,
+    profile_picture: this.props.artist.profile_picture,
+    spotify: this.props.artist.spotify,
+    instagram: this.props.artist.instagram,
+    email_address: this.props.artist.email_address,
+    artist_genre: this.props.artist.artist_genre,
+    phone_number: this.props.artist.phone_number,
   };
 
   handleChange = (e) => {
@@ -24,7 +24,7 @@ export default class EditArtistProfile extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-
+    console.log(this.state);
     API.updateArtist(this.state);
   };
 
@@ -45,9 +45,10 @@ export default class EditArtistProfile extends React.Component {
           <label>User Name:</label>
           <input
             type="text"
-            name="stageName"
+            name="username"
             onChange={this.handleChange}
             value={this.state.username}
+            placeholder={this.props.artist.username}
           />
         </Form.Field>
         <br />
@@ -65,9 +66,9 @@ export default class EditArtistProfile extends React.Component {
           <label>Email:</label>
           <input
             type="text"
-            name="email"
+            name="email_address"
             onChange={this.handleChange}
-            value={this.state.email}
+            value={this.state.email_address}
           />
         </Form.Field>
         <br />
@@ -75,7 +76,7 @@ export default class EditArtistProfile extends React.Component {
           <label>Artist Genre:</label>
           <input
             type="text"
-            name="artistGenre"
+            name="artist_genre"
             onChange={this.handleChange}
             value={this.state.artist_genre}
           />
@@ -84,7 +85,7 @@ export default class EditArtistProfile extends React.Component {
           <label>Phone Number:</label>
           <input
             type="text"
-            name="phoneNumber"
+            name="phone_number"
             onChange={this.handleChange}
             value={this.state.phone_number}
           />
@@ -95,9 +96,9 @@ export default class EditArtistProfile extends React.Component {
           <label>Profile Pic:</label>
           <input
             type="text"
-            name="profile"
+            name="profile_picture"
             onChange={this.handleChange}
-            value={this.state.profile}
+            value={this.state.profile_picture}
           />
         </Form.Field>
         <br />
