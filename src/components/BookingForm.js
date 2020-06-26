@@ -26,6 +26,7 @@ export default class BookingForm extends React.Component {
   };
 
   componentDidMount = () => {
+    console.log(this.props.match.params.availability_id);
     API.createRequest(this.props.match.params.availability_id).then(
       (availObject) =>
         this.setState({

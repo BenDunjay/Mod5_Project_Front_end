@@ -88,8 +88,8 @@ export default class ManageArtistBookings extends Component {
   render() {
     return (
       <div>
-        <div style={table}>
-          <h3 style={title}> Pending Bookings</h3>
+        <h3 style={title}> Pending Bookings</h3>
+        <div style={table} style={trial}>
           <Table striped color={"orange"}>
             <Table.Header>
               <Table.Row>
@@ -110,8 +110,8 @@ export default class ManageArtistBookings extends Component {
           </Table>
         </div>
         <hr></hr>
-        <div style={table}>
-          <h3 style={title}> Accepted / UpComing Bookings</h3>
+        <h3 style={title}> Accepted / UpComing Bookings</h3>
+        <div style={table} style={trial}>
           <Table striped color={"red"}>
             <Table.Header>
               <Table.Row>
@@ -132,8 +132,8 @@ export default class ManageArtistBookings extends Component {
           </Table>
         </div>
         <hr></hr>
-        <div style={table}>
-          <h3 style={title}> Rejected Bookings</h3>
+        <h3 style={title}> Rejected Bookings</h3>
+        <div style={table} style={trial}>
           <Table striped color={"yellow"}>
             <Table.Header>
               <Table.Row>
@@ -164,4 +164,9 @@ const table = {
 
 const title = {
   textAlign: "center",
+};
+
+const trial = {
+  overflow: "scroll",
+  maxHeight: "500px",
 };

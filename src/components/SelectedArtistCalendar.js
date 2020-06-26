@@ -5,7 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 export default class SelectedArtistCalendar extends Component {
   state = {
-    startDate: new Date(),
+    startDate: null,
   };
 
   handleChange = (date) => {
@@ -29,6 +29,7 @@ export default class SelectedArtistCalendar extends Component {
           selected={this.state.startDate}
           onChange={this.handleChange}
           includeDates={this.showArtistAvailability()}
+          placeholderText="Click to select a date"
         />
       </div>
     );

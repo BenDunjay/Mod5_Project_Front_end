@@ -13,7 +13,7 @@ export default function ArtistProfile({ artist }) {
         <Image src={artist.profile_picture} alt="Artist Profile" />
         {/* <h2>{artist.name}</h2> */}
         <h3 style={text}>
-          <strong>{artist.username}</strong>
+          <strong>{artist.name}</strong>
         </h3>
         <p style={text}> {artist.email_address}</p>
         <p style={text}> {artist.artist_genre}</p>
