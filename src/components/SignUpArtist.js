@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import API from "../API";
 
+import { Button, Form } from "semantic-ui-react";
+
 class SignUpArtist extends Component {
   state = {
     username: "",
@@ -30,32 +32,37 @@ class SignUpArtist extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Sign Up</h1>
-        <div>
-          <form onSubmit={this.handleSubmit}>
-            <label>Username:</label>
-            <input
-              type="text"
-              name="name"
-              onChange={this.handleChange}
-              value={this.state.name}
-            />
-            <br />
-            <label>Password</label>
-            <input
-              type="password"
-              name="password"
-              onChange={this.handleChange}
-              value={this.state.password}
-            />
-            <br />
-            <input type="submit" value="Sign up" />
-          </form>
-        </div>
-      </div>
+      <Form onSubmit={this.handleSubmit}>
+        <Form.Field>
+          <label style={color}>Username:</label>
+          <input
+            type="text"
+            name="name"
+            onChange={this.handleChange}
+            value={this.state.name}
+          />
+        </Form.Field>
+        <br />
+        <Form.Field>
+          <label style={color}>Password</label>
+          <input
+            type="password"
+            name="password"
+            onChange={this.handleChange}
+            value={this.state.password}
+          />
+        </Form.Field>
+        <Button type="submit" value="signup">
+          {" "}
+          Sign Up{" "}
+        </Button>
+      </Form>
     );
   }
 }
+
+const color = {
+  color: "lightgrey",
+};
 
 export default SignUpArtist;

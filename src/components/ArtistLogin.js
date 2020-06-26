@@ -42,37 +42,38 @@ class ArtistLogin extends Component {
     //   return <Redirect to="/profile" />;
     // }
     return (
-      <div>
-        <h1>Login</h1>
-        <Form onSubmit={this.handleSubmit}>
-          <Form.Field>
-            <label>Name:</label>
-            <input
-              type="text"
-              name="name"
-              onChange={this.handleChange}
-              value={this.state.name}
-            />
-          </Form.Field>
+      <Form onSubmit={this.handleSubmit}>
+        <Form.Field>
+          <label style={color}>Username:</label>
+          <input
+            type="text"
+            name="name"
+            onChange={this.handleChange}
+            value={this.state.name}
+          />
+        </Form.Field>
+        <br />
+        <Form.Field>
+          <label style={color}>Password</label>
+          <input
+            type="password"
+            name="password"
+            onChange={this.handleChange}
+            value={this.state.password}
+          />
           <br />
-          <Form.Field>
-            <label>Password</label>
-            <input
-              type="password"
-              name="password"
-              onChange={this.handleChange}
-              value={this.state.password}
-            />
-            <br />
-          </Form.Field>
-          <Button type="submit" value="Login">
-            {" "}
-            Login{" "}
-          </Button>
-        </Form>
-      </div>
+        </Form.Field>
+        <Button type="submit" value="Login">
+          {" "}
+          Login{" "}
+        </Button>
+      </Form>
     );
   }
 }
+
+const color = {
+  color: "lightgrey",
+};
 
 export default ArtistLogin;
