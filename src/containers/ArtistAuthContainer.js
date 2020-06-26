@@ -9,10 +9,16 @@ export default function ArtistAuthContainer({ loginArtist }) {
     <div style={artists}>
       <Router>
         <h3>
-          <Link to="/signup/artist"> Sign Up Artist</Link>
+          <Link to="/signup/artist" style={color}>
+            {" "}
+            Sign Up Artist
+          </Link>
         </h3>
         <h3>
-          <Link to="/artist_login"> Artist Log In </Link>
+          <Link to="/artist_login" style={color}>
+            {" "}
+            Artist Log In{" "}
+          </Link>
         </h3>
 
         <Switch>
@@ -32,5 +38,8 @@ const artists = {
   position: "fixed",
   top: "31%",
   left: "25%",
-  backgroundColor: "yellow",
+};
+
+const color = {
+  color: "lightgrey",
 };

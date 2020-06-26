@@ -9,10 +9,16 @@ export default function VenueAuthContainer({ loginVenue }) {
     <div style={venues}>
       <Router>
         <h3>
-          <Link to="/signup/venue"> Sign Up Venue</Link>
+          <Link to="/signup/venue" style={color}>
+            {" "}
+            Sign Up Venue
+          </Link>
         </h3>
         <h3>
-          <Link to="/venue_login"> Venue Log In </Link>
+          <Link to="/venue_login" style={color}>
+            {" "}
+            Venue Log In{" "}
+          </Link>
         </h3>
         <Switch>
           <Route exact path="/signup/venue">
@@ -31,4 +37,8 @@ const venues = {
   position: "fixed",
   top: "31%",
   left: "65%",
+};
+
+const color = {
+  color: "lightgrey",
 };
