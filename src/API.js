@@ -77,6 +77,7 @@ const postAPI = (url, object) => {
 };
 
 const signupArtist = (artist) => {
+  console.log(artist);
   return post(artistSignUpUrl, { artist });
 };
 
