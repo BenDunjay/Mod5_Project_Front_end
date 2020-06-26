@@ -7,7 +7,7 @@ import { Button, Form } from "semantic-ui-react";
 
 class ArtistLogin extends Component {
   state = {
-    name: "",
+    username: "",
     password: "",
     // redirect: false,
   };
@@ -47,9 +47,9 @@ class ArtistLogin extends Component {
           <label style={color}>Username:</label>
           <input
             type="text"
-            name="name"
+            name="username"
             onChange={this.handleChange}
-            value={this.state.name}
+            value={this.state.username}
           />
         </Form.Field>
         <br />

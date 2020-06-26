@@ -7,7 +7,6 @@ class SignUpArtist extends Component {
   state = {
     username: "",
     password: "",
-    stageName: "",
   };
   handleChange = (e) => {
     this.setState({
@@ -37,9 +36,9 @@ class SignUpArtist extends Component {
           <label style={color}>Username:</label>
           <input
             type="text"
-            name="name"
+            name="username"
             onChange={this.handleChange}
-            value={this.state.name}
+            value={this.state.username}
           />
         </Form.Field>
         <br />
