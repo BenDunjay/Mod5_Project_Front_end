@@ -24,7 +24,7 @@ export default class SelectedArtistCalendar extends Component {
   render() {
     return (
       <div>
-        <h3>See the dates {this.props.artist.name} is currently available</h3>
+        <h5>See the dates {this.props.artist.name} is currently available!</h5>
         <DatePicker
           selected={this.state.startDate}
           onChange={this.handleChange}
