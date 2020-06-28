@@ -44,7 +44,7 @@ class ArtistLogin extends Component {
     return (
       <Form onSubmit={this.handleSubmit}>
         <Form.Field>
-          <label style={color}>Username:</label>
+          <label style={color}>Username</label>
           <input
             type="text"
             name="username"
