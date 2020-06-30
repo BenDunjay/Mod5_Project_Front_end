@@ -28,7 +28,7 @@ const getArtist = (url, name) => {
   }).then((resp) => resp.json());
 };
 
-const post = (url, object) => {
+const postAPI = (url, object) => {
   return fetch(url, {
     method: "POST",
     headers: {
@@ -64,21 +64,9 @@ const patchRequest = (url, object, booleanValue) => {
   }).then((resp) => resp.json());
 };
 
-const postAPI = (url, object) => {
-  return fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-      Authorization: localStorage.token,
-    },
-    body: JSON.stringify(object),
-  }).then((response) => response.json());
-};
-
 const signupArtist = (artist) => {
   console.log(artist);
-  return post(artistSignUpUrl, { artist });
+  return postAPI(artistSignUpUrl, { artist });
 };
 
 const createRequest = (id) => {
@@ -86,7 +74,7 @@ const createRequest = (id) => {
 };
 
 const loginArtist = (artist) => {
-  return post(artistLoginUrl, { artist });
+  return postAPI(artistLoginUrl, { artist });
 };
 
 const updateArtist = (artist) => {
@@ -94,7 +82,7 @@ const updateArtist = (artist) => {
 };
 
 const loginVenue = (venue) => {
-  return post(venueLoginUrl, { venue });
+  return postAPI(venueLoginUrl, { venue });
 };
 
 const createAvailability = (date) => {
@@ -110,7 +98,7 @@ const findClickedArtist = (artistName) => {
 };
 
 const sendARequest = (requestObject) => {
-  return post(createRequestUrl, requestObject);
+  return postAPI(createRequestUrl, requestObject);
 };
 
 const acceptOrReject = (requestObject, booleanValue) => {
@@ -134,15 +122,3 @@ export default {
   acceptOrReject,
   fetchBookings,
 };
-
-// {
-//   /* <App>
-//   {this.state.user ? (
-//     <MainContainer>
-//       {this.props.isArtist ? <ArtistAppContainer /> : <VenueAppContainer />}
-//     </MainContainer>
-//   ) : (
-//     <AuthContainer />
-//   )}
-// </App>; */
-// }
