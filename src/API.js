@@ -122,15 +122,3 @@ export default {
   acceptOrReject,
   fetchBookings,
 };
-
-// {
-//   /* <App>
-//   {this.state.user ? (
-//     <MainContainer>
-//       {this.props.isArtist ? <ArtistAppContainer /> : <VenueAppContainer />}
-//     </MainContainer>
-//   ) : (
-//     <AuthContainer />
-//   )}
-// </App>; */
-// }
