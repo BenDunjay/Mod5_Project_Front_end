@@ -70,5 +70,5 @@ const styling = {
 
 const content = {
   backgroundColor: "red",
-  height: "100vh",
+  height: "100%",
 };
