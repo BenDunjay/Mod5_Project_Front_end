@@ -51,6 +51,22 @@ class Calendar extends React.Component {
     );
   };
 
+  removeAvailabilityRequest = (e) => {
+    e.preventDefault();
+    let newDate = new Date(this.state.selectedDate)
+      .toISOString("yyyy-MM-dd")
+      .slice(0, 10);
+    console.log(this.removeDate(newDate));
+    // API.removeAvailability(newDate).then(() => this.removeDate(newDate));
+  };
+
+  removeDate = (date) => {
+    let newDates = this.state.availableDates.filter(
+      (dateObject) => dateObject.date !== date
+    );
+    console.log(newDates);
+  };
+
   handleDateChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value,
@@ -65,7 +81,7 @@ class Calendar extends React.Component {
     return (
       <div style={container}>
         <form onSubmit={this.authenticateAvailabilityInput} style={form}>
-          <label>Create availability:</label>
+          {/* <label>Create availability</label> */}
           <input
             type="text"
             name="selectedDate"
@@ -74,7 +90,19 @@ class Calendar extends React.Component {
             placeholder="YYYY-MM-DD"
           />
           <br />
-          <input type="submit" value="Submit Date" style={button} />
+          <input type="submit" value="Create availability" style={button} />
+        </form>
+        <form onSubmit={this.removeAvailabilityRequest} style={form}>
+          {/* <label>Remove availability</label> */}
+          <input
+            type="text"
+            name="selectedDate"
+            onChange={this.handleDateChange}
+            value={this.state.selectedDate}
+            placeholder="YYYY-MM-DD"
+          />
+          <br />
+          <input type="submit" value="Remove availability" style={button} />
         </form>
 
         <h5 style={form}>See the dates you are currently available</h5>
