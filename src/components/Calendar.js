@@ -56,7 +56,13 @@ class Calendar extends React.Component {
     let newDate = new Date(this.state.selectedDate)
       .toISOString("yyyy-MM-dd")
       .slice(0, 10);
-    API.removeAvailability(newDate).then(() => this.removeDate(newDate));
+
+    let selectedDate = this.state.availableDates.filter(
+      (dateObject) => dateObject.date === newDate
+    );
+    API.deleteAvailability(selectedDate[0].id).then(() =>
+      this.removeDate(selectedDate[0])
+    );
   };
 
   removeDate = (date) => {
