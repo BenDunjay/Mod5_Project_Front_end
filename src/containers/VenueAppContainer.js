@@ -97,4 +97,6 @@ const color = {
   backgroundColor: "lightgrey",
 };
 
-const navbar = {};
+const navbar = {
+  backgroundColor: "lightblack",
+};

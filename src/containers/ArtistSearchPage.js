@@ -59,13 +59,14 @@ export default class ArtistSearchPage extends Component {
     return (
       <div>
         <div style={table}>
+          <h5 style={h5style}>Date Filter</h5>
           <input
             onChange={this.handleFilterDateChange}
             type="text"
             name="name"
             placeholder="Filter: YYYY-MM-DD"
           />
-          <Table>
+          <Table style={styling}>
             <ArtistList
               allArtists={this.artistFilter()}
               handleSelectedArtistChange={this.handleSelectedArtistChange}
@@ -92,4 +93,12 @@ const table = {
 const showArtist = {
   margin: "10px 40px 10px 10px",
   textAlign: "center",
+};
+
+const styling = {
+  backgroundColor: "lightgrey",
+};
+
+const h5style = {
+  color: "white",
 };
