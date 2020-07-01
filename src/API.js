@@ -46,7 +46,7 @@ const destroy = (url, id) => {
   return fetch(url + id, {
     method: "DELETE",
     headers: { Authorization: localStorage.token },
-  }).then((resp) => resp.json());
+  });
 };
 
 const patch = (url, object) => {
