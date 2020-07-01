@@ -11,6 +11,7 @@ const availabilityForRequestUrl = baseUrl + "/get_availability/";
 const createRequestUrl = baseUrl + "/create_request";
 const changeRequestStatusUrl = baseUrl + "/accept_or_reject/";
 const getAllBookingsUrl = baseUrl + "/all_bookings";
+const deleteBookingUrl = baseUrl + "/availabilities/";
 
 const get = (url) => {
   return fetch(url, {
@@ -40,6 +41,14 @@ const postAPI = (url, object) => {
   }).then((response) => response.json());
 };
 
+const destroy = (url, id) => {
+  console.log(url, id);
+  return fetch(url + id, {
+    method: "DELETE",
+    headers: { Authorization: localStorage.token },
+  }).then((resp) => resp.json());
+};
+
 const patch = (url, object) => {
   return fetch(url, {
     method: "PATCH",
@@ -64,8 +73,11 @@ const patchRequest = (url, object, booleanValue) => {
   }).then((resp) => resp.json());
 };
 
+const deleteAvailability = (id) => {
+  return destroy(deleteBookingUrl, id);
+};
+
 const signupArtist = (artist) => {
-  console.log(artist);
   return postAPI(artistSignUpUrl, { artist });
 };
 
@@ -121,4 +133,5 @@ export default {
   sendARequest,
   acceptOrReject,
   fetchBookings,
+  deleteAvailability,
 };
