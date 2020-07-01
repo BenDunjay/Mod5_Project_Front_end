@@ -4,8 +4,8 @@ import Vancouver from "../Vancouver.jpg";
 export default function NoArtistShown() {
   return (
     <div>
-      <h2> Background Of Local Music In Vancouver</h2>
-      <p>
+      <h2 style={styling}> Background Of Local Music In Vancouver</h2>
+      <p style={styling}>
         Bars that regularly host live music include The Railway Club, The
         Lamplighter, The Media Club, The Red Room, the Bourbon, Anza Club, The
         Astoria, The Biltmore, Pub 340, Venue (formerly the Plaza), the Rickshaw
@@ -21,7 +21,13 @@ export default function NoArtistShown() {
         establish themselves are hard to find or rent. This has negatively
         impacted Vancouver's cultural "business" and life.
       </p>
-      <img src={Vancouver} alt="Vancouver City"></img>{" "}
+      <div>
+        <img src={Vancouver} alt="Vancouver City"></img>{" "}
+      </div>
     </div>
   );
 }
+
+const styling = {
+  color: "lightgrey",
+};
