@@ -43,7 +43,7 @@ export default function AuthContainer({ loginArtist, loginVenue }) {
 const styling = {
   height: "100vh",
   textAlign: "center",
-  backgroundImage: `url(${Background})`,
+  // backgroundImage: `url(${Background})`,
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
   backgroundSize: "cover",

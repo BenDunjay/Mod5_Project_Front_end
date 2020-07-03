@@ -60,7 +60,6 @@ class Calendar extends React.Component {
     let selectedDate = this.state.availableDates.filter(
       (dateObject) => dateObject.date === newDate
     );
-    console.log(selectedDate);
     API.deleteAvailability(selectedDate[0].id).then(() =>
       this.removeDate(selectedDate[0])
     );
@@ -70,7 +69,6 @@ class Calendar extends React.Component {
     let newDates = this.state.availableDates.filter(
       (dateObject) => dateObject.id !== date.id
     );
-    console.log(date, newDates);
     this.setState({ availableDates: newDates });
   };
 
