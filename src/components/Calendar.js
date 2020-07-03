@@ -1,7 +1,7 @@
 import React from "react";
 import DatePicker from "react-datepicker";
 import API from "../API";
-
+import moment from "moment";
 import "react-datepicker/dist/react-datepicker.css";
 
 class Calendar extends React.Component {
@@ -53,9 +53,7 @@ class Calendar extends React.Component {
 
   removeAvailabilityRequest = (e) => {
     e.preventDefault();
-    let newDate = new Date(this.state.selectedDate)
-      .toISOString("yyyy-MM-dd")
-      .slice(0, 10);
+    let newDate = moment(this.state.selectedDate).format("YYYY-MM-DD");
 
     let selectedDate = this.state.availableDates.filter(
       (dateObject) => dateObject.date === newDate
