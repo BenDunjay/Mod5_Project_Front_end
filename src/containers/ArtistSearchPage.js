@@ -88,6 +88,8 @@ export default class ArtistSearchPage extends Component {
 const table = {
   float: "left",
   margin: "10px",
+  overflow: "scroll",
+  maxHeight: "100vh",
 };
 
 const showArtist = {

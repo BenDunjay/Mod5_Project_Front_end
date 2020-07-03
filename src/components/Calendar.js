@@ -67,9 +67,10 @@ class Calendar extends React.Component {
 
   removeDate = (date) => {
     let newDates = this.state.availableDates.filter(
-      (dateObject) => dateObject.date !== date
+      (dateObject) => dateObject.id !== date.id
     );
-    console.log(newDates);
+    console.log(date, newDates);
+    this.setState({ availableDates: newDates });
   };
 
   handleDateChange = (event) => {
