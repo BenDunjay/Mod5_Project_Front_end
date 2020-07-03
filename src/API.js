@@ -42,7 +42,6 @@ const postAPI = (url, object) => {
 };
 
 const destroy = (url, id) => {
-  console.log(url, id);
   return fetch(url + id, {
     method: "DELETE",
     headers: { Authorization: localStorage.token },
