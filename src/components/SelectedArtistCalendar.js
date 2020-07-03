@@ -9,6 +9,7 @@ export default class SelectedArtistCalendar extends Component {
   };
 
   handleChange = (date) => {
+    console.log(date);
     this.props.handledateToBookChange(date);
     this.setState({
       startDate: date,

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import moment from "moment";
 
 import API from "../API";
 import SelectedArtistCalendar from "./SelectedArtistCalendar";
@@ -25,13 +26,14 @@ export default class SelectedArtistProfile extends React.Component {
     let foundAvailability = allAvailabilities.find(
       (availableDateObject) => availableDateObject.date === selectedDate
     );
+    console.log(selectedDate);
     this.setState({
       dateToBook: foundAvailability,
     });
   };
 
   convertDate = (selectedDate) => {
-    return new Date(selectedDate).toISOString("yyyy-MM-dd").slice(0, 10);
+    return moment(selectedDate).format("YYYY-MM-DD");
   };
 
   render() {
