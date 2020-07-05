@@ -7,7 +7,7 @@ import { List } from "semantic-ui-react";
 export default function ArtistList(props) {
   const showAllArtists = () => {
     return props.allArtists.map((artist) => (
-      <List className="list">
+      <List>
         <ArtistListName
           artist={artist}
           key={artist.id}

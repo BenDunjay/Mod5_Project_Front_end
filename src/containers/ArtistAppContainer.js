@@ -11,7 +11,7 @@ export default function ArtistAppContainer(props) {
   return (
     <Router>
       <Menu>
-        <Menu.Item>
+        <Menu.Item className="menu-container">
           <Link to="/"> Home </Link>
         </Menu.Item>
         <Menu.Item>
