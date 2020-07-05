@@ -1,5 +1,4 @@
 import React from "react";
-// import "./App.css";
 import ArtistAppContainer from "./containers/ArtistAppContainer";
 import VenueAppContainer from "./containers/VenueAppContainer";
 import AuthContainer from "./containers/AuthContainer";
@@ -69,6 +68,5 @@ const styling = {
 };
 
 const content = {
-  backgroundColor: "red",
   height: "100%",
 };

@@ -66,7 +66,7 @@ export default class ArtistSearchPage extends Component {
             name="name"
             placeholder="Filter: YYYY-MM-DD"
           />
-          <Table style={styling}>
+          <Table className="list-table">
             <ArtistList
               allArtists={this.artistFilter()}
               handleSelectedArtistChange={this.handleSelectedArtistChange}

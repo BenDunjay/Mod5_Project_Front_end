@@ -1,13 +1,14 @@
 import React from "react";
 import Link from "@material-ui/core/Link";
+import styles from "../List.css";
 
 import { Image, List } from "semantic-ui-react";
 
 export default function ArtistListName(props) {
   return (
     <Link onClick={() => props.handleSelectedArtistChange(props.artist)}>
-      <List.Item>
-        <List.Content style={color}>
+      <List.Item className="fade-in">
+        <List.Content>
           <Image avatar src={props.artist.profile_picture} />
           {props.artist.username}
         </List.Content>
@@ -16,7 +17,3 @@ export default function ArtistListName(props) {
     </Link>
   );
 }
-
-const color = {
-  color: "black",
-};

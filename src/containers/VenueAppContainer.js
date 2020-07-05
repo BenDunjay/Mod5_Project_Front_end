@@ -63,7 +63,10 @@ export default class VenueAppContainer extends Component {
             active={activeItem === "logout"}
             onClick={this.handleItemClick}
           >
-            <Link onClick={this.props.logout}> Logout </Link>
+            <Link to="/" onClick={this.props.logout}>
+              {" "}
+              Logout{" "}
+            </Link>
           </Menu.Item>
         </Menu>
 
