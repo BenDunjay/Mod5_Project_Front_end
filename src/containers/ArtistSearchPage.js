@@ -57,7 +57,7 @@ export default class ArtistSearchPage extends Component {
 
   render() {
     return (
-      <div>
+      <div style={container}>
         <div style={table}>
           <h5 style={h5style}>Date Filter</h5>
           <input
@@ -103,4 +103,8 @@ const styling = {
 
 const h5style = {
   color: "white",
+};
+
+const container = {
+  height: "100vh",
 };
