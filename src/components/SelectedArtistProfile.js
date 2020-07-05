@@ -69,7 +69,7 @@ export default class SelectedArtistProfile extends React.Component {
   }
 }
 
-const container = { width: "fit-content", float: "center" };
+const container = { width: "fit-content", float: "center", height: "100vh" };
 const color = {
   backgroundColor: "lightgrey",
   textAlign: "center",
