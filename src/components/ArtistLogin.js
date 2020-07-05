@@ -9,7 +9,7 @@ class ArtistLogin extends Component {
   state = {
     username: "",
     password: "",
-    // redirect: false,
+    redirect: false,
   };
 
   handleChange = (e) => {
@@ -32,15 +32,15 @@ class ArtistLogin extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.artistLoginFetch(this.state);
-    // this.setState({
-    //   redirect: false,
-    // });
+    this.setState({
+      redirect: true,
+    });
   };
 
   render() {
-    // if (this.state.redirect) {
-    //   return <Redirect to="/profile" />;
-    // }
+    if (this.state.redirect) {
+      return <Redirect to="/profile" />;
+    }
     return (
       <Form onSubmit={this.handleSubmit}>
         <Form.Field>

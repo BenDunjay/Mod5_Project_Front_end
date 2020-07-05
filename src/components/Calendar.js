@@ -31,9 +31,7 @@ class Calendar extends React.Component {
   };
 
   convertDate = () => {
-    let date = new Date(this.state.selectedDate)
-      .toISOString("yyyy-MM-dd")
-      .slice(0, 10);
+    let date = moment(this.state.selectedDate).format("YYYY-MM-DD");
     if (this.props.artistDates.includes(date)) {
       alert("This date is already available!");
     } else {
@@ -67,7 +65,7 @@ class Calendar extends React.Component {
     let newDates = this.state.availableDates.filter(
       (dateObject) => dateObject.id !== date.id
     );
-    this.setState({ availableDates: newDates });
+    this.setState({ availableDates: newDates, selectedDate: "" });
   };
 
   handleDateChange = (event) => {

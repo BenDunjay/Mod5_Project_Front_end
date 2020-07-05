@@ -31,7 +31,7 @@ class SignUpArtist extends Component {
 
   render() {
     return (
-      <Form onSubmit={this.handleSubmit}>
+      <Form onSubmit={this.handleSubmit} className="signupartist">
         <Form.Field>
           <label style={color}>Username:</label>
           <input
