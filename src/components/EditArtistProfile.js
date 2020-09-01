@@ -16,6 +16,7 @@ export default class EditArtistProfile extends React.Component {
     phone_number: this.props.artist.phone_number,
   };
 
+  // handles changes in artist profile fields
   handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value,

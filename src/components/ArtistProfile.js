@@ -3,6 +3,7 @@ import Calendar from "./Calendar";
 import { Icon, Container, Divider, Card, Image } from "semantic-ui-react";
 
 export default function ArtistProfile({ artist }) {
+  // will map through and return each date object for the artist.
   const availableArtistDates = () => {
     return artist.availabilities.map((element) => element);
   };

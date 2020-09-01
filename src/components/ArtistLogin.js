@@ -12,11 +12,15 @@ class ArtistLogin extends Component {
     redirect: false,
   };
 
+  // will set the state of the appropriate input field
+
   handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
     });
   };
+
+  // will look at the route in the backend and check if the artist is valid. If so, will attach a token and pass data to login the artist
 
   artistLoginFetch = (artist) => {
     API.loginArtist(artist).then((data) => {
@@ -29,6 +33,8 @@ class ArtistLogin extends Component {
     });
   };
 
+  // will handle the submit of login being clicked and send the state as the arguments.
+
   handleSubmit = (e) => {
     e.preventDefault();
     this.artistLoginFetch(this.state);
@@ -38,6 +44,7 @@ class ArtistLogin extends Component {
   };
 
   render() {
+    // will redirect to the profile page
     if (this.state.redirect) {
       return <Redirect to="/profile" />;
     }

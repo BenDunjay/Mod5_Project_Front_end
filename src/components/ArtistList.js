@@ -5,7 +5,8 @@ import styles from "../List.css";
 import { List } from "semantic-ui-react";
 
 export default function ArtistList(props) {
-  console.log(props);
+  // will take all artists and loop through them to display them in the left hand column
+
   const showAllArtists = () => {
     return props.allArtists.map((artist) => (
       <List>
