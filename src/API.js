@@ -1,6 +1,7 @@
 const baseUrl = "http://localhost:3000/api/v1";
 
 const artistLoginUrl = baseUrl + "/artist_login";
+const authorizeUrl = baseUrl + "/authorize";
 const artistSignUpUrl = baseUrl + "/artists";
 const updateArtistUrl = baseUrl + "/edit_profile";
 const createAvailabilityUrl = baseUrl + "/create_availability";
@@ -116,11 +117,14 @@ const acceptOrReject = (requestObject, booleanValue) => {
   return patchRequest(changeRequestStatusUrl, requestObject, booleanValue);
 };
 
+const authorize = () => get(authorizeUrl);
+
 const fetchBookings = () => {
   return get(getAllBookingsUrl);
 };
 
 export default {
+  authorize,
   signupArtist,
   loginArtist,
   updateArtist,

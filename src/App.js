@@ -1,4 +1,5 @@
 import React from "react";
+import API from "./API";
 import ArtistAppContainer from "./containers/ArtistAppContainer";
 import VenueAppContainer from "./containers/VenueAppContainer";
 import AuthContainer from "./containers/AuthContainer";
@@ -8,6 +9,16 @@ export default class App extends React.Component {
   state = {
     artist: null,
     venue: null,
+  };
+
+  componentDidMount = () => {
+    API.authorize().then((data) => {
+      if (data.artist) {
+        this.loginArtist(data.artist);
+      } else if (data.venue) {
+        this.loginVenue(data.venue);
+      }
+    });
   };
 
   loginArtist = (artist) => {
