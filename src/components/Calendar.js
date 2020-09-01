@@ -11,20 +11,21 @@ class Calendar extends React.Component {
     selectedDate: "",
   };
 
+  // sets the available dates of the artist logged in
   componentDidMount = () => {
     this.setState({
       availableDates: this.props.artistDates,
     });
   };
 
+  // captures the date being entered into the input fields
   handleChange = (date) => {
     this.setState({
       startDate: date,
     });
   };
 
-  // need to write method to check if the input follows the YYYY-MM-DD else returns sorry this is not a date.
-
+  // converts the date to the correct format
   authenticateAvailabilityInput = (event) => {
     event.preventDefault();
     this.convertDate();
@@ -39,6 +40,7 @@ class Calendar extends React.Component {
     }
   };
 
+  // creates the new availability and sets the available dates to all the new dates and resets selectedDate to empty
   sendAvailabilityRequest = (date) => {
     let newDate = { date: date };
     API.createAvailability(newDate).then((newAvailability) =>
@@ -49,6 +51,7 @@ class Calendar extends React.Component {
     );
   };
 
+  // looks for the entered date in the artists available dates via filtering. Will then remove the date if the ID's match
   removeAvailabilityRequest = (e) => {
     e.preventDefault();
     let newDate = moment(this.state.selectedDate).format("YYYY-MM-DD");
@@ -74,6 +77,7 @@ class Calendar extends React.Component {
     });
   };
 
+  // sets all dates to the correct format for the Calendar
   showArtistAvailability = () => {
     return this.state.availableDates.map((date) => new Date(date.date));
   };

@@ -11,6 +11,8 @@ export default class App extends React.Component {
     venue: null,
   };
 
+  // on mounting(refresh) everytime it will check to see if there is either an artist or venue with a JWT token
+
   componentDidMount = () => {
     API.authorize().then((data) => {
       if (data.artist) {
@@ -21,17 +23,23 @@ export default class App extends React.Component {
     });
   };
 
+  // changes artist state object to the artist logging in
+
   loginArtist = (artist) => {
     this.setState({
       artist,
     });
   };
 
+  // changes venue state object to the venue logging in
+
   loginVenue = (venue) => {
     this.setState({
       venue,
     });
   };
+
+  //removes the token and resets the state.
 
   logout = () => {
     this.setState({
@@ -40,6 +48,8 @@ export default class App extends React.Component {
     });
     localStorage.removeItem("token");
   };
+
+  // looks at whether an artist or venue is logged in and will then proceed to the necessary container with their data
 
   chooseContainer = () => {
     if (this.state.artist) {

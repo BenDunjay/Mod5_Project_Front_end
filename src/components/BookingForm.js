@@ -5,6 +5,7 @@ import { Redirect } from "react-router-dom";
 import { Form, Button, Message } from "semantic-ui-react";
 
 export default class BookingForm extends React.Component {
+  // all necessary states to create a booking request
   state = {
     availabilityObject: null,
     numberOfHours: 0,
@@ -25,8 +26,8 @@ export default class BookingForm extends React.Component {
     }
   };
 
+  // on mounting will take the date selected and store it in the state
   componentDidMount = () => {
-    console.log(this.props.match.params.availability_id);
     API.createRequest(this.props.match.params.availability_id).then(
       (availObject) =>
         this.setState({
@@ -35,12 +36,14 @@ export default class BookingForm extends React.Component {
     );
   };
 
+  // changes all input fields on form
   handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
     });
   };
 
+  // handles the submit request. Will change the number of hours and payment to floats prior to sending
   handleSubmitRequest = (e) => {
     e.preventDefault();
     let request = {
@@ -49,6 +52,7 @@ export default class BookingForm extends React.Component {
       payment: parseFloat(this.state.payment),
       start_time: this.state.startTime,
     };
+    // if the request is successful will flip the success state to true and display a message
     API.sendARequest(request).then(() =>
       this.setState({
         success: true,

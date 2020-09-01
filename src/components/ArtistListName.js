@@ -5,6 +5,8 @@ import styles from "../List.css";
 import { Image, List } from "semantic-ui-react";
 
 export default function ArtistListName(props) {
+  // will show the individual artist name and avatar for within the ArtistList
+
   return (
     <Link onClick={() => props.handleSelectedArtistChange(props.artist)}>
       <List.Item className="fade-in">
