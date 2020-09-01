@@ -5,6 +5,7 @@ import styles from "../List.css";
 import { List } from "semantic-ui-react";
 
 export default function ArtistList(props) {
+  console.log(props);
   const showAllArtists = () => {
     return props.allArtists.map((artist) => (
       <List>

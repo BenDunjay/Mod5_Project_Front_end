@@ -65,15 +65,15 @@ export default class BookingForm extends React.Component {
         Booking Page
         <Form onSubmit={this.handleSubmitRequest} success={this.state.success}>
           <Form.Field>
-            <label> Artist:</label>
+            <label style={textColor}> Artist:</label>
             <input value={artist.username} disabled={true} />
             <br />
-            <label> Date:</label>
+            <label style={textColor}> Date:</label>
             <input value={this.state.availabilityObject.date} disabled={true} />
             <br />
           </Form.Field>
           <Form.Field>
-            <label>Start Time:</label>
+            <label style={textColor}>Start Time:</label>
             <input
               type="time"
               name="startTime"
@@ -85,7 +85,7 @@ export default class BookingForm extends React.Component {
             />
           </Form.Field>
           <Form.Field>
-            <label>Number of Hours Required:</label>
+            <label style={textColor}>Number of Hours Required:</label>
             <input
               type="integer"
               name="numberOfHours"
@@ -95,14 +95,14 @@ export default class BookingForm extends React.Component {
           </Form.Field>
           <Form.Field>
             <br />
-            <label>Payment</label>
+            <label style={textColor}>Payment</label>
             <input
               type="float"
               name="payment"
               onChange={this.handleChange}
               value={this.state.payment}
             />
-            <label>CAD</label>
+            <label style={textColor}>CAD</label>
             <br />
           </Form.Field>
           <Message
@@ -129,4 +129,8 @@ const bookingForm = {
   margin: "10px 250px",
   padding: "5px",
   textAlign: "center",
+};
+
+const textColor = {
+  color: "white",
 };
