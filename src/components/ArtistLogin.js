@@ -51,7 +51,7 @@ class ArtistLogin extends Component {
     return (
       <Form onSubmit={this.handleSubmit}>
         <Form.Field>
-          <label style={color}>Username</label>
+          <label>Username</label>
           <input
             type="text"
             name="username"
@@ -61,7 +61,7 @@ class ArtistLogin extends Component {
         </Form.Field>
         <br />
         <Form.Field>
-          <label style={color}>Password</label>
+          <label>Password</label>
           <input
             type="password"
             name="password"
@@ -78,9 +78,5 @@ class ArtistLogin extends Component {
     );
   }
 }
-
-const color = {
-  color: "lightgrey",
-};
 
 export default ArtistLogin;

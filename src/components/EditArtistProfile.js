@@ -31,9 +31,9 @@ export default class EditArtistProfile extends React.Component {
 
   render() {
     return (
-      <Form onSubmit={this.handleSubmit} style={editProfile}>
+      <Form onSubmit={this.handleSubmit}>
         <Form.Field>
-          <label style={label}>Artist Name:</label>
+          <label>Artist Name:</label>
           <input
             type="text"
             name="name"
@@ -43,7 +43,7 @@ export default class EditArtistProfile extends React.Component {
           />
         </Form.Field>
         <Form.Field>
-          <label style={label}>User Name:</label>
+          <label>User Name:</label>
           <input
             type="text"
             name="username"
@@ -54,7 +54,7 @@ export default class EditArtistProfile extends React.Component {
         </Form.Field>
         <br />
         <Form.Field>
-          <label style={label}>Bio:</label>
+          <label>Bio:</label>
           <textarea
             type="text"
             name="bio"
@@ -64,7 +64,7 @@ export default class EditArtistProfile extends React.Component {
         </Form.Field>
         <br />
         <Form.Field>
-          <label style={label}>Email:</label>
+          <label>Email:</label>
           <input
             type="text"
             name="email_address"
@@ -74,7 +74,7 @@ export default class EditArtistProfile extends React.Component {
         </Form.Field>
         <br />
         <Form.Field>
-          <label style={label}>Artist Genre:</label>
+          <label>Artist Genre:</label>
           <input
             type="text"
             name="artist_genre"
@@ -83,7 +83,7 @@ export default class EditArtistProfile extends React.Component {
           />
         </Form.Field>
         <Form.Field>
-          <label style={label}>Phone Number:</label>
+          <label>Phone Number:</label>
           <input
             type="text"
             name="phone_number"
@@ -94,7 +94,7 @@ export default class EditArtistProfile extends React.Component {
         <br />
         <br />
         <Form.Field>
-          <label style={label}>Profile Pic:</label>
+          <label>Profile Pic:</label>
           <input
             type="text"
             name="profile_picture"
@@ -104,7 +104,7 @@ export default class EditArtistProfile extends React.Component {
         </Form.Field>
         <br />
         <Form.Field>
-          <label style={label}>Spotify Url:</label>
+          <label>Spotify Url:</label>
           <input
             type="text"
             name="spotify"
@@ -114,7 +114,7 @@ export default class EditArtistProfile extends React.Component {
         </Form.Field>
         <br />
         <Form.Field>
-          <label style={label}>Instagram Url:</label>
+          <label>Instagram Url:</label>
           <input
             type="text"
             name="instagram"
@@ -130,13 +130,3 @@ export default class EditArtistProfile extends React.Component {
     );
   }
 }
-
-const editProfile = {
-  margin: "10px 250px",
-  padding: "5px",
-  textAlign: "center",
-};
-
-const label = {
-  color: "lightgrey",
-};

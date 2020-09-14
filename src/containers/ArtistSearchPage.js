@@ -57,23 +57,23 @@ export default class ArtistSearchPage extends Component {
 
   render() {
     return (
-      <div style={container}>
-        <div style={table}>
-          <h5 style={h5style}>Date Filter</h5>
+      <div>
+        <div>
+          <h5>Date Filter</h5>
           <input
             onChange={this.handleFilterDateChange}
             type="text"
             name="name"
             placeholder="Filter: YYYY-MM-DD"
           />
-          <Table className="list-table">
+          <Table>
             <ArtistList
               allArtists={this.artistFilter()}
               handleSelectedArtistChange={this.handleSelectedArtistChange}
             />
           </Table>
         </div>
-        <div style={showArtist}>
+        <div>
           {this.state.selectedArtist ? (
             <ArtistShown artist={this.state.selectedArtist} />
           ) : (
@@ -84,27 +84,3 @@ export default class ArtistSearchPage extends Component {
     );
   }
 }
-
-const table = {
-  float: "left",
-  margin: "10px",
-  overflow: "scroll",
-  maxHeight: "100vh",
-};
-
-const showArtist = {
-  margin: "10px 40px 10px 10px",
-  textAlign: "center",
-};
-
-const styling = {
-  backgroundColor: "lightgrey",
-};
-
-const h5style = {
-  color: "white",
-};
-
-const container = {
-  height: "100vh",
-};

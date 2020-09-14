@@ -20,7 +20,7 @@ export default class VenueAppContainer extends Component {
     const { activeItem } = this.state;
     return (
       <Router>
-        <Menu style={navbar} pointing>
+        <Menu pointing>
           <Menu.Item
             name="home"
             active={activeItem === "home"}
@@ -58,7 +58,6 @@ export default class VenueAppContainer extends Component {
           </Menu.Item>
           <Menu.Item
             position="right"
-            style={color}
             name="logout"
             active={activeItem === "logout"}
             onClick={this.handleItemClick}
@@ -95,11 +94,3 @@ export default class VenueAppContainer extends Component {
     );
   }
 }
-
-const color = {
-  backgroundColor: "lightgrey",
-};
-
-const navbar = {
-  backgroundColor: "lightblack",
-};

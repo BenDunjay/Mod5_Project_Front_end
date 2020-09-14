@@ -23,7 +23,7 @@ export default function ArtistAppContainer(props) {
         <Menu.Item>
           <Link to="/manage_bookings"> Manage Bookings </Link>
         </Menu.Item>
-        <Menu.Item position="right" style={color}>
+        <Menu.Item position="right">
           <Link onClick={props.logout}> Logout </Link>
         </Menu.Item>
       </Menu>
@@ -45,7 +45,3 @@ export default function ArtistAppContainer(props) {
     </Router>
   );
 }
-
-const color = {
-  backgroundColor: "lightgrey",
-};

@@ -9,17 +9,17 @@ export default function ArtistProfile({ artist }) {
   };
 
   return (
-    <Container style={container}>
-      <Card style={color}>
+    <Container>
+      <Card>
         <Image src={artist.profile_picture} alt="Artist Profile" />
         {/* <h2>{artist.name}</h2> */}
-        <h3 style={text}>
+        <h3>
           <strong>{artist.name}</strong>
         </h3>
-        <p style={text}> {artist.email_address}</p>
-        <p style={text}> {artist.artist_genre}</p>
-        <p style={text}> {artist.bio}</p>
-        <p style={text}>
+        <p> {artist.email_address}</p>
+        <p> {artist.artist_genre}</p>
+        <p> {artist.bio}</p>
+        <p>
           {" "}
           <strong>{artist.phone_number}</strong>
         </p>
@@ -38,9 +38,3 @@ export default function ArtistProfile({ artist }) {
     </Container>
   );
 }
-
-const container = { width: "fit-content" };
-const text = { margin: "5px", textAlign: "center" };
-const color = {
-  backgroundColor: "lightgrey",
-};

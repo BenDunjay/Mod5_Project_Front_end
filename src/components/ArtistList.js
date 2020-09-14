@@ -1,6 +1,5 @@
 import React from "react";
 import ArtistListName from "./ArtistListName";
-import styles from "../List.css";
 
 import { List } from "semantic-ui-react";
 
