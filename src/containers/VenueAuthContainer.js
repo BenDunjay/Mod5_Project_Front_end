@@ -6,19 +6,13 @@ import SignUpVenue from "../components/SignUpVenue";
 
 export default function VenueAuthContainer({ loginVenue }) {
   return (
-    <div style={venues}>
+    <div>
       <Router>
         <h3>
-          <Link to="/signup/venue" style={color}>
-            {" "}
-            Sign Up Venue
-          </Link>
+          <Link to="/signup/venue"> Sign Up Venue</Link>
         </h3>
         <h3>
-          <Link to="/venue_login" style={color}>
-            {" "}
-            Venue Log In{" "}
-          </Link>
+          <Link to="/venue_login"> Venue Log In </Link>
         </h3>
         <Switch>
           <Route exact path="/signup/venue">
@@ -32,13 +26,3 @@ export default function VenueAuthContainer({ loginVenue }) {
     </div>
   );
 }
-
-const venues = {
-  position: "fixed",
-  top: "31%",
-  left: "65%",
-};
-
-const color = {
-  color: "lightgrey",
-};

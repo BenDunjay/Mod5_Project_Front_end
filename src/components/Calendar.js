@@ -84,8 +84,8 @@ class Calendar extends React.Component {
 
   render() {
     return (
-      <div style={container}>
-        <form onSubmit={this.authenticateAvailabilityInput} style={form}>
+      <div>
+        <form onSubmit={this.authenticateAvailabilityInput}>
           {/* <label>Create availability</label> */}
           <input
             type="text"
@@ -95,10 +95,9 @@ class Calendar extends React.Component {
             placeholder="YYYY-MM-DD"
           />
           <br />
-          <input type="submit" value="Create availability" style={button} />
+          <input type="submit" value="Create availability" />
         </form>
-        <form onSubmit={this.removeAvailabilityRequest} style={form}>
-          {/* <label>Remove availability</label> */}
+        <form onSubmit={this.removeAvailabilityRequest}>
           <input
             type="text"
             name="selectedDate"
@@ -107,10 +106,10 @@ class Calendar extends React.Component {
             placeholder="YYYY-MM-DD"
           />
           <br />
-          <input type="submit" value="Remove availability" style={button} />
+          <input type="submit" value="Remove availability" />
         </form>
 
-        <h5 style={form}>See the dates you are currently available</h5>
+        <h5>See the dates you are currently available</h5>
         <DatePicker
           selected={this.state.startDate}
           onChange={this.handleChange}
@@ -121,9 +120,5 @@ class Calendar extends React.Component {
     );
   }
 }
-
-const container = { margin: "5px", textAlign: "center" };
-const button = { margin: "5px", textAlign: "center" };
-const form = { textAlign: "center" };
 
 export default Calendar;

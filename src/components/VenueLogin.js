@@ -45,7 +45,7 @@ class VenueLogin extends Component {
       <div>
         <Form onSubmit={this.handleSubmit}>
           <Form.Field>
-            <label style={color}>Username</label>
+            <label>Username</label>
             <input
               type="text"
               name="name"
@@ -55,7 +55,7 @@ class VenueLogin extends Component {
           </Form.Field>
           <br />
           <Form.Field>
-            <label style={color}>Password</label>
+            <label>Password</label>
             <input
               type="password"
               name="password"
@@ -73,9 +73,5 @@ class VenueLogin extends Component {
     );
   }
 }
-
-const color = {
-  color: "lightgrey",
-};
 
 export default VenueLogin;

@@ -65,19 +65,19 @@ export default class BookingForm extends React.Component {
     let artist = this.state.availabilityObject.artist;
 
     return (
-      <div style={bookingForm}>
+      <div>
         Booking Page
         <Form onSubmit={this.handleSubmitRequest} success={this.state.success}>
           <Form.Field>
-            <label style={textColor}> Artist:</label>
+            <label> Artist:</label>
             <input value={artist.username} disabled={true} />
             <br />
-            <label style={textColor}> Date:</label>
+            <label> Date:</label>
             <input value={this.state.availabilityObject.date} disabled={true} />
             <br />
           </Form.Field>
           <Form.Field>
-            <label style={textColor}>Start Time:</label>
+            <label>Start Time:</label>
             <input
               type="time"
               name="startTime"
@@ -89,7 +89,7 @@ export default class BookingForm extends React.Component {
             />
           </Form.Field>
           <Form.Field>
-            <label style={textColor}>Number of Hours Required:</label>
+            <label>Number of Hours Required:</label>
             <input
               type="integer"
               name="numberOfHours"
@@ -99,14 +99,14 @@ export default class BookingForm extends React.Component {
           </Form.Field>
           <Form.Field>
             <br />
-            <label style={textColor}>Payment</label>
+            <label>Payment</label>
             <input
               type="float"
               name="payment"
               onChange={this.handleChange}
               value={this.state.payment}
             />
-            <label style={textColor}>CAD</label>
+            <label>CAD</label>
             <br />
           </Form.Field>
           <Message
@@ -120,21 +120,8 @@ export default class BookingForm extends React.Component {
         </Form>
         <br></br>
         {this.renderRedirect()}
-        <Button onClick={this.setRedirect} color="yellow">
-          {" "}
-          Back to Artist List
-        </Button>
+        <Button onClick={this.setRedirect}> Back to Artist List</Button>
       </div>
     );
   }
 }
-
-const bookingForm = {
-  margin: "10px 250px",
-  padding: "5px",
-  textAlign: "center",
-};
-
-const textColor = {
-  color: "white",
-};

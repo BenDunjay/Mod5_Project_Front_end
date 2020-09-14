@@ -38,11 +38,10 @@ export default class SelectedArtistProfile extends React.Component {
 
   render() {
     return (
-      <Container style={container}>
-        <Card style={color}>
+      <Container>
+        <Card>
           <Image src={this.state.artist.profile_picture} wrapped ui={false} />
           <Card.Content>
-            {/* <h3>{this.state.artist.name}'s profile Page </h3> */}
             <Card.Header>{this.state.artist.username}</Card.Header>
             <Card.Meta>
               <span>{this.state.artist.name}</span>
@@ -68,9 +67,3 @@ export default class SelectedArtistProfile extends React.Component {
     );
   }
 }
-
-const container = { width: "fit-content", float: "center", height: "100vh" };
-const color = {
-  backgroundColor: "lightgrey",
-  textAlign: "center",
-};

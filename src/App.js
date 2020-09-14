@@ -3,7 +3,6 @@ import API from "./API";
 import ArtistAppContainer from "./containers/ArtistAppContainer";
 import VenueAppContainer from "./containers/VenueAppContainer";
 import AuthContainer from "./containers/AuthContainer";
-import Background from "./FrontPhoto.jpg";
 
 export default class App extends React.Component {
   state = {
@@ -72,22 +71,9 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div style={content}>
-        <div style={styling}>{this.chooseContainer()}</div>{" "}
+      <div>
+        <div>{this.chooseContainer()}</div>{" "}
       </div>
     );
   }
 }
-
-const styling = {
-  height: "100%",
-  textAlign: "center",
-  backgroundImage: `url(${Background})`,
-  backgroundPosition: "center",
-  backgroundRepeat: "no-repeat",
-  backgroundSize: "cover",
-};
-
-const content = {
-  height: "100%",
-};
