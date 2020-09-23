@@ -4,6 +4,8 @@ import ArtistAppContainer from "./containers/ArtistAppContainer";
 import VenueAppContainer from "./containers/VenueAppContainer";
 import AuthContainer from "./containers/AuthContainer";
 
+import "./App.css";
+
 export default class App extends React.Component {
   state = {
     artist: null,
@@ -70,10 +72,6 @@ export default class App extends React.Component {
   };
 
   render() {
-    return (
-      <div>
-        <div>{this.chooseContainer()}</div>{" "}
-      </div>
-    );
+    return <div className="first-container">{this.chooseContainer()}</div>;
   }
 }
