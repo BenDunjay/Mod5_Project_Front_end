@@ -6,24 +6,25 @@ import EditArtistProfile from "../components/EditArtistProfile";
 import ManageArtistBookings from "../components/ManageArtistBookings";
 
 import { Menu } from "semantic-ui-react";
+import "../css/ArtistNavBar.css";
 
 export default function ArtistAppContainer(props) {
   return (
     <Router>
       <Menu>
-        <Menu.Item className="menu-container">
+        <Menu.Item className="navbar-artist">
           <Link to="/"> Home </Link>
         </Menu.Item>
-        <Menu.Item>
+        <Menu.Item className="navbar-artist">
           <Link to="/profile"> Profile </Link>
         </Menu.Item>
-        <Menu.Item>
+        <Menu.Item className="navbar-artist">
           <Link to="/edit_profile"> Edit Profile </Link>
         </Menu.Item>
-        <Menu.Item>
+        <Menu.Item className="navbar-artist">
           <Link to="/manage_bookings"> Manage Bookings </Link>
         </Menu.Item>
-        <Menu.Item position="right">
+        <Menu.Item className="navbar-artist">
           <Link onClick={props.logout}> Logout </Link>
         </Menu.Item>
       </Menu>
