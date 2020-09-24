@@ -4,22 +4,24 @@ import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 import SignUpArtist from "../components/SignUpArtist";
 import ArtistLogin from "../components/ArtistLogin";
 
+import "../css/ArtistAuthContainer.css";
+
 export default function ArtistAuthContainer({ loginArtist }) {
   return (
-    <div>
+    <div className="artist-auth-container">
       <Router>
         <h3>
-          <Link to="/signup/artist"> Sign Up Artist</Link>
+          <Link to="/signup"> Sign Up Artist</Link>
         </h3>
         <h3>
-          <Link to="/artist_login"> Artist Log In </Link>
+          <Link to="/login"> Artist Log In </Link>
         </h3>
 
         <Switch>
-          <Route exact path="/signup/artist">
+          <Route exact path="/signup">
             <SignUpArtist />
           </Route>
-          <Route exact path="/artist_login">
+          <Route exact path="/login">
             <ArtistLogin loginArtist={loginArtist} />
           </Route>
         </Switch>
