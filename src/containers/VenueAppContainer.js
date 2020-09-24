@@ -21,7 +21,7 @@ export default class VenueAppContainer extends Component {
     return (
       <Router>
         <Menu pointing>
-          <Menu.Item
+          {/* <Menu.Item
             name="home"
             active={activeItem === "home"}
             onClick={this.handleItemClick}
@@ -61,12 +61,12 @@ export default class VenueAppContainer extends Component {
             name="logout"
             active={activeItem === "logout"}
             onClick={this.handleItemClick}
-          >
-            <Link to="/" onClick={this.props.logout}>
-              {" "}
-              Logout{" "}
-            </Link>
-          </Menu.Item>
+          > */}
+          <Link to="/" onClick={this.props.logout}>
+            {" "}
+            Logout{" "}
+          </Link>
+          {/* </Menu.Item> */}
         </Menu>
 
         <Switch>
