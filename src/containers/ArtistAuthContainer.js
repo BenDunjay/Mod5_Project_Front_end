@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Link,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 
 import SignUpArtist from "../components/SignUpArtist";
 import ArtistLogin from "../components/ArtistLogin";
@@ -9,7 +15,11 @@ import "../css/ArtistAuthContainer.css";
 export default function ArtistAuthContainer({ loginArtist }) {
   const [isPrimaryDiv, setIsPrimaryDiv] = useState(true);
   return (
-    <div>
+    <div className="login-or-signup">
+      <button>
+        {" "}
+        <Link to="/">Back </Link>
+      </button>
       <Router>
         <div
           className={
@@ -18,7 +28,10 @@ export default function ArtistAuthContainer({ loginArtist }) {
           onClick={() => setIsPrimaryDiv(true)}
         >
           <h3>
-            <Link to="/signup"> Sign Up Artist</Link>
+            <Link to="/signup" className="signin-signup-links">
+              {" "}
+              Sign Up Artist
+            </Link>
           </h3>
         </div>
         <div
@@ -28,16 +41,19 @@ export default function ArtistAuthContainer({ loginArtist }) {
           onClick={() => setIsPrimaryDiv(false)}
         >
           <h3>
-            <Link to="/login"> Artist Log In </Link>
+            <Link to="/login" className="signin-signup-links">
+              {" "}
+              Artist Log In{" "}
+            </Link>
           </h3>
         </div>
 
         <Switch>
-          <Route exact path="/signup">
-            <SignUpArtist />
-          </Route>
           <Route exact path="/login">
             <ArtistLogin loginArtist={loginArtist} />
+          </Route>
+          <Route exact path="/signup">
+            <SignUpArtist />
           </Route>
         </Switch>
       </Router>

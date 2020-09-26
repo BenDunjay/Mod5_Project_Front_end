@@ -1,11 +1,23 @@
 .artist-auth-primary {
-  background-color: yellow;
   margin: 20px;
   width: fit-content;
+  color: red;
 }
 
 .artist-auth-secondary {
-  background-color: white;
   margin: 20px;
   width: fit-content;
+  opacity: 0.4;
+}
+
+.login-or-signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  width: 100%;
+}
+
+.signin-signup-links {
+  color: white;
 }
