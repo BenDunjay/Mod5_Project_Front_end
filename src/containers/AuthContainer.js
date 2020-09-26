@@ -23,15 +23,9 @@ export default function AuthContainer({ loginArtist, loginVenue }) {
         </div>
       ) : null}
       {artistIsClicked ? (
-        <div>
-          <ArtistAuthContainer loginArtist={loginArtist} />{" "}
-        </div>
+        <ArtistAuthContainer loginArtist={loginArtist} />
       ) : null}
-      {venueIsClicked ? (
-        <div>
-          <VenueAuthContainer loginVenue={loginVenue} />
-        </div>
-      ) : null}
+      {venueIsClicked ? <VenueAuthContainer loginVenue={loginVenue} /> : null}
     </Router>
   );
 }

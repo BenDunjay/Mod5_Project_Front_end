@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import API from "../API";
 
 import { Button, Form } from "semantic-ui-react";
+import "../css/SignUpArtist.css";
 
 class SignUpArtist extends Component {
   state = {
