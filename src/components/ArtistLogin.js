@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import API from "../API";
 
 import { Redirect } from "react-router-dom";
-
 import { Button, Form } from "semantic-ui-react";
+
+import "../css/ArtistLogin.css";
 
 class ArtistLogin extends Component {
   state = {
@@ -49,7 +50,7 @@ class ArtistLogin extends Component {
       return <Redirect to="/profile" />;
     }
     return (
-      <Form onSubmit={this.handleSubmit}>
+      <Form onSubmit={this.handleSubmit} className="artistlogin">
         <Form.Field>
           <label>Username</label>
           <input

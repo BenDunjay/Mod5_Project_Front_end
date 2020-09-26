@@ -1,3 +1,7 @@
-.artist-auth-container {
-  background-color: blue;
+.artist-auth-primary {
+  background-color: yellow;
+}
+
+.artist-auth-secondary {
+  background-color: white;
 }
