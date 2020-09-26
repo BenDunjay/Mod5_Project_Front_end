@@ -32,9 +32,9 @@ class SignUpArtist extends Component {
 
   render() {
     return (
-      <Form onSubmit={this.handleSubmit} className="signupartist">
+      <Form onSubmit={this.handleSubmit} className="artistsignup">
         <Form.Field>
-          <label>Username:</label>
+          <label className="form-label">Username</label>
           <input
             type="text"
             name="username"
@@ -44,7 +44,7 @@ class SignUpArtist extends Component {
         </Form.Field>
         <br />
         <Form.Field>
-          <label>Password</label>
+          <label className="form-label">Password</label>
           <input
             type="password"
             name="password"
