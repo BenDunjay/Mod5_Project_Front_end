@@ -1,7 +1,11 @@
 .artist-auth-primary {
   background-color: yellow;
+  margin: 20px;
+  width: fit-content;
 }
 
 .artist-auth-secondary {
   background-color: white;
+  margin: 20px;
+  width: fit-content;
 }
