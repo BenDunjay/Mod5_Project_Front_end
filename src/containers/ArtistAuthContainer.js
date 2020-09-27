@@ -16,10 +16,6 @@ export default function ArtistAuthContainer({ loginArtist }) {
   const [isPrimaryDiv, setIsPrimaryDiv] = useState(true);
   return (
     <div className="login-or-signup">
-      <button>
-        {" "}
-        <Link to="/">Back </Link>
-      </button>
       <Router>
         <div
           className={

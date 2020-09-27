@@ -1,4 +1,5 @@
 .navbar-artist {
   padding: 0px 10px;
   background-color: green;
+  width: fit-content;
 }

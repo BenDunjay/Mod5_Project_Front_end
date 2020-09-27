@@ -11,8 +11,8 @@ import "../css/ArtistNavBar.css";
 export default function ArtistAppContainer(props) {
   return (
     <Router>
-      <Menu>
-        {/* <Menu.Item className="navbar-artist">
+      <Menu className="artist-navbar">
+        <Menu.Item className="navbar-artist">
           <Link to="/"> Home </Link>
         </Menu.Item>
         <Menu.Item className="navbar-artist">
@@ -23,7 +23,7 @@ export default function ArtistAppContainer(props) {
         </Menu.Item>
         <Menu.Item className="navbar-artist">
           <Link to="/manage_bookings"> Manage Bookings </Link>
-        </Menu.Item> */}
+        </Menu.Item>
         <Menu.Item className="navbar-artist">
           <Link onClick={props.logout}> Logout </Link>
         </Menu.Item>
