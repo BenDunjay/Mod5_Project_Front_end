@@ -11,20 +11,20 @@ import "../css/ArtistNavBar.css";
 export default function ArtistAppContainer(props) {
   return (
     <Router>
-      <Menu>
-        {/* <Menu.Item className="navbar-artist">
-          <Link to="/"> Home </Link>
+      <Menu className="artist-navbar">
+        <Menu.Item className="navbar-artist-section">
+          <Link to="/"> AVB </Link>
         </Menu.Item>
-        <Menu.Item className="navbar-artist">
+        <Menu.Item className="navbar-artist-section">
           <Link to="/profile"> Profile </Link>
         </Menu.Item>
-        <Menu.Item className="navbar-artist">
+        <Menu.Item className="navbar-artist-section">
           <Link to="/edit_profile"> Edit Profile </Link>
         </Menu.Item>
-        <Menu.Item className="navbar-artist">
+        <Menu.Item className="navbar-artist-section">
           <Link to="/manage_bookings"> Manage Bookings </Link>
-        </Menu.Item> */}
-        <Menu.Item className="navbar-artist">
+        </Menu.Item>
+        <Menu.Item className="navbar-artist-section-logout" position="right">
           <Link onClick={props.logout}> Logout </Link>
         </Menu.Item>
       </Menu>

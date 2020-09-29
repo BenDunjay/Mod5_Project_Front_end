@@ -1,6 +1,18 @@
 .artist-or-venue {
-  background-color: yellow;
   width: 50%;
   height: fit-content;
-  text-align: center;
+  display: flex;
+}
+
+.artist-entry {
+  margin: 0px;
+}
+
+.venue-entry {
+  margin: 0px;
+  text-align: right;
+}
+
+.link-to-venue-or-artist {
+  color: white;
 }
