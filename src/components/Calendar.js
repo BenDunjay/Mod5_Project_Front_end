@@ -86,7 +86,10 @@ class Calendar extends React.Component {
     return (
       <div className="calendar-div">
         <span className="change-availability">
-          <form onSubmit={this.authenticateAvailabilityInput}>
+          <form
+            onSubmit={this.authenticateAvailabilityInput}
+            className="artist-form"
+          >
             {/* <label>Create availability</label> */}
             <input
               type="text"
@@ -98,7 +101,10 @@ class Calendar extends React.Component {
             <br />
             <input type="submit" value="Create availability" />
           </form>
-          <form onSubmit={this.removeAvailabilityRequest}>
+          <form
+            onSubmit={this.removeAvailabilityRequest}
+            className="artist-form"
+          >
             <input
               type="text"
               name="selectedDate"
