@@ -84,38 +84,42 @@ class Calendar extends React.Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.authenticateAvailabilityInput}>
-          {/* <label>Create availability</label> */}
-          <input
-            type="text"
-            name="selectedDate"
-            onChange={this.handleDateChange}
-            value={this.state.selectedDate}
-            placeholder="YYYY-MM-DD"
+      <div className="calendar-div">
+        <span className="change-availability">
+          <form onSubmit={this.authenticateAvailabilityInput}>
+            {/* <label>Create availability</label> */}
+            <input
+              type="text"
+              name="selectedDate"
+              onChange={this.handleDateChange}
+              value={this.state.selectedDate}
+              placeholder="YYYY-MM-DD"
+            />
+            <br />
+            <input type="submit" value="Create availability" />
+          </form>
+          <form onSubmit={this.removeAvailabilityRequest}>
+            <input
+              type="text"
+              name="selectedDate"
+              onChange={this.handleDateChange}
+              value={this.state.selectedDate}
+              placeholder="YYYY-MM-DD"
+            />
+            <br />
+            <input type="submit" value="Remove availability" />
+          </form>
+        </span>
+        <span className="calendar">
+          <h5>See the dates you are currently available: </h5>
+          <DatePicker
+            selected={this.state.startDate}
+            onChange={this.handleChange}
+            includeDates={this.showArtistAvailability()}
+            inline
+            className="date-picker"
           />
-          <br />
-          <input type="submit" value="Create availability" />
-        </form>
-        <form onSubmit={this.removeAvailabilityRequest}>
-          <input
-            type="text"
-            name="selectedDate"
-            onChange={this.handleDateChange}
-            value={this.state.selectedDate}
-            placeholder="YYYY-MM-DD"
-          />
-          <br />
-          <input type="submit" value="Remove availability" />
-        </form>
-
-        <h5>See the dates you are currently available</h5>
-        <DatePicker
-          selected={this.state.startDate}
-          onChange={this.handleChange}
-          includeDates={this.showArtistAvailability()}
-          inline
-        />
+        </span>
       </div>
     );
   }

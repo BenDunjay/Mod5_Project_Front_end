@@ -12,35 +12,45 @@ export default function ArtistProfile({ artist }) {
 
   return (
     <div className="artist-profile-div">
-      <span>
+      <span className="artist-image-about-section">
         <img
           src={artist.profile_picture}
           alt="Artist Profile"
           className="artist-profile-image"
         />
         {/* <h2>{artist.name}</h2> */}
-        <h3 className="artist-name">
-          <strong>{artist.name}</strong>
-        </h3>
-        <p className="artist-genre"> {artist.artist_genre}</p>
-        <p className="artist-bio"> {artist.bio}</p>
-        <p>
-          {" "}
-          <strong>
-            {artist.phone_number} <p> {artist.email_address}</p>
-          </strong>
-        </p>
+        <span className="about-artist-section">
+          <h2> {artist.username}</h2>
+          <h3 className="artist-genre"> {artist.artist_genre}</h3>
+          <p className="artist-bio"> {artist.bio}</p>
+          <h5 className="artist-name">
+            Contact: <strong>{artist.name}</strong>
+          </h5>
+          <p className="artist-contact-details">
+            {" "}
+            <strong>
+              Mob: {artist.phone_number} <br></br> Email: {artist.email_address}
+            </strong>
+          </p>
+
+          <a href="https://open.spotify.com/user/tigiras?si=yy15Im-RQiiJUk2TQTzROA">
+            <Icon
+              name="spotify"
+              alt="Spotify link"
+              className="artist-icons"
+            ></Icon>
+          </a>
+          <a href="https://www.instagram.com/">
+            <Icon
+              name="instagram"
+              alt="instagram link"
+              className="artist-icons"
+            ></Icon>
+          </a>
+        </span>
       </span>
       <Calendar artistDates={availableArtistDates()} artist={artist} />
       <hr></hr>
-      <p>
-        <a href="https://open.spotify.com/user/tigiras?si=yy15Im-RQiiJUk2TQTzROA">
-          <Icon name="spotify" alt="Spotify link"></Icon>
-        </a>
-        <a href="https://www.instagram.com/">
-          <Icon name="instagram" alt="instagram link"></Icon>
-        </a>
-      </p>
     </div>
   );
 }
