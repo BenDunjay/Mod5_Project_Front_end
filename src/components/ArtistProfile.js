@@ -12,22 +12,25 @@ export default function ArtistProfile({ artist }) {
 
   return (
     <div className="artist-profile-div">
-      <img
-        src={artist.profile_picture}
-        alt="Artist Profile"
-        className="artist-profile-image"
-      />
-      {/* <h2>{artist.name}</h2> */}
-      <h3>
-        <strong>{artist.name}</strong>
-      </h3>
-      <p> {artist.email_address}</p>
-      <p> {artist.artist_genre}</p>
-      <p> {artist.bio}</p>
-      <p>
-        {" "}
-        <strong>{artist.phone_number}</strong>
-      </p>
+      <span>
+        <img
+          src={artist.profile_picture}
+          alt="Artist Profile"
+          className="artist-profile-image"
+        />
+        {/* <h2>{artist.name}</h2> */}
+        <h3 className="artist-name">
+          <strong>{artist.name}</strong>
+        </h3>
+        <p className="artist-genre"> {artist.artist_genre}</p>
+        <p className="artist-bio"> {artist.bio}</p>
+        <p>
+          {" "}
+          <strong>
+            {artist.phone_number} <p> {artist.email_address}</p>
+          </strong>
+        </p>
+      </span>
       <Calendar artistDates={availableArtistDates()} artist={artist} />
       <hr></hr>
       <p>

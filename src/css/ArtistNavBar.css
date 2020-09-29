@@ -1,8 +1,9 @@
 .artist-navbar {
-  padding: 0px 10px;
-  background-color: green;
+  padding: 0px;
   width: 100%;
   flex-wrap: wrap;
+  border-radius: 0mm !important;
+  margin: 0 !important;
 }
 
 .navbar-artist-section {
@@ -11,4 +12,5 @@
 
 .navbar-artist-section-logout {
   width: fit-content;
+  background-color: silver !important;
 }

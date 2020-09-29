@@ -13,7 +13,7 @@ export default function ArtistAppContainer(props) {
     <Router>
       <Menu className="artist-navbar">
         <Menu.Item className="navbar-artist-section">
-          <Link to="/"> Home </Link>
+          <Link to="/"> AVB </Link>
         </Menu.Item>
         <Menu.Item className="navbar-artist-section">
           <Link to="/profile"> Profile </Link>
