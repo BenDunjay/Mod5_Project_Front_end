@@ -19,6 +19,7 @@ export default function AuthContainer({ loginArtist, loginVenue }) {
             <Link
               onClick={() => setArtistIsClicked(!artistIsClicked)}
               className="link-to-venue-or-artist"
+              to="/artist"
             >
               Artists
             </Link>
@@ -27,6 +28,7 @@ export default function AuthContainer({ loginArtist, loginVenue }) {
             <Link
               onClick={() => setVenueIsClicked(!venueIsClicked)}
               className="link-to-venue-or-artist"
+              to="/venue"
             >
               {" "}
               Venues{" "}
@@ -40,15 +42,4 @@ export default function AuthContainer({ loginArtist, loginVenue }) {
       {venueIsClicked ? <VenueAuthContainer loginVenue={loginVenue} /> : null}
     </Router>
   );
-}
-
-{
-  /* <Switch>
-  <Route exact path="/artist">
-    <ArtistAuthContainer loginArtist={loginArtist} />
-  </Route>
-  <Route exact path="/venue">
-    <VenueAuthContainer loginVenue={loginVenue} />
-  </Route>
-</Switch> */
 }

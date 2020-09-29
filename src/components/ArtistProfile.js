@@ -29,25 +29,24 @@ export default function ArtistProfile({ artist }) {
           <p className="artist-contact-details">
             {" "}
             <strong>
-              Mob: {artist.phone_number} <p> Email: {artist.email_address}</p>
+              Mob: {artist.phone_number} <br></br> Email: {artist.email_address}
             </strong>
           </p>
-          <p>
-            <a href="https://open.spotify.com/user/tigiras?si=yy15Im-RQiiJUk2TQTzROA">
-              <Icon
-                name="spotify"
-                alt="Spotify link"
-                className="artist-icons"
-              ></Icon>
-            </a>
-            <a href="https://www.instagram.com/">
-              <Icon
-                name="instagram"
-                alt="instagram link"
-                className="artist-icons"
-              ></Icon>
-            </a>
-          </p>
+
+          <a href="https://open.spotify.com/user/tigiras?si=yy15Im-RQiiJUk2TQTzROA">
+            <Icon
+              name="spotify"
+              alt="Spotify link"
+              className="artist-icons"
+            ></Icon>
+          </a>
+          <a href="https://www.instagram.com/">
+            <Icon
+              name="instagram"
+              alt="instagram link"
+              className="artist-icons"
+            ></Icon>
+          </a>
         </span>
       </span>
       <Calendar artistDates={availableArtistDates()} artist={artist} />

@@ -25,7 +25,10 @@ export default function ArtistAppContainer(props) {
           <Link to="/manage_bookings"> Manage Bookings </Link>
         </Menu.Item>
         <Menu.Item className="navbar-artist-section-logout" position="right">
-          <Link onClick={props.logout}> Logout </Link>
+          <Link onClick={props.logout} to="/">
+            {" "}
+            Logout{" "}
+          </Link>
         </Menu.Item>
       </Menu>
 
