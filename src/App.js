@@ -55,7 +55,9 @@ export default class App extends React.Component {
   chooseContainer = () => {
     if (this.state.artist) {
       return (
-        <ArtistAppContainer logout={this.logout} artist={this.state.artist} />
+        <div>
+          <ArtistAppContainer logout={this.logout} artist={this.state.artist} />
+        </div>
       );
     } else if (this.state.venue) {
       return (
@@ -63,10 +65,12 @@ export default class App extends React.Component {
       );
     } else {
       return (
-        <AuthContainer
-          loginArtist={this.loginArtist}
-          loginVenue={this.loginVenue}
-        />
+        <div className="first-auth-container">
+          <AuthContainer
+            loginArtist={this.loginArtist}
+            loginVenue={this.loginVenue}
+          />
+        </div>
       );
     }
   };
