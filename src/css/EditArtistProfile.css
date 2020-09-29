@@ -1,0 +1,27 @@
+.edit-artist-div {
+  background: rgb(65, 125, 156);
+  background: linear-gradient(
+    90deg,
+    rgba(65, 125, 156, 1) 0%,
+    rgba(86, 183, 200, 1) 43%,
+    rgba(43, 131, 147, 1) 100%
+  );
+  display: flex;
+  flex-wrap: nowrap;
+  text-align: center;
+  width: 100%;
+}
+
+.edit-artist-form-label-top {
+  padding: 10px 0px 5px 0px;
+  color: white !important;
+}
+
+.edit-artist-form-input {
+  width: 40% !important;
+}
+
+.edit-artist-form-label {
+  padding: 0px 0px 5px 0px;
+  color: white !important;
+}
