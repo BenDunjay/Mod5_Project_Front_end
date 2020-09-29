@@ -1,5 +1,14 @@
-.navbar-artist {
+.artist-navbar {
   padding: 0px 10px;
   background-color: green;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.navbar-artist-section {
+  width: fit-content;
+}
+
+.navbar-artist-section-logout {
   width: fit-content;
 }
