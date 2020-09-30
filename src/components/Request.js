@@ -57,7 +57,7 @@ export default function Request({ request, changeAcceptStatus }) {
       <Table.Cell className="artist-booking-table-cell">
         {request.payment}
       </Table.Cell>
-      <Table.Cell> Brief Message</Table.Cell>
+      <Table.Cell> Brief message from venue to artist. </Table.Cell>
       <Table.Cell className="artist-booking-table-cell">
         {request.phone_number}
       </Table.Cell>
