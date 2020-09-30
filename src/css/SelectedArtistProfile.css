@@ -1,0 +1,42 @@
+.selected-artist-profile-div {
+  padding: 20px !important;
+  border-radius: 10% !important;
+  border: solid !important;
+  border-color: orange !important;
+  height: fit-content !important;
+  width: 40% !important;
+  box-shadow: -0.6rem 0 3rem #000 !important;
+}
+
+.selected-artist-profile-card {
+  padding: 20px !important;
+  border-radius: 10% !important;
+  border: solid !important;
+  border-color: orange !important;
+  height: fit-content !important;
+  width: 100% !important;
+  box-shadow: -0.6rem 0 3rem #000 !important;
+  text-align: center;
+}
+
+.selected-artist-card-content {
+  padding: 8px;
+  font-weight: bold;
+}
+
+.selected-artist-profile-surrounding-div {
+  height: fit-content;
+  /* background: rgb(183, 186, 190); */
+  background: linear-gradient(
+    90deg,
+    rgb(86, 89, 92) 0%,
+    rgb(119, 116, 136) 50%,
+    rgba(89, 107, 176, 0.24833683473389356) 100%
+  );
+}
+
+.selected-artist-book-button {
+  width: fit-content;
+  padding: 5px;
+  margin: 5px;
+}

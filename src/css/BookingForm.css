@@ -1,0 +1,59 @@
+.booking-form-div {
+  background: rgb(65, 125, 156);
+  background: linear-gradient(
+    90deg,
+    rgb(93, 115, 126) 0%,
+    rgb(115, 172, 182) 43%,
+    rgb(105, 133, 138) 100%
+  );
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  width: 100%;
+  justify-content: center;
+  height: 100%;
+  align-content: center;
+}
+
+.booking-form {
+  width: fit-content;
+  box-shadow: -1rem 0 2rem #000;
+  width: 50%;
+  margin: 10px;
+  height: fit-content;
+  padding: 20px;
+  border: solid;
+  border-radius: 10%;
+  border-color: lightblue;
+  background: rgb(183, 186, 190);
+  background: linear-gradient(
+    90deg,
+    rgb(143, 146, 149) 0%,
+    rgb(104, 108, 119) 50%,
+    rgba(0, 0, 0, 0.248) 100%
+  );
+}
+
+.booking-form-form-input {
+  width: 40% !important;
+  border: solid;
+  border-width: 1mm !important;
+  border-color: skyblue !important;
+  box-shadow: -0.3rem 0 1rem #000 !important;
+  margin: 10px;
+}
+
+.booking-form-form-back-button {
+  width: 40% !important;
+  border: solid;
+  border-width: 1mm !important;
+  border-color: skyblue !important;
+  box-shadow: -0.3rem 0 1rem #000 !important;
+  margin: 20px 5px 5px 5px !important;
+}
+
+.booking-form-form-label {
+  padding: 0px 0px 5px 0px;
+  color: white !important;
+  font-size: 4mm !important;
+}
