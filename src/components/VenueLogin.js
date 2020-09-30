@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import API from "../API";
 
 import { Redirect } from "react-router-dom";
-
 import { Button, Form } from "semantic-ui-react";
+
+import "../css/VenueLogin.css";
 
 class VenueLogin extends Component {
   state = {
@@ -42,34 +43,32 @@ class VenueLogin extends Component {
       return <Redirect to="/all_artists" />;
     }
     return (
-      <div>
-        <Form onSubmit={this.handleSubmit}>
-          <Form.Field>
-            <label>Username</label>
-            <input
-              type="text"
-              name="name"
-              onChange={this.handleChange}
-              value={this.state.name}
-            />
-          </Form.Field>
+      <Form onSubmit={this.handleSubmit} className="venuelogin">
+        <Form.Field>
+          <label className="form-label">Username</label>
+          <input
+            type="text"
+            name="name"
+            onChange={this.handleChange}
+            value={this.state.name}
+          />
+        </Form.Field>
+        <br />
+        <Form.Field>
+          <label className="form-label">Password</label>
+          <input
+            type="password"
+            name="password"
+            onChange={this.handleChange}
+            value={this.state.password}
+          />
           <br />
-          <Form.Field>
-            <label>Password</label>
-            <input
-              type="password"
-              name="password"
-              onChange={this.handleChange}
-              value={this.state.password}
-            />
-            <br />
-          </Form.Field>
-          <Button type="submit" value="Login">
-            {" "}
-            Login{" "}
-          </Button>
-        </Form>
-      </div>
+        </Form.Field>
+        <Button type="submit" value="Login">
+          {" "}
+          Login{" "}
+        </Button>
+      </Form>
     );
   }
 }

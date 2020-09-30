@@ -1,0 +1,13 @@
+.venuelogin {
+  /* background-color: deepskyblue; */
+  width: 20%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.form-label {
+  color: white !important;
+  text-decoration-line: underline;
+  padding: 0 0 10px 0;
+}

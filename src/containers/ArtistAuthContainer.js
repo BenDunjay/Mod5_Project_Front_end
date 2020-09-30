@@ -14,6 +14,7 @@ import "../css/ArtistAuthContainer.css";
 
 export default function ArtistAuthContainer({ loginArtist }) {
   const [isPrimaryDiv, setIsPrimaryDiv] = useState(true);
+
   return (
     <div className="login-or-signup">
       <Router>
@@ -45,11 +46,11 @@ export default function ArtistAuthContainer({ loginArtist }) {
         </div>
 
         <Switch>
-          <Route exact path="/login">
-            <ArtistLogin loginArtist={loginArtist} />
-          </Route>
           <Route exact path="/signup">
             <SignUpArtist />
+          </Route>
+          <Route exact path="/login">
+            <ArtistLogin loginArtist={loginArtist} />
           </Route>
         </Switch>
       </Router>
