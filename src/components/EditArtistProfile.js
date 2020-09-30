@@ -34,7 +34,7 @@ export default class EditArtistProfile extends React.Component {
   render() {
     return (
       <div className="edit-artist-div">
-        <Form onSubmit={this.handleSubmit} className="form">
+        <Form onSubmit={this.handleSubmit} className="edit-artist-form">
           <Form.Field>
             <label className="edit-artist-form-label-top">Artist Name:</label>
             <input
