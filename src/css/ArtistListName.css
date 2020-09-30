@@ -1,0 +1,9 @@
+.artist-link {
+  color: white;
+  width: fit-content;
+}
+
+.artist-list-name {
+  color: white !important;
+  padding: 5px;
+}

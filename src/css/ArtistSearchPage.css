@@ -1,0 +1,25 @@
+.artist-search-page-first-div {
+  display: flex;
+  flex-wrap: nowrap;
+  text-align: center;
+  width: 100%;
+  color: white;
+}
+
+.artist-table {
+  width: fit-content;
+  border: solid;
+  border-color: white;
+  background: rgb(183, 186, 190);
+  background: linear-gradient(
+    90deg,
+    rgb(111, 113, 116) 0%,
+    rgb(116, 115, 128) 50%,
+    rgba(73, 74, 78, 0.24833683473389356) 100%
+  );
+  padding: 10px 10px;
+  height: fit-content;
+  margin: 0px 10px 0px 0px;
+  border-radius: 10%;
+  box-shadow: -1rem 0 0.8rem #000;
+}

@@ -1,0 +1,27 @@
+.venue-navbar {
+  padding: 0px;
+  width: 100%;
+  flex-wrap: wrap;
+  border-radius: 0mm !important;
+  margin: 0 !important;
+  background: rgb(131, 132, 133) !important;
+  background: linear-gradient(
+    90deg,
+    rgba(131, 132, 133, 1) 0%,
+    rgb(51, 54, 54) 50%,
+    rgba(131, 132, 133, 0.24833683473389356) 100%
+  ) !important;
+  text-decoration: underline;
+}
+
+.navbar-venue-section {
+  width: fit-content;
+}
+
+.navbar-venue-section-logout {
+  width: fit-content;
+}
+
+.navbar-venue-link {
+  color: white !important;
+}

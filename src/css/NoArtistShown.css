@@ -1,0 +1,20 @@
+.no-artist-shown-div {
+  border: solid;
+  border-radius: 5%;
+  box-shadow: -0.5rem 0 0.5rem #000;
+}
+
+.no-artist-shown-bio {
+  padding: 5px;
+  margin: 10px;
+  border: solid;
+  border-radius: 5%;
+  border-color: lightblue;
+  width: fit-content;
+  box-shadow: -0.4rem 0 0.5rem #000;
+}
+
+.no-artist-shown-image {
+  height: 300px;
+  width: 40%;
+}

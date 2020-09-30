@@ -9,64 +9,53 @@ import BookingForm from "../components/BookingForm";
 
 import { Menu } from "semantic-ui-react";
 
+import "../css/VenueNavBar.css";
+
 export default class VenueAppContainer extends Component {
-  state = {
-    activeItem: "all_artists",
-  };
-
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
-
   render() {
-    const { activeItem } = this.state;
     return (
       <Router>
-        <Menu pointing>
-          {/* <Menu.Item
-            name="home"
-            active={activeItem === "home"}
-            onClick={this.handleItemClick}
-          >
-            <Link to="/"> AVB </Link>
+        <Menu className="venue-navbar">
+          <Menu.Item className="navbar-venue-section">
+            <Link to="/" className="navbar-venue-link">
+              {" "}
+              AVB{" "}
+            </Link>
           </Menu.Item>
-          <Menu.Item
-            name="profile"
-            active={activeItem === "profile"}
-            onClick={this.handleItemClick}
-          >
-            <Link to="/profile"> Profile </Link>
+          <Menu.Item className="navbar-venue-section">
+            <Link to="/profile" className="navbar-venue-link">
+              {" "}
+              Profile{" "}
+            </Link>
           </Menu.Item>
-          <Menu.Item
-            name="all_artists"
-            active={activeItem === "all_artists"}
-            onClick={this.handleItemClick}
-          >
-            <Link to="/all_artists"> All Artists </Link>
+          <Menu.Item className="navbar-venue-section">
+            <Link to="/all_artists" className="navbar-venue-link">
+              {" "}
+              All Artists{" "}
+            </Link>
           </Menu.Item>
-          <Menu.Item
-            name="manage_bookings"
-            active={activeItem === "manage_bookings"}
-            onClick={this.handleItemClick}
-          >
-            <Link to="/manage_bookings"> Manage Bookings </Link>
+          <Menu.Item className="navbar-venue-section">
+            <Link to="/manage_bookings" className="navbar-venue-link">
+              {" "}
+              Manage Bookings{" "}
+            </Link>
           </Menu.Item>
-          <Menu.Item
-            name="edit_profile"
-            active={activeItem === "edit_profile"}
-            onClick={this.handleItemClick}
-          >
-            <Link to="/edit_profile"> Edit Profile </Link>
+          <Menu.Item className="navbar-venue-section">
+            <Link to="/edit_profile" className="navbar-venue-link">
+              {" "}
+              Edit Profile{" "}
+            </Link>
           </Menu.Item>
-          <Menu.Item
-            position="right"
-            name="logout"
-            active={activeItem === "logout"}
-            onClick={this.handleItemClick}
-          > */}
-          <Link to="/" onClick={this.props.logout}>
-            {" "}
-            Logout{" "}
-          </Link>
-          {/* </Menu.Item> */}
+          <Menu.Item className="navbar-venue-section" position="right">
+            <Link
+              to="/"
+              onClick={this.props.logout}
+              className="navbar-venue-link"
+            >
+              {" "}
+              Logout{" "}
+            </Link>
+          </Menu.Item>
         </Menu>
 
         <Switch>
