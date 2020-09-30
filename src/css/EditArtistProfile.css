@@ -2,9 +2,9 @@
   background: rgb(65, 125, 156);
   background: linear-gradient(
     90deg,
-    rgba(65, 125, 156, 1) 0%,
-    rgba(86, 183, 200, 1) 43%,
-    rgba(43, 131, 147, 1) 100%
+    rgb(93, 115, 126) 0%,
+    rgb(115, 172, 182) 43%,
+    rgb(105, 133, 138) 100%
   );
   display: flex;
   flex-wrap: nowrap;
@@ -38,6 +38,13 @@
   box-shadow: -1rem 0 2rem #000;
   width: 60%;
   margin: 10px;
+  background: rgb(183, 186, 190);
+  background: linear-gradient(
+    90deg,
+    rgba(183, 186, 190, 1) 0%,
+    rgba(199, 194, 238, 1) 50%,
+    rgba(112, 116, 245, 0.24833683473389356) 100%
+  );
 }
 
 .edit-artist-form-input-bottom {
