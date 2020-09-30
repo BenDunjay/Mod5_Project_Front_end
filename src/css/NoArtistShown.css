@@ -2,6 +2,7 @@
   border: solid;
   border-radius: 5%;
   box-shadow: -0.5rem 0 0.5rem #000;
+  margin: 20px 0px 0px 0px;
 }
 
 .no-artist-shown-bio {
@@ -17,4 +18,6 @@
 .no-artist-shown-image {
   height: 300px;
   width: 40%;
+  margin: 10px;
+  box-shadow: -0.4rem 0 0.5rem #000;
 }
