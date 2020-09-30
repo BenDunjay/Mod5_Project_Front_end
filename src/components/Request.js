@@ -2,6 +2,8 @@ import React from "react";
 import { Table, Icon } from "semantic-ui-react";
 import moment from "moment";
 
+import "../css/Request.css";
+
 export default function Request({ request, changeAcceptStatus }) {
   const showAcceptReject = () => {
     if (request.accept === true) {
@@ -34,16 +36,35 @@ export default function Request({ request, changeAcceptStatus }) {
 
   return (
     <Table.Row>
-      <Table.Cell>{request.id}</Table.Cell>
-      <Table.Cell>{request.date}</Table.Cell>
-      <Table.Cell>{request.name}</Table.Cell>
-      <Table.Cell>{request.postcode}</Table.Cell>
-      <Table.Cell>{moment(request.start_time).format("LT")}</Table.Cell>
-      <Table.Cell>{request.number_of_hours}</Table.Cell>
-      <Table.Cell>{request.payment}</Table.Cell>
-      <Table.Cell> Brief Message</Table.Cell>
-      <Table.Cell>{request.phone_number}</Table.Cell>
-      <Table.Cell> {tickOrCross()}</Table.Cell>
+      <Table.Cell className="artist-booking-table-cell">
+        {request.id}
+      </Table.Cell>
+      <Table.Cell className="artist-booking-table-cell">
+        {request.date}
+      </Table.Cell>
+      <Table.Cell className="artist-booking-table-cell">
+        {request.name}
+      </Table.Cell>
+      <Table.Cell className="artist-booking-table-cell">
+        {request.postcode}
+      </Table.Cell>
+      <Table.Cell className="artist-booking-table-cell">
+        {moment(request.start_time).format("LT")}
+      </Table.Cell>
+      <Table.Cell className="artist-booking-table-cell">
+        {request.number_of_hours}
+      </Table.Cell>
+      <Table.Cell className="artist-booking-table-cell">
+        {request.payment}
+      </Table.Cell>
+      <Table.Cell> Brief message from venue to artist. </Table.Cell>
+      <Table.Cell className="artist-booking-table-cell">
+        {request.phone_number}
+      </Table.Cell>
+      <Table.Cell className="artist-booking-table-cell">
+        {" "}
+        {tickOrCross()}
+      </Table.Cell>
     </Table.Row>
   );
 }

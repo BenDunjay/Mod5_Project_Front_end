@@ -1,3 +1,23 @@
-.venue-auth-container {
-  background-color: blue;
+.artist-auth-primary {
+  margin: 20px;
+  width: fit-content;
+  color: red;
+}
+
+.artist-auth-secondary {
+  margin: 20px;
+  width: fit-content;
+  opacity: 0.4;
+}
+
+.login-or-signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  width: 100%;
+}
+
+.signin-signup-links {
+  color: white;
 }

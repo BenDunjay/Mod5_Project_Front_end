@@ -10,15 +10,32 @@
   background: rgb(65, 125, 156);
   background: linear-gradient(
     90deg,
-    rgba(65, 125, 156, 1) 0%,
-    rgba(86, 183, 200, 1) 43%,
-    rgba(43, 131, 147, 1) 100%
+    rgb(93, 115, 126) 0%,
+    rgb(115, 172, 182) 43%,
+    rgb(105, 133, 138) 100%
   );
 }
 
 .inner-manage-bookings-div {
   width: 75%;
+}
+
+.manage-booking-table {
+  margin: 10px 10px;
   border: solid;
   border-color: rgb(143, 177, 177);
-  border-radius: 5%;
+  padding: 15px;
+  height: fit-content;
+  width: fit-content;
+  box-shadow: -0.3rem 0 1rem #000 !important;
+}
+
+.manage-artist-bookings-labels {
+  text-decoration: underline;
+  margin: 40px 0px 30px 0px !important;
+}
+
+.table-header {
+  width: fit-content !important;
+  text-align: center !important;
 }

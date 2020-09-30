@@ -5,9 +5,9 @@
   background: rgb(65, 125, 156);
   background: linear-gradient(
     90deg,
-    rgba(65, 125, 156, 1) 0%,
-    rgba(86, 183, 200, 1) 43%,
-    rgba(43, 131, 147, 1) 100%
+    rgb(93, 115, 126) 0%,
+    rgb(115, 172, 182) 43%,
+    rgb(105, 133, 138) 100%
   );
   color: white;
   height: 100%;
@@ -22,6 +22,7 @@
   border: solid;
   border-color: skyblue;
   box-shadow: -1rem 0 0.8rem #000;
+  margin: 5px;
 }
 
 .artist-image-about-section {
@@ -57,6 +58,7 @@
   border: solid;
   border-radius: 10%;
   box-shadow: -0.5rem 0 1rem #000;
+  margin: 5px;
 }
 
 .calendar-div {
@@ -67,10 +69,12 @@
   border-radius: 10%;
   border: solid;
   box-shadow: -0.5rem 0 1rem #000;
+  margin: 5px;
 }
 
 .calendar {
   padding: 10px 20px;
+  margin: 5px;
   width: 100%;
   box-shadow: -0.5rem 0 1rem #000;
   border-radius: 10%;
