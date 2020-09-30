@@ -4,6 +4,8 @@ import API from "../API";
 import { Redirect } from "react-router-dom";
 import { Form, Button, Message } from "semantic-ui-react";
 
+import "../css/BookingForm.css";
+
 export default class BookingForm extends React.Component {
   // all necessary states to create a booking request
   state = {
@@ -65,19 +67,30 @@ export default class BookingForm extends React.Component {
     let artist = this.state.availabilityObject.artist;
 
     return (
-      <div>
-        Booking Page
-        <Form onSubmit={this.handleSubmitRequest} success={this.state.success}>
+      <div className="booking-form-div">
+        <Form
+          onSubmit={this.handleSubmitRequest}
+          success={this.state.success}
+          className="booking-form"
+        >
           <Form.Field>
-            <label> Artist:</label>
-            <input value={artist.username} disabled={true} />
+            <label className="booking-form-form-label"> Artist:</label>
+            <input
+              value={artist.username}
+              disabled={true}
+              className="booking-form-form-input"
+            />
             <br />
-            <label> Date:</label>
-            <input value={this.state.availabilityObject.date} disabled={true} />
+            <label className="booking-form-form-label"> Date:</label>
+            <input
+              value={this.state.availabilityObject.date}
+              disabled={true}
+              className="booking-form-form-input"
+            />
             <br />
           </Form.Field>
           <Form.Field>
-            <label>Start Time:</label>
+            <label className="booking-form-form-label">Start Time:</label>
             <input
               type="time"
               name="startTime"
@@ -86,27 +99,32 @@ export default class BookingForm extends React.Component {
               required
               onChange={this.handleChange}
               value={this.state.startTime}
+              className="booking-form-form-input"
             />
           </Form.Field>
           <Form.Field>
-            <label>Number of Hours Required:</label>
+            <label className="booking-form-form-label">
+              Number of Hours Required:
+            </label>
             <input
               type="integer"
               name="numberOfHours"
               onChange={this.handleChange}
               value={this.state.numberOfHours}
+              className="booking-form-form-input"
             />
           </Form.Field>
           <Form.Field>
             <br />
-            <label>Payment</label>
+            <label className="booking-form-form-label">Payment CAD</label>
             <input
               type="float"
               name="payment"
               onChange={this.handleChange}
               value={this.state.payment}
+              className="booking-form-form-input"
             />
-            <label>CAD</label>
+
             <br />
           </Form.Field>
           <Message
@@ -114,13 +132,23 @@ export default class BookingForm extends React.Component {
             header="Booking Complete"
             content="Wait to see if the artist accepts the request!"
           />
-          <Button type="submit" value="Submit Booking Request">
+          <Button
+            type="submit"
+            value="Submit Booking Request"
+            className="booking-form-form-input"
+          >
             Submit Booking{" "}
           </Button>
+          <br></br>
+          <Button
+            onClick={this.setRedirect}
+            className="booking-form-form-back-button"
+          >
+            {" "}
+            Back to Artist List
+          </Button>
+          {this.renderRedirect()}
         </Form>
-        <br></br>
-        {this.renderRedirect()}
-        <Button onClick={this.setRedirect}> Back to Artist List</Button>
       </div>
     );
   }

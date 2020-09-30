@@ -43,7 +43,12 @@ export default class SelectedArtistProfile extends React.Component {
       <div className="selected-artist-profile-surrounding-div">
         <Container className="selected-artist-profile-div">
           <Card className="selected-artist-profile-card">
-            <Image src={this.state.artist.profile_picture} wrapped ui={false} />
+            <Image
+              src={this.state.artist.profile_picture}
+              wrapped
+              ui={false}
+              className="selected-artist-profile-card-image"
+            />
             <Card.Content className="selected-artist-card-content">
               <Card.Header className="selected-artist-card-content">
                 {this.state.artist.username}

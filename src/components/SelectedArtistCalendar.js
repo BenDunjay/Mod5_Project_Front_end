@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
+import "../css/SelectedArtistCalendar.css";
+
 export default class SelectedArtistCalendar extends Component {
   state = {
     startDate: null,
@@ -31,6 +33,7 @@ export default class SelectedArtistCalendar extends Component {
           onChange={this.handleChange}
           includeDates={this.showArtistAvailability()}
           placeholderText="Click to select a date"
+          className="datepicker-calendar"
         />
       </div>
     );

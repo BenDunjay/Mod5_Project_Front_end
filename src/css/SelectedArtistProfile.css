@@ -1,5 +1,5 @@
 .selected-artist-profile-div {
-  padding: 30px !important;
+  padding: 20px !important;
   border-radius: 10% !important;
   border: solid !important;
   border-color: orange !important;
@@ -9,7 +9,7 @@
 }
 
 .selected-artist-profile-card {
-  padding: 30px !important;
+  padding: 20px !important;
   border-radius: 10% !important;
   border: solid !important;
   border-color: orange !important;
@@ -25,7 +25,7 @@
 }
 
 .selected-artist-profile-surrounding-div {
-  height: 100%;
+  height: fit-content;
   /* background: rgb(183, 186, 190); */
   background: linear-gradient(
     90deg,
