@@ -1,7 +1,7 @@
 .venue-navbar {
   padding: 0px;
   width: 100%;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   border-radius: 0mm !important;
   margin: 0 !important;
   background: rgb(131, 132, 133) !important;
@@ -12,6 +12,7 @@
     rgba(131, 132, 133, 0.24833683473389356) 100%
   ) !important;
   text-decoration: underline;
+  height: fit-content;
 }
 
 .navbar-venue-section {
