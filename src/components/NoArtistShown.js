@@ -1,11 +1,13 @@
 import React from "react";
 import Vancouver from "../Vancouver.jpg";
 
+import "../css/NoArtistShown.css";
+
 export default function NoArtistShown() {
   return (
-    <div>
+    <div className="no-artist-shown-div">
       <h2> Background Of The Local Artist Scene In Vancouver</h2>
-      <p>
+      <p className="no-artist-shown-bio">
         Bars that regularly host live music include The Railway Club, The
         Lamplighter, The Media Club, The Red Room, the Bourbon, Anza Club, The
         Astoria, The Biltmore, Pub 340, Venue (formerly the Plaza), the Rickshaw
@@ -22,7 +24,11 @@ export default function NoArtistShown() {
         impacted Vancouver's cultural "business" and life.
       </p>
       <div>
-        <img src={Vancouver} alt="Vancouver City"></img>{" "}
+        <img
+          src={Vancouver}
+          alt="Vancouver City"
+          className="no-artist-shown-image"
+        ></img>{" "}
       </div>
     </div>
   );
