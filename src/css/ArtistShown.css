@@ -5,4 +5,15 @@
   border-color: orange !important;
   height: fit-content !important;
   width: 40% !important;
+  box-shadow: -0.6rem 0 3rem #000 !important;
+}
+
+.artist-card-content {
+  padding: 8px;
+  font-weight: bold;
+}
+
+.artist-card-content-button {
+  margin: 8px;
+  padding: 5px;
 }
