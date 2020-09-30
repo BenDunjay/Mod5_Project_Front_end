@@ -96,16 +96,34 @@ export default class ManageArtistBookings extends Component {
             <Table striped color={"orange"}>
               <Table.Header>
                 <Table.Row>
-                  <Table.HeaderCell>Request Id</Table.HeaderCell>
-                  <Table.HeaderCell>Date</Table.HeaderCell>
-                  <Table.HeaderCell>Venue Name</Table.HeaderCell>
-                  <Table.HeaderCell>Postcode</Table.HeaderCell>
-                  <Table.HeaderCell>Start Time</Table.HeaderCell>
-                  <Table.HeaderCell>Hours Needed</Table.HeaderCell>
-                  <Table.HeaderCell>Payment Offer</Table.HeaderCell>
+                  <Table.HeaderCell className="table-header">
+                    Request Id
+                  </Table.HeaderCell>
+                  <Table.HeaderCell className="table-header">
+                    Date
+                  </Table.HeaderCell>
+                  <Table.HeaderCell className="table-header">
+                    Venue Name
+                  </Table.HeaderCell>
+                  <Table.HeaderCell className="table-header">
+                    Postcode
+                  </Table.HeaderCell>
+                  <Table.HeaderCell className="table-header">
+                    Start Time
+                  </Table.HeaderCell>
+                  <Table.HeaderCell className="table-header">
+                    Hours Needed
+                  </Table.HeaderCell>
+                  <Table.HeaderCell className="table-header">
+                    Payment Offer
+                  </Table.HeaderCell>
                   <Table.HeaderCell>Venue message</Table.HeaderCell>
-                  <Table.HeaderCell>Phone Number</Table.HeaderCell>
-                  <Table.HeaderCell>Accept?</Table.HeaderCell>
+                  <Table.HeaderCell className="table-header">
+                    Phone Number
+                  </Table.HeaderCell>
+                  <Table.HeaderCell className="table-header">
+                    Accept?
+                  </Table.HeaderCell>
                 </Table.Row>
               </Table.Header>
 
@@ -120,15 +138,31 @@ export default class ManageArtistBookings extends Component {
             <Table striped color={"red"}>
               <Table.Header>
                 <Table.Row>
-                  <Table.HeaderCell>Request Id</Table.HeaderCell>
-                  <Table.HeaderCell>Date</Table.HeaderCell>
-                  <Table.HeaderCell>Venue Name</Table.HeaderCell>
-                  <Table.HeaderCell>Postcode</Table.HeaderCell>
-                  <Table.HeaderCell>Start Time</Table.HeaderCell>
-                  <Table.HeaderCell>Hours Needed</Table.HeaderCell>
-                  <Table.HeaderCell>Payment Offer</Table.HeaderCell>
+                  <Table.HeaderCell className="table-header">
+                    Request Id
+                  </Table.HeaderCell>
+                  <Table.HeaderCell className="table-header">
+                    Date
+                  </Table.HeaderCell>
+                  <Table.HeaderCell className="table-header">
+                    Venue Name
+                  </Table.HeaderCell>
+                  <Table.HeaderCell className="table-header">
+                    Postcode
+                  </Table.HeaderCell>
+                  <Table.HeaderCell className="table-header">
+                    Start Time
+                  </Table.HeaderCell>
+                  <Table.HeaderCell className="table-header">
+                    Hours Needed
+                  </Table.HeaderCell>
+                  <Table.HeaderCell className="table-header">
+                    Payment Offer
+                  </Table.HeaderCell>
                   <Table.HeaderCell>Venue message</Table.HeaderCell>
-                  <Table.HeaderCell>Phone Number</Table.HeaderCell>
+                  <Table.HeaderCell className="table-header">
+                    Phone Number
+                  </Table.HeaderCell>
                   <Table.HeaderCell>Accept?</Table.HeaderCell>
                 </Table.Row>
               </Table.Header>
@@ -141,15 +175,31 @@ export default class ManageArtistBookings extends Component {
             <Table striped color={"yellow"}>
               <Table.Header>
                 <Table.Row>
-                  <Table.HeaderCell>Request Id</Table.HeaderCell>
-                  <Table.HeaderCell>Date</Table.HeaderCell>
-                  <Table.HeaderCell>Venue Name</Table.HeaderCell>
-                  <Table.HeaderCell>Postcode</Table.HeaderCell>
-                  <Table.HeaderCell>Start Time</Table.HeaderCell>
-                  <Table.HeaderCell>Hours Needed</Table.HeaderCell>
-                  <Table.HeaderCell>Payment Offer</Table.HeaderCell>
+                  <Table.HeaderCell className="table-header">
+                    Request Id
+                  </Table.HeaderCell>
+                  <Table.HeaderCell className="table-header">
+                    Date
+                  </Table.HeaderCell>
+                  <Table.HeaderCell className="table-header">
+                    Venue Name
+                  </Table.HeaderCell>
+                  <Table.HeaderCell className="table-header">
+                    Postcode
+                  </Table.HeaderCell>
+                  <Table.HeaderCell className="table-header">
+                    Start Time
+                  </Table.HeaderCell>
+                  <Table.HeaderCell className="table-header">
+                    Hours Needed
+                  </Table.HeaderCell>
+                  <Table.HeaderCell className="table-header">
+                    Payment Offer
+                  </Table.HeaderCell>
                   <Table.HeaderCell>Venue message</Table.HeaderCell>
-                  <Table.HeaderCell>Phone Number</Table.HeaderCell>
+                  <Table.HeaderCell className="table-header">
+                    Phone Number
+                  </Table.HeaderCell>
                   <Table.HeaderCell>Accept?</Table.HeaderCell>
                 </Table.Row>
               </Table.Header>

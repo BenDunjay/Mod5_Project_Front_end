@@ -27,8 +27,14 @@
   padding: 15px;
   height: fit-content;
   width: fit-content;
+  box-shadow: -0.3rem 0 1rem #000 !important;
 }
 
 .manage-artist-bookings-labels {
   text-decoration: underline;
+}
+
+.table-header {
+  width: fit-content !important;
+  text-align: center !important;
 }
