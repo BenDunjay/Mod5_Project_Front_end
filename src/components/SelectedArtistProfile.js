@@ -6,6 +6,8 @@ import API from "../API";
 import SelectedArtistCalendar from "./SelectedArtistCalendar";
 import { Card, Image, Container } from "semantic-ui-react";
 
+import "../css/SelectedArtistProfile.css";
+
 export default class SelectedArtistProfile extends React.Component {
   state = {
     artist: {
@@ -38,32 +40,42 @@ export default class SelectedArtistProfile extends React.Component {
 
   render() {
     return (
-      <Container>
-        <Card>
-          <Image src={this.state.artist.profile_picture} wrapped ui={false} />
-          <Card.Content>
-            <Card.Header>{this.state.artist.username}</Card.Header>
-            <Card.Meta>
-              <span>{this.state.artist.name}</span>
-            </Card.Meta>
-            <p> {this.state.artist.email_address}</p>
-            <Card.Meta> {this.state.artist.artist_genre}</Card.Meta>
-            <Card.Description> {this.state.artist.bio}</Card.Description>
-            <p> {this.state.artist.phone_number}</p>
-            <div>
-              <SelectedArtistCalendar
-                artist={this.state.artist}
-                handledateToBookChange={this.handledateToBookChange}
-              />
-            </div>
-            <button>
-              <Link to={`/booking_form/${this.state.dateToBook.id}`}>
-                Book Me!
-              </Link>
-            </button>
-          </Card.Content>
-        </Card>
-      </Container>
+      <div className="selected-artist-profile-surrounding-div">
+        <Container className="selected-artist-profile-div">
+          <Card className="selected-artist-profile-card">
+            <Image src={this.state.artist.profile_picture} wrapped ui={false} />
+            <Card.Content className="selected-artist-card-content">
+              <Card.Header className="selected-artist-card-content">
+                {this.state.artist.username}
+              </Card.Header>
+              <Card.Meta className="selected-artist-card-content">
+                <span>{this.state.artist.name}</span>
+              </Card.Meta>
+              <p> {this.state.artist.email_address}</p>
+              <Card.Meta className="selected-artist-card-content">
+                {" "}
+                {this.state.artist.artist_genre}
+              </Card.Meta>
+              <Card.Description className="selected-artist-card-content">
+                {" "}
+                {this.state.artist.bio}
+              </Card.Description>
+              <p> {this.state.artist.phone_number}</p>
+              <div>
+                <SelectedArtistCalendar
+                  artist={this.state.artist}
+                  handledateToBookChange={this.handledateToBookChange}
+                />
+              </div>
+              <button className="selected-artist-book-button">
+                <Link to={`/booking_form/${this.state.dateToBook.id}`}>
+                  Book Me!
+                </Link>
+              </button>
+            </Card.Content>
+          </Card>
+        </Container>
+      </div>
     );
   }
 }
