@@ -1,0 +1,8 @@
+.artist-shown-card {
+  padding: 30px !important;
+  border-radius: 10% !important;
+  border: solid !important;
+  border-color: orange !important;
+  height: fit-content !important;
+  width: 40% !important;
+}

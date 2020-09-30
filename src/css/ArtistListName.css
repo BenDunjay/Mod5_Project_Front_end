@@ -6,4 +6,5 @@
 .artist-list-name {
   color: white !important;
   padding: 5px;
+  cursor: pointer;
 }

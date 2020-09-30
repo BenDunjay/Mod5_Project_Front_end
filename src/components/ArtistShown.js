@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 
 import { Card, Image } from "semantic-ui-react";
 
+import "../css/ArtistShown.css";
+
 export default function ArtistShown(props) {
   return (
-    <Card>
+    <Card className="artist-shown-card">
       <Image src={props.artist.profile_picture} wrapped ui={false} />
       <Card.Content>
         {/* <h3>This is {props.artist.name}'s profile Page </h3> */}
