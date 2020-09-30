@@ -2,15 +2,15 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  background: rgb(128, 124, 186);
-  background: radial-gradient(
-    circle,
-    rgba(128, 124, 186, 1) 0%,
-    rgba(119, 119, 175, 1) 43%,
-    rgba(95, 125, 201, 1) 100%
+  background: rgb(65, 125, 156);
+  background: linear-gradient(
+    90deg,
+    rgba(65, 125, 156, 1) 0%,
+    rgba(86, 183, 200, 1) 43%,
+    rgba(43, 131, 147, 1) 100%
   );
   color: white;
-  height: 100vh;
+  height: 100%;
 }
 
 .artist-profile-image {
@@ -21,6 +21,7 @@
   border-radius: 10%;
   border: solid;
   border-color: skyblue;
+  box-shadow: -1rem 0 0.8rem #000;
 }
 
 .artist-image-about-section {
@@ -55,6 +56,7 @@
   text-align: center;
   border: solid;
   border-radius: 10%;
+  box-shadow: -0.5rem 0 1rem #000;
 }
 
 .calendar-div {
@@ -64,11 +66,14 @@
   text-align: -webkit-center;
   border-radius: 10%;
   border: solid;
+  box-shadow: -0.5rem 0 1rem #000;
 }
 
 .calendar {
   padding: 10px 20px;
   width: 100%;
+  box-shadow: -0.5rem 0 1rem #000;
+  border-radius: 10%;
 }
 
 .artist-icons {
@@ -83,6 +88,8 @@
 .artist-form {
   width: fit-content;
   padding: 10px;
+  box-shadow: -0.5rem 0 1rem #000;
+  border-radius: 20%;
 }
 
 @media only screen and (max-device-width: 626px) {

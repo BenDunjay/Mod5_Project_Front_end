@@ -4,6 +4,8 @@ import API from "../API";
 
 import Request from "./Request";
 
+import "../css/ManageArtistBookings.css";
+
 export default class ManageArtistBookings extends Component {
   state = {
     bookings: [],
@@ -87,71 +89,73 @@ export default class ManageArtistBookings extends Component {
 
   render() {
     return (
-      <div>
-        <h3> Pending Bookings</h3>
-        <div>
-          <Table striped color={"orange"}>
-            <Table.Header>
-              <Table.Row>
-                <Table.HeaderCell>Request Id</Table.HeaderCell>
-                <Table.HeaderCell>Date</Table.HeaderCell>
-                <Table.HeaderCell>Venue Name</Table.HeaderCell>
-                <Table.HeaderCell>Postcode</Table.HeaderCell>
-                <Table.HeaderCell>Start Time</Table.HeaderCell>
-                <Table.HeaderCell>Hours Needed</Table.HeaderCell>
-                <Table.HeaderCell>Payment Offer</Table.HeaderCell>
-                <Table.HeaderCell>Venue message</Table.HeaderCell>
-                <Table.HeaderCell>Phone Number</Table.HeaderCell>
-                <Table.HeaderCell>Accept?</Table.HeaderCell>
-              </Table.Row>
-            </Table.Header>
+      <div className="manage-bookings-div">
+        <div className="inner-manage-bookings-div">
+          <h3> Pending Bookings</h3>
+          <div>
+            <Table striped color={"orange"}>
+              <Table.Header>
+                <Table.Row>
+                  <Table.HeaderCell>Request Id</Table.HeaderCell>
+                  <Table.HeaderCell>Date</Table.HeaderCell>
+                  <Table.HeaderCell>Venue Name</Table.HeaderCell>
+                  <Table.HeaderCell>Postcode</Table.HeaderCell>
+                  <Table.HeaderCell>Start Time</Table.HeaderCell>
+                  <Table.HeaderCell>Hours Needed</Table.HeaderCell>
+                  <Table.HeaderCell>Payment Offer</Table.HeaderCell>
+                  <Table.HeaderCell>Venue message</Table.HeaderCell>
+                  <Table.HeaderCell>Phone Number</Table.HeaderCell>
+                  <Table.HeaderCell>Accept?</Table.HeaderCell>
+                </Table.Row>
+              </Table.Header>
 
-            <Table.Body>{this.pendingRequests()}</Table.Body>
-          </Table>
-        </div>
-        <hr></hr>
-        <h3> Accepted / UpComing Bookings</h3>
-        <div>
-          <Table striped color={"red"}>
-            <Table.Header>
-              <Table.Row>
-                <Table.HeaderCell>Request Id</Table.HeaderCell>
-                <Table.HeaderCell>Date</Table.HeaderCell>
-                <Table.HeaderCell>Venue Name</Table.HeaderCell>
-                <Table.HeaderCell>Postcode</Table.HeaderCell>
-                <Table.HeaderCell>Start Time</Table.HeaderCell>
-                <Table.HeaderCell>Hours Needed</Table.HeaderCell>
-                <Table.HeaderCell>Payment Offer</Table.HeaderCell>
-                <Table.HeaderCell>Venue message</Table.HeaderCell>
-                <Table.HeaderCell>Phone Number</Table.HeaderCell>
-                <Table.HeaderCell>Accept?</Table.HeaderCell>
-              </Table.Row>
-            </Table.Header>
+              <Table.Body>{this.pendingRequests()}</Table.Body>
+            </Table>
+          </div>
+          <hr></hr>
+          <h3> Accepted / UpComing Bookings</h3>
+          <div>
+            <Table striped color={"red"}>
+              <Table.Header>
+                <Table.Row>
+                  <Table.HeaderCell>Request Id</Table.HeaderCell>
+                  <Table.HeaderCell>Date</Table.HeaderCell>
+                  <Table.HeaderCell>Venue Name</Table.HeaderCell>
+                  <Table.HeaderCell>Postcode</Table.HeaderCell>
+                  <Table.HeaderCell>Start Time</Table.HeaderCell>
+                  <Table.HeaderCell>Hours Needed</Table.HeaderCell>
+                  <Table.HeaderCell>Payment Offer</Table.HeaderCell>
+                  <Table.HeaderCell>Venue message</Table.HeaderCell>
+                  <Table.HeaderCell>Phone Number</Table.HeaderCell>
+                  <Table.HeaderCell>Accept?</Table.HeaderCell>
+                </Table.Row>
+              </Table.Header>
 
-            <Table.Body>{this.confirmedBookings()}</Table.Body>
-          </Table>
-        </div>
-        <hr></hr>
-        <h3> Rejected Bookings</h3>
-        <div>
-          <Table striped color={"yellow"}>
-            <Table.Header>
-              <Table.Row>
-                <Table.HeaderCell>Request Id</Table.HeaderCell>
-                <Table.HeaderCell>Date</Table.HeaderCell>
-                <Table.HeaderCell>Venue Name</Table.HeaderCell>
-                <Table.HeaderCell>Postcode</Table.HeaderCell>
-                <Table.HeaderCell>Start Time</Table.HeaderCell>
-                <Table.HeaderCell>Hours Needed</Table.HeaderCell>
-                <Table.HeaderCell>Payment Offer</Table.HeaderCell>
-                <Table.HeaderCell>Venue message</Table.HeaderCell>
-                <Table.HeaderCell>Phone Number</Table.HeaderCell>
-                <Table.HeaderCell>Accept?</Table.HeaderCell>
-              </Table.Row>
-            </Table.Header>
+              <Table.Body>{this.confirmedBookings()}</Table.Body>
+            </Table>
+          </div>
+          <hr></hr>
+          <h3> Rejected Bookings</h3>
+          <div>
+            <Table striped color={"yellow"}>
+              <Table.Header>
+                <Table.Row>
+                  <Table.HeaderCell>Request Id</Table.HeaderCell>
+                  <Table.HeaderCell>Date</Table.HeaderCell>
+                  <Table.HeaderCell>Venue Name</Table.HeaderCell>
+                  <Table.HeaderCell>Postcode</Table.HeaderCell>
+                  <Table.HeaderCell>Start Time</Table.HeaderCell>
+                  <Table.HeaderCell>Hours Needed</Table.HeaderCell>
+                  <Table.HeaderCell>Payment Offer</Table.HeaderCell>
+                  <Table.HeaderCell>Venue message</Table.HeaderCell>
+                  <Table.HeaderCell>Phone Number</Table.HeaderCell>
+                  <Table.HeaderCell>Accept?</Table.HeaderCell>
+                </Table.Row>
+              </Table.Header>
 
-            <Table.Body>{this.rejectedBookings()}</Table.Body>
-          </Table>
+              <Table.Body>{this.rejectedBookings()}</Table.Body>
+            </Table>
+          </div>
         </div>
       </div>
     );

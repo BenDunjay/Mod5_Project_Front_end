@@ -10,18 +10,40 @@
   flex-wrap: nowrap;
   text-align: center;
   width: 100%;
+  justify-content: center;
 }
 
 .edit-artist-form-label-top {
   padding: 10px 0px 5px 0px;
   color: white !important;
+  font-size: 4mm !important;
 }
 
 .edit-artist-form-input {
   width: 40% !important;
+  border: solid;
+  border-width: 1mm !important;
+  border-color: skyblue !important;
+  box-shadow: -0.3rem 0 1rem #000 !important;
 }
 
 .edit-artist-form-label {
   padding: 0px 0px 5px 0px;
   color: white !important;
+  font-size: 4mm !important;
+}
+
+.edit-artist-form {
+  border-radius: 10%;
+  box-shadow: -1rem 0 2rem #000;
+  width: 60%;
+  margin: 10px;
+}
+
+.edit-artist-form-input-bottom {
+  width: 40% !important;
+  margin: 0px 0px 10px 0px !important;
+  border: solid;
+  box-shadow: -0.3rem 0 1rem #000 !important;
+  font-size: 4mm !important;
 }
