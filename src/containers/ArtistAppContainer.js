@@ -13,19 +13,31 @@ export default function ArtistAppContainer(props) {
     <Router>
       <Menu className="artist-navbar">
         <Menu.Item className="navbar-artist-section">
-          <Link to="/"> AVB </Link>
+          <Link to="/" className="navbar-artist-link">
+            {" "}
+            AVB{" "}
+          </Link>
         </Menu.Item>
         <Menu.Item className="navbar-artist-section">
-          <Link to="/profile"> Profile </Link>
+          <Link to="/profile" className="navbar-artist-link">
+            {" "}
+            Profile{" "}
+          </Link>
         </Menu.Item>
         <Menu.Item className="navbar-artist-section">
-          <Link to="/edit_profile"> Edit Profile </Link>
+          <Link to="/edit_profile" className="navbar-artist-link">
+            {" "}
+            Edit Profile{" "}
+          </Link>
         </Menu.Item>
         <Menu.Item className="navbar-artist-section">
-          <Link to="/manage_bookings"> Manage Bookings </Link>
+          <Link to="/manage_bookings" className="navbar-artist-link">
+            {" "}
+            Manage Bookings{" "}
+          </Link>
         </Menu.Item>
         <Menu.Item className="navbar-artist-section-logout" position="right">
-          <Link onClick={props.logout} to="/">
+          <Link onClick={props.logout} to="/" className="navbar-artist-link">
             {" "}
             Logout{" "}
           </Link>

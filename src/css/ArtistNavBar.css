@@ -4,6 +4,14 @@
   flex-wrap: wrap;
   border-radius: 0mm !important;
   margin: 0 !important;
+  background: rgb(131, 132, 133) !important;
+  background: linear-gradient(
+    90deg,
+    rgba(131, 132, 133, 1) 0%,
+    rgba(151, 212, 223, 1) 50%,
+    rgba(131, 132, 133, 0.24833683473389356) 100%
+  ) !important;
+  text-decoration: underline;
 }
 
 .navbar-artist-section {
@@ -12,5 +20,8 @@
 
 .navbar-artist-section-logout {
   width: fit-content;
-  background-color: silver !important;
+}
+
+.navbar-artist-link {
+  color: white !important;
 }
