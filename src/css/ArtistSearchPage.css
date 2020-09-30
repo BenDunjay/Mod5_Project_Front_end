@@ -1,0 +1,7 @@
+.artist-search-page-first-div {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  width: 100%;
+  justify-content: center;
+}

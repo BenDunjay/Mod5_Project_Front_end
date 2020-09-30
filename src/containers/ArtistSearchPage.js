@@ -6,6 +6,8 @@ import ArtistShown from "../components/ArtistShown";
 import NoArtistShown from "../components/NoArtistShown";
 import { Table } from "semantic-ui-react";
 
+import "../css/ArtistSearchPage.css";
+
 export default class ArtistSearchPage extends Component {
   state = {
     selectedArtist: null,
@@ -57,22 +59,21 @@ export default class ArtistSearchPage extends Component {
 
   render() {
     return (
-      <div>
-        <div>
-          <h5>Date Filter</h5>
-          <input
-            onChange={this.handleFilterDateChange}
-            type="text"
-            name="name"
-            placeholder="Filter: YYYY-MM-DD"
+      <div className="artist-search-page-first-div">
+        <h5>Date Filter</h5>
+        <input
+          onChange={this.handleFilterDateChange}
+          type="text"
+          name="name"
+          placeholder="Filter: YYYY-MM-DD"
+        />
+        <Table>
+          <ArtistList
+            allArtists={this.artistFilter()}
+            handleSelectedArtistChange={this.handleSelectedArtistChange}
           />
-          <Table>
-            <ArtistList
-              allArtists={this.artistFilter()}
-              handleSelectedArtistChange={this.handleSelectedArtistChange}
-            />
-          </Table>
-        </div>
+        </Table>
+
         <div>
           {this.state.selectedArtist ? (
             <ArtistShown artist={this.state.selectedArtist} />
