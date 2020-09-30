@@ -6,7 +6,10 @@ import "../css/NoArtistShown.css";
 export default function NoArtistShown() {
   return (
     <div className="no-artist-shown-div">
-      <h2> Background Of The Local Artist Scene In Vancouver</h2>
+      <h2 className="no-artist-shown-title">
+        {" "}
+        Background Of The Local Artist Scene In Vancouver
+      </h2>
       <p className="no-artist-shown-bio">
         Bars that regularly host live music include The Railway Club, The
         Lamplighter, The Media Club, The Red Room, the Bourbon, Anza Club, The

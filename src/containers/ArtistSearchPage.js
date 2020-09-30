@@ -72,7 +72,7 @@ export default class ArtistSearchPage extends Component {
             handleSelectedArtistChange={this.handleSelectedArtistChange}
           />
         </div>
-        <div>
+        <div className="artist-shown-div">
           {this.state.selectedArtist ? (
             <ArtistShown artist={this.state.selectedArtist} />
           ) : (

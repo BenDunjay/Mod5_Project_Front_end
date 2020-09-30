@@ -39,3 +39,9 @@
   width: fit-content !important;
   text-align: center !important;
 }
+
+.artist-shown-div {
+  align-self: center;
+  text-align: -webkit-center;
+  height: 100%;
+}
