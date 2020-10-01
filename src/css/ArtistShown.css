@@ -6,14 +6,23 @@
   height: fit-content !important;
   width: 40% !important;
   box-shadow: -0.6rem 0 3rem #000 !important;
+  background: rgb(183, 186, 190) !important;
+  background: linear-gradient(
+    90deg,
+    rgb(143, 146, 149) 0%,
+    rgb(104, 108, 119) 50%,
+    rgba(0, 0, 0, 0.248) 100%
+  ) !important;
 }
 
 .artist-card-content {
   padding: 8px;
   font-weight: bold;
+  color: white !important;
 }
 
 .artist-card-content-button {
   margin: 8px;
   padding: 5px;
+  background-color: black;
 }

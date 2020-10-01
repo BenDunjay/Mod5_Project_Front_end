@@ -65,17 +65,20 @@ export default class App extends React.Component {
       );
     } else {
       return (
-        <div className="first-auth-container">
-          <AuthContainer
-            loginArtist={this.loginArtist}
-            loginVenue={this.loginVenue}
-          />
-        </div>
+        <span className="first-span">
+          <span className="app-AVB-Background">AVB</span>
+          <div className="first-auth-container">
+            <AuthContainer
+              loginArtist={this.loginArtist}
+              loginVenue={this.loginVenue}
+            />
+          </div>
+        </span>
       );
     }
   };
 
   render() {
-    return <div className="first-container">{this.chooseContainer()}</div>;
+    return <div className="first-container"> {this.chooseContainer()}</div>;
   }
 }
